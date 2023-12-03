@@ -7,7 +7,7 @@
     "build": "prisma generate && prisma db push && next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
+    "format": "prettier --write --ignore-unknown .",
     "seed": "prisma db seed",
     "prepare": "husky install"
   },
