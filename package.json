@@ -3,13 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev2": "prisma generate && next dev",
     "dev": "next dev",
-    "build": "prisma generate && prisma db push && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write --ignore-unknown .",
+    "lint": "next lint && tsc --noEmit",
+    "format": "prettier --write --ignore-unknown . && prisma format",
     "seed": "prisma db seed",
+    "push": "prisma db push",
+    "studio": "prisma studio",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev",
+    "postinstall": "prisma generate",
     "prepare": "husky install"
   },
   "dependencies": {
