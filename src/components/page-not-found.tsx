@@ -1,11 +1,9 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 
-type Props = {
-  supportEmailAddress?: string
-}
+const SUPPORT_EMAIL_ADDRESS = ''
 
-export default function PageNotFound(props: Props) {
+export default function PageNotFound() {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center px-8 py-12'>
       <div className='space-y-6 text-center'>
@@ -22,15 +20,15 @@ export default function PageNotFound(props: Props) {
           <Link href='/'>Return to Home</Link>
         </Button>
 
-        {props.supportEmailAddress && (
+        {SUPPORT_EMAIL_ADDRESS && (
           <p className='text-pretty text-muted-foreground'>
             If you believe this is an error, please{' '}
-            <Link
-              href={`mailto:${props.supportEmailAddress}`}
+            <a
+              href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}
               className='font-medium text-primary underline-offset-4 hover:text-primary/90 hover:underline'
             >
               contact our support team
-            </Link>
+            </a>
             .
           </p>
         )}
