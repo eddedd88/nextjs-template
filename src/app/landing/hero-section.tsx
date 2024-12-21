@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export function HeroSection() {
@@ -12,13 +13,23 @@ export function HeroSection() {
         everything you need to launch your app, gather feedback, and iterate
         fast.
       </p>
-      <div className='flex items-center space-x-4'>
+      {/* <div className='flex items-center space-x-4'>
         <Button size='lg'>
           <Link href='/dash'>Try it for Free</Link>
         </Button>
         <Button variant='secondary' size='lg'>
           Book a Demo
         </Button>
+      </div> */}
+      <div className='relative aspect-video h-[450px] overflow-hidden rounded-xl shadow-sm'>
+        <Image
+          src='/fake-saas.png'
+          alt='demo image'
+          priority
+          fill
+          className='object-fit object-top'
+        />
+        <div className='absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white to-transparent' />
       </div>
     </section>
   )
