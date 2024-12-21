@@ -13,10 +13,10 @@ import {
 export function NavBar() {
   return (
     <nav className='flex items-center justify-between gap-4 py-4'>
-      <div className='flex items-center gap-2'>
+      <Link className='flex items-center gap-2' href='/'>
         <FlaskConicalIcon className='h-8 w-8 rotate-[30deg] stroke-1' />
         Rocketfuel
-      </div>
+      </Link>
 
       {/* Links in bigger screens */}
       <div className='hidden gap-4 sm:flex sm:gap-6'>
