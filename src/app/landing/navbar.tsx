@@ -5,6 +5,7 @@ import { FlaskConicalIcon, MenuIcon } from 'lucide-react'
 import {
   Drawer,
   DrawerContent,
+  DrawerDescription,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -35,6 +36,7 @@ export function NavBar() {
           <DrawerContent>
             <DrawerHeader className='sr-only'>
               <DrawerTitle>Menu</DrawerTitle>
+              <DrawerDescription>Links to navigate the site</DrawerDescription>
             </DrawerHeader>
             <div className='flex flex-col items-start pb-6'>
               <MobileNavLinkItem href='/features' label='Features' />
