@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
+import JoinWaitlistButton from './join-waitlist-button'
 
 export function HeroSection() {
   return (
@@ -13,6 +14,7 @@ export function HeroSection() {
         everything you need to launch your app, gather feedback, and iterate
         fast.
       </p>
+      {/* <JoinWaitlistButton /> */}
       {/* <div className='flex items-center space-x-4 pb-4'>
         <Button size='lg'>
           <Link href='/dash'>Try it for Free</Link>
