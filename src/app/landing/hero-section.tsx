@@ -15,14 +15,14 @@ export function HeroSection() {
         fast.
       </p>
       {/* <JoinWaitlistButton /> */}
-      {/* <div className='flex items-center space-x-4 pb-4'>
+      <div className='flex items-center space-x-4 pb-4'>
         <Button size='lg'>
-          <Link href='/dash'>Try it for Free</Link>
+          <Link href='/'>Try it for Free</Link>
         </Button>
         <Button variant='secondary' size='lg'>
           Book a Demo
         </Button>
-      </div> */}
+      </div>
       <div className='relative aspect-video w-full max-w-6xl overflow-hidden rounded-xl shadow-sm'>
         <Image
           src='/fake-saas.png'
