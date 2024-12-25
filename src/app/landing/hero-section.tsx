@@ -19,7 +19,7 @@ export function HeroSection() {
         <Button size='lg'>
           <Link href='/'>Try it for Free</Link>
         </Button>
-        <Button variant='secondary' size='lg'>
+        <Button variant='outline' size='lg'>
           Book a Demo
         </Button>
       </div>
