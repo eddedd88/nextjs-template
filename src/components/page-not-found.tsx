@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const SUPPORT_EMAIL_ADDRESS = ''
 
-export default function PageNotFound() {
+export function PageNotFound() {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center px-8 py-12'>
       <div className='space-y-6 text-center'>

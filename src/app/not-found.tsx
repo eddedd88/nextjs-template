@@ -1,5 +1,5 @@
-import NotFoundPage from '@/components/page-not-found'
+import { PageNotFound } from '@/components/page-not-found'
 
-export default function PageNotFound() {
-  return <NotFoundPage />
+export default function NotFoundPage() {
+  return <PageNotFound />
 }
