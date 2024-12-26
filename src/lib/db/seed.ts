@@ -6,7 +6,7 @@ const prisma = new PrismaClient()
  * Send queries to production db to manipulate the data
  */
 async function main() {
-  console.log('\n\tNothing to seed in "prisma/seed.ts"')
+  console.log('\n\tNothing to seed in "src/lib/db/seed.ts"')
 }
 
 main()

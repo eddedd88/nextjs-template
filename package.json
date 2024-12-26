@@ -9,7 +9,7 @@
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write --ignore-unknown . && prisma format",
     "seed": "prisma db seed",
-    "push": "prisma db push",
+    "pushdb": "prisma db push",
     "studio": "prisma studio",
     "generate": "prisma generate",
     "migrate": "prisma migrate dev",
@@ -59,6 +59,7 @@
     "**/*": "prettier --write --ignore-unknown"
   },
   "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "schema": "src/lib/db/schema.prisma",
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} src/lib/db/seed.ts"
   }
 }
