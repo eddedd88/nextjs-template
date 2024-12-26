@@ -11,7 +11,7 @@
     "generatedb": "prisma generate",
     "pushdb": "prisma db push",
     "studio": "prisma studio",
-    "seed": "prisma db seed",
+    "seed": "NODE_ENV=development prisma db seed",
     "migrate": "prisma migrate dev",
     "postinstall": "prisma generate",
     "prepare": "husky install"
@@ -53,7 +53,7 @@
     "prettier-plugin-tailwindcss": "^0.6.9",
     "prisma": "^6.1.0",
     "tailwindcss": "^3.4.17",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   },
   "lint-staged": {
@@ -61,6 +61,6 @@
   },
   "prisma": {
     "schema": "src/lib/db/schema.prisma",
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} src/lib/db/seed.ts"
+    "seed": "tsx src/lib/db/seed.ts"
   }
 }
