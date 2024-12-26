@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import JoinWaitlistButton from './join-waitlist-button'
+import { JoinWaitlistButton } from './join-waitlist-button'
 
 export function HeroSection() {
   return (
