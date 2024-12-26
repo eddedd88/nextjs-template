@@ -8,10 +8,10 @@
     "start": "next start",
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write --ignore-unknown . && prisma format",
-    "seed": "prisma db seed",
+    "generatedb": "prisma generate",
     "pushdb": "prisma db push",
     "studio": "prisma studio",
-    "generate": "prisma generate",
+    "seed": "prisma db seed",
     "migrate": "prisma migrate dev",
     "postinstall": "prisma generate",
     "prepare": "husky install"

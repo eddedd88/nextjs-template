@@ -64,6 +64,13 @@ model VerificationToken {
   @@id([identifier, token])
 }
 
+model Waitlist {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Feedback {
   id        String   @id @default(cuid())
   userId    String?
