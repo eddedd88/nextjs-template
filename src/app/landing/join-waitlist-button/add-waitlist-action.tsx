@@ -1,5 +1,7 @@
 'use server'
 
+import { prisma } from '@/lib/db/prisma'
+
 export async function addWaitlistAction(formData: FormData) {
   try {
     const name = formData.get('name')?.toString()
@@ -16,6 +18,11 @@ export async function addWaitlistAction(formData: FormData) {
     console.log(
       'Implement adding to waitlist at /src/app/landing/join-waitlist-button/add-waitlist-action.tsx',
     )
+    await prisma.waitlist.upsert({
+      where: { email },
+      create: { name, email },
+      update: { name },
+    })
   } catch (error) {
     console.error('Failed to add to waitlist:', error)
   }

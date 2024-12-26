@@ -1,19 +1,16 @@
 import { env } from '@/env'
 import { PrismaClient } from '@prisma/client'
 
-declare global {
-  var prisma: PrismaClient | undefined
+const createPrismaClient = () => {
+  return new PrismaClient({
+    log: env.NODE_ENV === 'development' ? ['error', 'warn'] : ['error'],
+  })
 }
 
-let prisma: PrismaClient
+declare const globalThis: {
+  prismaGlobal: ReturnType<typeof createPrismaClient>
+} & typeof global
 
-if (env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
-} else {
-  if (!global.prisma) {
-    global.prisma = new PrismaClient()
-  }
-  prisma = global.prisma
-}
+export const prisma = globalThis.prismaGlobal ?? createPrismaClient()
 
-export default prisma
+if (env.NODE_ENV !== 'production') globalThis.prismaGlobal = prisma
