@@ -1,3 +1,4 @@
+import { Footer } from './footer'
 import { HeroSection } from './hero-section'
 import { NavBar } from './navbar'
 
@@ -10,6 +11,7 @@ export default function LandingPage() {
       <main className='grow pb-12 md:pb-20'>
         <HeroSection />
       </main>
+      <Footer />
     </div>
   )
 }
