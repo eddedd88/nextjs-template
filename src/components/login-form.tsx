@@ -9,6 +9,7 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
+import Link from 'next/link'
 
 export function LoginForm({
   className,
@@ -87,9 +88,16 @@ export function LoginForm({
           </form>
         </CardContent>
       </Card>
-      <div className='text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary'>
-        By clicking continue, you agree to our <a href='#'>Terms of Service</a>{' '}
-        and <a href='#'>Privacy Policy</a>.
+      <div className='text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
+        By clicking continue, you agree to our{' '}
+        <Link href='/landing/terms' className='hover:text-primary'>
+          Terms of Service
+        </Link>{' '}
+        and{' '}
+        <Link href='/landing/terms' className='hover:text-primary'>
+          Privacy Policy
+        </Link>
+        .
       </div>
     </div>
   )
