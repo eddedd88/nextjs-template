@@ -90,11 +90,11 @@ export function LoginForm({
       </Card>
       <div className='text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
         By clicking continue, you agree to our{' '}
-        <Link href='/landing/terms' className='hover:text-primary'>
+        <Link href='/terms' className='hover:text-primary'>
           Terms of Service
         </Link>{' '}
         and{' '}
-        <Link href='/landing/terms' className='hover:text-primary'>
+        <Link href='/terms' className='hover:text-primary'>
           Privacy Policy
         </Link>
         .

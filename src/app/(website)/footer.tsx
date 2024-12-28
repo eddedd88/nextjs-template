@@ -14,7 +14,7 @@ export function Footer() {
               size='sm'
               asChild
             >
-              <Link href='/landing/terms'>Terms of Service</Link>
+              <Link href='/terms'>Terms of Service</Link>
             </Button>
           </div>
         </div>

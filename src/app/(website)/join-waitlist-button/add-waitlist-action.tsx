@@ -16,7 +16,7 @@ export async function addWaitlistAction(formData: FormData) {
     }
 
     console.log(
-      'Implement adding to waitlist at /src/app/landing/join-waitlist-button/add-waitlist-action.tsx',
+      'Implement adding to waitlist at /src/app/(website)/join-waitlist-button/add-waitlist-action.tsx',
     )
     await prisma.waitlist.upsert({
       where: { email },
