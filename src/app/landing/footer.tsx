@@ -53,12 +53,7 @@ function SocialLink({
   children: React.ReactNode
 }) {
   return (
-    <Button
-      variant='ghost'
-      className='text-muted-foreground hover:text-foreground'
-      size='icon'
-      asChild
-    >
+    <Button variant='ghost' className='hover:bg-primary/5' size='icon' asChild>
       <a href={href} target='_blank'>
         {children}
       </a>
