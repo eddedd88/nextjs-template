@@ -57,6 +57,55 @@ export default function TermsPage() {
             Privacy Policy, which is incorporated by reference into these Terms.
           </p>
         </section>
+
+        <section>
+          <h2 className='mb-2 text-xl font-medium'>5. Intellectual Property</h2>
+          <p className='font-light'>
+            All content, trademarks, service marks, and logos used on the
+            Service are the property of Nitro or its licensors. You may not use,
+            copy, reproduce, distribute, or create derivative works based on our
+            intellectual property without prior written consent from us.
+          </p>
+        </section>
+
+        <section>
+          <h2 className='mb-2 text-xl font-medium'>6. Termination</h2>
+          <p className='font-light'>
+            We may suspend or terminate your access to the Service at any time,
+            with or without notice, for any reason, including if you violate
+            these Terms. Upon termination, your right to use the Service will
+            immediately cease. Any provisions of these Terms that by their
+            nature should survive termination shall survive.
+          </p>
+        </section>
+
+        <section>
+          <h2 className='mb-2 text-xl font-medium'>
+            7. Limitation of Liability
+          </h2>
+          <p className='font-light'>
+            To the maximum extent permitted by law, Nitro shall not be liable
+            for any indirect, incidental, special, consequential, or punitive
+            damages, or any loss of profits or revenues, whether incurred
+            directly or indirectly, or any loss of data, use, goodwill, or other
+            intangible losses resulting from (a) your use or inability to use
+            the Service; (b) any unauthorized access or use of our servers
+            and/or any personal information stored therein; or (c) any
+            interruption or cessation of transmission to or from the Service.
+          </p>
+        </section>
+
+        <section>
+          <h2 className='mb-2 text-xl font-medium'>8. Indemnification</h2>
+          <p className='font-light'>
+            You agree to indemnify and hold Nitro, its affiliates, officers,
+            agents, and employees harmless from any claim, demand, loss, or
+            damages, including reasonable attorneys&apos; fees, arising out of
+            or related to your use of the Service, your violation of these
+            Terms, or your violation of any rights of a third party.
+          </p>
+        </section>
+
         <section>
           <h2 className='mb-2 text-xl font-medium'>9. Changes to the Terms</h2>
           <p className='font-light'>
@@ -65,6 +114,21 @@ export default function TermsPage() {
             at least 30 days notice prior to any new terms taking effect. Your
             continued use of the Service after any such modifications
             constitutes acceptance of the new Terms.
+          </p>
+        </section>
+
+        <section>
+          <h2 className='mb-2 text-xl font-medium'>
+            10. Governing Law and Dispute Resolution
+          </h2>
+          <p className='font-light'>
+            These Terms are governed by and construed in accordance with the
+            laws of [Jurisdiction], without regard to its conflict of law
+            principles. Any disputes arising under or in connection with these
+            Terms shall be resolved through binding arbitration in accordance
+            with the rules of [Arbitration Institution], and the decision of the
+            arbitrator shall be final and binding. You agree to waive your right
+            to a jury trial or to participate in a class action.
           </p>
         </section>
       </div>
