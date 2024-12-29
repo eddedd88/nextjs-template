@@ -9,6 +9,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
     strategy: 'jwt',
   },
+  pages: {
+    signIn: '/login',
+  },
   callbacks: {
     // required in JWT mode
     jwt({ token, user }) {
@@ -21,5 +24,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       session.user.id = user.id
       return session
     },
+    authorized: async ({ auth }) => !!auth,
   },
 })
