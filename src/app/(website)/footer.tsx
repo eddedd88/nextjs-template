@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { COMPANY_NAME } from '@/constants'
 
 export function Footer() {
   return (
     <footer className='bg-secondary/80 py-2'>
       <div className='container flex items-center justify-between text-sm text-muted-foreground'>
         <div className='flex items-center gap-4 divide-x-2'>
-          <p>&copy; 2024 Nitro. All rights reserved.</p>
+          <p>&copy; 2024 {COMPANY_NAME}. All rights reserved.</p>
           <div>
             <Button
               variant='link'

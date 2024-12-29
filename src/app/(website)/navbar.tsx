@@ -10,13 +10,14 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer'
+import { COMPANY_NAME } from '@/constants'
 
 export function NavBar() {
   return (
     <nav className='flex items-center justify-between gap-4 py-4'>
       <Link className='flex items-center gap-2' href='/'>
         <FlaskConicalIcon className='h-8 w-8 rotate-[30deg] stroke-1' />
-        Nitro
+        {COMPANY_NAME}
       </Link>
 
       {/* Links in bigger screens */}

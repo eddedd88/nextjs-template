@@ -1,3 +1,5 @@
+import { COMPANY_NAME } from '@/constants'
+
 export default function TermsPage() {
   return (
     <div className='container mx-auto max-w-4xl rounded-md bg-white py-8 shadow-sm'>
@@ -9,11 +11,11 @@ export default function TermsPage() {
       </div>
       <div className='mt-4 space-y-8'>
         <p className='font-light'>
-          Welcome to Nitro (&quot;Service&quot;, &quot;we&quot;, &quot;us&quot;,
-          or &quot;our&quot;). These Terms and Conditions govern your use of our
-          platform. By accessing or using our Service, you agree to be bound by
-          these Terms. If you do not agree to these terms, do not use our
-          Service.
+          Welcome to {COMPANY_NAME} (&quot;Service&quot;, &quot;we&quot;,
+          &quot;us&quot;, or &quot;our&quot;). These Terms and Conditions govern
+          your use of our platform. By accessing or using our Service, you agree
+          to be bound by these Terms. If you do not agree to these terms, do not
+          use our Service.
         </p>
 
         <section>
@@ -62,9 +64,10 @@ export default function TermsPage() {
           <h2 className='mb-2 text-xl font-medium'>5. Intellectual Property</h2>
           <p className='font-light'>
             All content, trademarks, service marks, and logos used on the
-            Service are the property of Nitro or its licensors. You may not use,
-            copy, reproduce, distribute, or create derivative works based on our
-            intellectual property without prior written consent from us.
+            Service are the property of {COMPANY_NAME} or its licensors. You may
+            not use, copy, reproduce, distribute, or create derivative works
+            based on our intellectual property without prior written consent
+            from us.
           </p>
         </section>
 
@@ -84,13 +87,13 @@ export default function TermsPage() {
             7. Limitation of Liability
           </h2>
           <p className='font-light'>
-            To the maximum extent permitted by law, Nitro shall not be liable
-            for any indirect, incidental, special, consequential, or punitive
-            damages, or any loss of profits or revenues, whether incurred
-            directly or indirectly, or any loss of data, use, goodwill, or other
-            intangible losses resulting from (a) your use or inability to use
-            the Service; (b) any unauthorized access or use of our servers
-            and/or any personal information stored therein; or (c) any
+            To the maximum extent permitted by law, {COMPANY_NAME} shall not be
+            liable for any indirect, incidental, special, consequential, or
+            punitive damages, or any loss of profits or revenues, whether
+            incurred directly or indirectly, or any loss of data, use, goodwill,
+            or other intangible losses resulting from (a) your use or inability
+            to use the Service; (b) any unauthorized access or use of our
+            servers and/or any personal information stored therein; or (c) any
             interruption or cessation of transmission to or from the Service.
           </p>
         </section>
@@ -98,11 +101,11 @@ export default function TermsPage() {
         <section>
           <h2 className='mb-2 text-xl font-medium'>8. Indemnification</h2>
           <p className='font-light'>
-            You agree to indemnify and hold Nitro, its affiliates, officers,
-            agents, and employees harmless from any claim, demand, loss, or
-            damages, including reasonable attorneys&apos; fees, arising out of
-            or related to your use of the Service, your violation of these
-            Terms, or your violation of any rights of a third party.
+            You agree to indemnify and hold {COMPANY_NAME}, its affiliates,
+            officers, agents, and employees harmless from any claim, demand,
+            loss, or damages, including reasonable attorneys&apos; fees, arising
+            out of or related to your use of the Service, your violation of
+            these Terms, or your violation of any rights of a third party.
           </p>
         </section>
 
