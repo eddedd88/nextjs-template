@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import 'server-only'
 
 const envSchema = z.object({
   NODE_ENV: z.enum(['development', 'production', 'test']),
