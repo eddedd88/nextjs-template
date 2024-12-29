@@ -6,6 +6,7 @@ import GoogleProvider from 'next-auth/providers/google'
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [GoogleProvider],
+  // to run in Database mode, must setup Prisma to run in Edge mode
   session: {
     strategy: 'jwt',
   },
@@ -13,15 +14,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     signIn: '/login',
   },
   callbacks: {
-    // required in JWT mode
-    jwt({ token, user }) {
-      if (user) {
-        token.id = user.id
+    session({ session, token }) {
+      if (!token.sub) {
+        throw new Error('No user id in token')
       }
-      return token
-    },
-    async session({ session, user }) {
-      session.user.id = user.id
+      session.user.id = token.sub
       return session
     },
     authorized: async ({ auth }) => !!auth,

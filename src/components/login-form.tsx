@@ -10,11 +10,18 @@ import {
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import Link from 'next/link'
+import { signIn } from '@/lib/auth'
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<'div'>) {
+  const handleGoogleSignIn = async () => {
+    'use server'
+    await signIn('google', {
+      redirectTo: '/dash',
+    })
+  }
   return (
     <div className={cn('flex flex-col gap-6', className)} {...props}>
       <Card>
@@ -25,7 +32,7 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form action={handleGoogleSignIn}>
             <div className='grid gap-6'>
               <div className='flex flex-col gap-4'>
                 <Button variant='outline' className='w-full'>
