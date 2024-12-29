@@ -16,7 +16,7 @@ export function HeroSection() {
       </p>
       {/* <JoinWaitlistButton /> */}
       <div className='flex items-center space-x-4 pb-4'>
-        <Button size='lg'>
+        <Button size='lg' asChild>
           <Link href='/dash'>Try it for Free</Link>
         </Button>
         <Button variant='outline' size='lg'>
