@@ -5,7 +5,7 @@ import { JoinWaitlistButton } from './join-waitlist-button'
 
 export function HeroSection() {
   return (
-    <section className='mx-auto flex flex-col items-center gap-6 px-4 pt-20 text-center'>
+    <section className='mx-auto flex flex-col items-center gap-6 px-4 py-20 text-center'>
       <h1 className='max-w-4xl text-balance text-4xl font-[350] leading-normal tracking-tight sm:text-6xl sm:leading-tight'>
         Launch your startup in minutes.
       </h1>
