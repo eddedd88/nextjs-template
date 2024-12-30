@@ -12,7 +12,7 @@ export default function LayoutLandingPage({
       <header className='container'>
         <NavBar />
       </header>
-      <main className='grow pb-12 md:pb-20'>{children}</main>
+      <main className='grow'>{children}</main>
       <Footer />
     </div>
   )
