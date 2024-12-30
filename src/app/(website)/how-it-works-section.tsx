@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 
 export function HowItWorksSection() {
   return (
-    <section className='container py-16'>
+    <section className='container py-16 sm:py-24'>
       <h2 className='mb-12 text-center text-3xl sm:text-4xl'>How It Works</h2>
       <div className='grid gap-12 md:grid-cols-3'>
         <Step
