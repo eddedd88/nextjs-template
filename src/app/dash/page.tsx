@@ -22,11 +22,11 @@ export default function DashPage() {
 
   return (
     <div className='flex h-screen w-full items-center justify-center'>
-      <h1 className='bg-primary bg-clip-text px-4 text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
+      <h1 className='bg-gray-900 bg-clip-text px-4 text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
         {text}
         <span
           className={cn(
-            'full -mb-2 ml-0.5 inline-block h-1.5 w-0.5 bg-primary/40 sm:h-[60px]',
+            'full -mb-2 ml-0.5 inline-block h-1.5 w-0.5 bg-gray-600 sm:h-[60px]',
             finishedTyping && 'animate-blink',
           )}
         />
