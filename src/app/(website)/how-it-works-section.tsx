@@ -3,27 +3,26 @@ import { ReactNode } from 'react'
 
 export function HowItWorksSection() {
   return (
-    <section className='py-16'>
-      <div className='container mx-auto px-4'>
-        <h2 className='mb-12 text-center text-4xl'>How It Works</h2>
-        <div className='grid gap-12 md:grid-cols-3'>
-          <Step
-            icon={<SearchIcon />}
-            title={'Discover'}
-            description='Find the perfect solution for your needs from our curated selection.'
-          />
-          <Step
-            icon={<ZapIcon />}
-            title={'Choose'}
-            description='Select the option that best fits your requirements and goals.'
-          />
-          <Step
-            icon={<SendIcon />}
-            title={'Implement'}
-            description='Easily integrate our solution into your workflow and see immediate results.'
-          />
-        </div>
+    <section className='container py-16'>
+      <h2 className='mb-12 text-center text-3xl sm:text-4xl'>How It Works</h2>
+      <div className='grid gap-12 md:grid-cols-3'>
+        <Step
+          icon={<SearchIcon />}
+          title={'Discover'}
+          description='Find the perfect solution for your needs from our curated selection.'
+        />
+        <Step
+          icon={<ZapIcon />}
+          title={'Choose'}
+          description='Select the option that best fits your requirements and goals.'
+        />
+        <Step
+          icon={<SendIcon />}
+          title={'Implement'}
+          description='Easily integrate our solution into your workflow and see immediate results.'
+        />
       </div>
+      {/* </div> */}
     </section>
   )
 }
@@ -34,7 +33,7 @@ function Step(props: { icon: ReactNode; title: string; description: string }) {
       <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent'>
         {props.icon}
       </div>
-      <h3 className='mb-2 text-xl'>{props.title}</h3>
+      <h3 className='mb-2 text-2xl'>{props.title}</h3>
       <p className='text-balance text-lg text-muted-foreground'>
         {props.description}
       </p>

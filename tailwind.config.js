@@ -66,7 +66,7 @@ module.exports = {
       keyframes: {
         'accordion-down': {
           from: {
-            height: 0,
+            height: '0',
           },
           to: {
             height: 'var(--radix-accordion-content-height)',
@@ -77,12 +77,16 @@ module.exports = {
             height: 'var(--radix-accordion-content-height)',
           },
           to: {
-            height: 0,
+            height: '0',
           },
         },
         blink: {
-          '0%, 49%': { opacity: '1' },
-          '50%, 100%': { opacity: '0' },
+          '0%, 49%': {
+            opacity: '1',
+          },
+          '50%, 100%': {
+            opacity: '0',
+          },
         },
       },
       animation: {
