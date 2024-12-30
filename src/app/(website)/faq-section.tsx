@@ -48,7 +48,9 @@ export function FAQSection() {
         {faqData.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger>{item.question}</AccordionTrigger>
-            <AccordionContent>{item.answer}</AccordionContent>
+            <AccordionContent className='text-muted-foreground'>
+              {item.answer}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
