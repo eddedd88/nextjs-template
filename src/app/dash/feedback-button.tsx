@@ -13,14 +13,17 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { toast } from 'sonner'
 import { submitFeedbackAction } from './submit-feedback-action'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
+import { useAction } from 'next-safe-action/hooks'
 
 export function FeedbackButton() {
   const [open, setOpen] = useState(false)
-  const formRef = useRef<HTMLFormElement>(null)
+  const submitFeedback = useAction(submitFeedbackAction)
 
   async function handleSubmit(formData: FormData) {
-    submitFeedbackAction(formData)
+    submitFeedback.execute({
+      message: formData.get('message') as string,
+    })
     setOpen(false)
     toast('Thank you for your feedback!')
   }
@@ -37,7 +40,7 @@ export function FeedbackButton() {
             Let us know how we can improve your experience.
           </DialogDescription>
         </DialogHeader>
-        <form action={handleSubmit} ref={formRef}>
+        <form action={handleSubmit}>
           <Textarea
             name='message'
             placeholder='Enter your feedback here...'
