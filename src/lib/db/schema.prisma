@@ -76,7 +76,7 @@ model Feedback {
   id        String   @id @default(cuid())
   userId    String?
   email     String?
-  feedback  String
+  message   String
   createdAt DateTime @default(now())
   createdBy User?    @relation(fields: [userId], references: [id])
 }
