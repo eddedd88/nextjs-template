@@ -18,9 +18,7 @@ export default function LayoutDashPage({
             {COMPANY_NAME}
           </Link>
 
-          <div>
-            <FeedbackButton />
-          </div>
+          <FeedbackButton />
         </nav>
       </header>
       <main className='grow'>{children}</main>

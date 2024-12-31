@@ -21,7 +21,7 @@ export default function DashPage() {
   }, [text])
 
   return (
-    <div className='flex h-screen w-full items-center justify-center'>
+    <div className='flex min-h-[calc(100vh-68px)] w-full items-center justify-center'>
       <h1 className='bg-gray-900 bg-clip-text px-4 text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
         {text}
         <span
