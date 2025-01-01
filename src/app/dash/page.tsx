@@ -33,7 +33,7 @@ export default function DashPage() {
           />
         </h1>
       </div>
-      <div className='grid grid-cols-4 gap-4'>
+      <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         <InstructionBox>
           <p>To setup Auth.js, run:</p>
           <CodeBlock>npx auth secret</CodeBlock>
@@ -118,7 +118,7 @@ function InstructionBox({ children }: { children: React.ReactNode }) {
 
 function CodeBlock({ children }: { children: React.ReactNode }) {
   return (
-    <code className='mx-auto whitespace-pre rounded bg-secondary px-12 py-2 text-left font-mono'>
+    <code className='mx-auto rounded bg-secondary px-8 py-2 text-left font-mono'>
       {children}
     </code>
   )
