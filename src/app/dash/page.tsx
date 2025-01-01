@@ -23,7 +23,7 @@ export default function DashPage() {
   return (
     <div className='container flex min-h-[calc(100vh-68px)] flex-col pb-6'>
       <div className='flex grow items-center justify-center'>
-        <h1 className='bg-gray-900 bg-clip-text px-4 text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
+        <h1 className='bg-gray-900 bg-clip-text px-4 text-center text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
           {text}
           <span
             className={cn(
