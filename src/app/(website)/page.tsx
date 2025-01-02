@@ -4,7 +4,7 @@ import { HowItWorksSection } from './how-it-works-section'
 import { FinalCTASection } from './final-cta-section'
 import type { Metadata } from 'next'
 
-export const metatdata: Metadata = {
+export const metadata: Metadata = {
   title: 'Nitro | Launch your SaaS today',
   description:
     'Nitro is a full-stack SaaS starter kit that helps you build and deploy your next idea in minutes.',
