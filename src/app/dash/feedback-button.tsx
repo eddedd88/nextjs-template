@@ -18,14 +18,17 @@ import { useAction } from 'next-safe-action/hooks'
 
 export function FeedbackButton() {
   const [open, setOpen] = useState(false)
-  const submitFeedback = useAction(submitFeedbackAction)
+  const submitFeedback = useAction(submitFeedbackAction, {
+    onExecute: () => {
+      setOpen(false)
+      toast('Thank you for your feedback!')
+    },
+  })
 
   async function handleSubmit(formData: FormData) {
     submitFeedback.execute({
       message: formData.get('message') as string,
     })
-    setOpen(false)
-    toast('Thank you for your feedback!')
   }
 
   return (
