@@ -1,5 +1,4 @@
 import { Footer } from './footer'
-import { HeroSection } from './hero-section'
 import { NavBar } from './navbar'
 
 export default function LayoutLandingPage({

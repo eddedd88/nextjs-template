@@ -1,14 +1,13 @@
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import Link from 'next/link'
-import { JoinWaitlistButton } from './join-waitlist-button'
+import { JoinWaitlistButton } from '../join-waitlist-button'
+import { AnimatedHeroHeading } from './animated-hero-heading'
 
 export function HeroSection() {
   return (
     <section className='mx-auto flex flex-col items-center gap-6 px-4 py-20 text-center'>
-      <h1 className='max-w-4xl text-balance text-4xl font-[350] leading-normal tracking-tight sm:text-6xl sm:leading-tight'>
-        Launch your startup in minutes.
-      </h1>
+      <AnimatedHeroHeading />
       <p className='max-w-3xl text-pretty pb-2 text-lg leading-7 text-muted-foreground sm:text-xl sm:leading-8'>
         A template with a landing page, dashboard, auth, database, and
         everything you need to launch your app, gather feedback, and iterate
