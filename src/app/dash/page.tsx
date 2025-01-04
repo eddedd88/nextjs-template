@@ -1,38 +1,19 @@
-'use client'
-
-import { cn } from '@/lib/utils'
-import { useEffect, useState } from 'react'
-
-const TYPING_SPEED = 75 // in ms
+import { CogIcon } from 'lucide-react'
 
 export default function DashPage() {
-  const [text, setText] = useState('')
-  const fullMessage = 'What are you building tonight?'
-  const finishedTyping = text.length === fullMessage.length
-
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      if (text.length < fullMessage.length) {
-        setText(fullMessage.slice(0, text.length + 1))
-      }
-    }, TYPING_SPEED)
-
-    return () => clearTimeout(timeout)
-  }, [text])
-
   return (
     <div className='container flex min-h-[calc(100vh-68px)] flex-col pb-6'>
       <div className='flex grow items-center justify-center'>
-        <h1 className='bg-gray-900 bg-clip-text px-4 text-center text-4xl leading-normal text-transparent md:text-6xl md:leading-normal'>
-          {text}
-          <span
-            className={cn(
-              'full -mb-2 ml-0.5 inline-block h-[44px] w-0.5 bg-gray-600 sm:h-[60px]',
-              finishedTyping && 'animate-blink',
-            )}
-          />
+        <div className='flex'>
+          <CogIcon className='h-12 w-12 animate-[spin_linear_5s_infinite]' />
+          <CogIcon className='-ml-3 -mt-5 h-12 w-12 animate-[spin_linear_5s_infinite_reverse_200ms]' />
+          <CogIcon className='-ml-2 -mt-2 h-12 w-12 animate-[spin_linear_5s_infinite_350ms]' />
+        </div>
+        <h1 className='px-4 text-center text-4xl leading-normal md:text-6xl md:leading-normal'>
+          Hello World
         </h1>
       </div>
+      <h2 className='mb-8 text-center text-2xl'>Getting Started</h2>
       <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         <InstructionBox>
           <p>To setup Auth.js, run:</p>
