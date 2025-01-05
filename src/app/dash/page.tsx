@@ -23,7 +23,9 @@ export default function DashPage() {
             </Link>
           </Button>
           <Button size='lg' variant='secondary' className='w-full'>
-            Setup Google Authentication
+            <Link href='/dash/setup/google-auth'>
+              Setup Google Authentication
+            </Link>
           </Button>
           <Button size='lg' variant='secondary' className='w-full'>
             Setup Database
