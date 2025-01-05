@@ -8,7 +8,7 @@ export function Footer() {
       <div className='container flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between'>
         <div className='flex flex-col items-center gap-2 sm:flex-row sm:gap-4 sm:divide-x-2'>
           <p className='text-center sm:text-left'>
-            &copy; 2024 {COMPANY_NAME}. All rights reserved.
+            &copy; 2025 {COMPANY_NAME}. All rights reserved.
           </p>
           <div>
             <Button
