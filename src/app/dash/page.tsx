@@ -22,7 +22,7 @@ export default function DashPage() {
               Setup Authentication with Auth.js
             </Link>
           </Button>
-          <Button size='lg' variant='secondary' className='w-full'>
+          <Button size='lg' variant='secondary' className='w-full' asChild>
             <Link href='/dash/setup/google-auth'>
               Setup Google Authentication
             </Link>
