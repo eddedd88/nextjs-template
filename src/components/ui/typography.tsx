@@ -6,7 +6,7 @@ const typographyVariants = cva('', {
   variants: {
     variant: {
       p: 'leading-7 [&:not(:first-child)]:mt-6',
-      codeBlock: 'rounded bg-muted p-3 font-mono text-sm block',
+      codeBlock: 'rounded bg-muted p-3 font-mono text-sm block break-words',
     },
   },
   defaultVariants: {
