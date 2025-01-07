@@ -4,12 +4,11 @@ import { CogIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
-import { UserAction } from './user-actions'
 import { useState } from 'react'
 import { matchMessageAction } from './match-message-action'
+import { toast } from 'sonner'
 
 export default function DashPage() {
-  // const [matchedAction, setMatchedAction] = useState<UserAction | null>(null)
   const [input, setInput] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +20,9 @@ export default function DashPage() {
     const matchedAction = await matchMessageAction({
       message: input.trim(),
     })
-    // setMatchedAction(matchedAction)
+    if (!matchedAction?.data?.success) {
+      toast.error('No matching action found for your request.')
+    }
   }
 
   return (
