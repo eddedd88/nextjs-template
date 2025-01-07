@@ -8,8 +8,8 @@ importers:
   .:
     dependencies:
       '@ai-sdk/google-vertex':
-        specifier: ^2.0.12
-        version: 2.0.12(zod@3.24.1)
+        specifier: ^2.0.13
+        version: 2.0.13(zod@3.24.1)
       '@prisma/client':
         specifier: ^6.1.0
         version: 6.1.0(prisma@6.1.0)
@@ -32,8 +32,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(next@15.1.2(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
       ai:
-        specifier: ^4.0.22
-        version: 4.0.22(react@19.0.0)(zod@3.24.1)
+        specifier: ^4.0.27
+        version: 4.0.27(react@19.0.0)(zod@3.24.1)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -139,10 +139,10 @@ packages:
     peerDependencies:
       zod: ^3.0.0
 
-  '@ai-sdk/google-vertex@2.0.12':
+  '@ai-sdk/google-vertex@2.0.13':
     resolution:
       {
-        integrity: sha512-xa+be0B2mKARoovx3AbStXRTpf3m9/2migZSukkWmP95bn/L0YMOf8pZej1tUctMnGd/aOOD/3ajDsIif4IJ0w==,
+        integrity: sha512-XX3bVRw/GWnm6Gq1rmw3tIsnFS34zIfoVXbGZ8hC+DhCP02Sir14CujjcPSLQyAL2CeHkrwYKMScOe739X0s2w==,
       }
     engines: { node: '>=18' }
     peerDependencies:
@@ -1496,10 +1496,10 @@ packages:
       }
     engines: { node: '>= 14' }
 
-  ai@4.0.22:
+  ai@4.0.27:
     resolution:
       {
-        integrity: sha512-yvcjWtofI2HZwgT3jMkoNnDUhAY+S9cOvZ6xbbOzrS0ZeFl1/gcbasFnwAqUJ7uL/t72/3a0Vy/pKg6N19A2Mw==,
+        integrity: sha512-3wMFXNAR6a269R7k4ZDQ9FfF3fb8gQlnlIE4kWaQfZDUTEM5aWgQdbzFhsr9Q5DULCyZg7l/bFpGd48cRfvLaA==,
       }
     engines: { node: '>=18' }
     peerDependencies:
@@ -4596,7 +4596,7 @@ snapshots:
       '@ai-sdk/provider-utils': 2.0.5(zod@3.24.1)
       zod: 3.24.1
 
-  '@ai-sdk/google-vertex@2.0.12(zod@3.24.1)':
+  '@ai-sdk/google-vertex@2.0.13(zod@3.24.1)':
     dependencies:
       '@ai-sdk/anthropic': 1.0.6(zod@3.24.1)
       '@ai-sdk/google': 1.0.12(zod@3.24.1)
@@ -5333,7 +5333,7 @@ snapshots:
 
   agent-base@7.1.3: {}
 
-  ai@4.0.22(react@19.0.0)(zod@3.24.1):
+  ai@4.0.27(react@19.0.0)(zod@3.24.1):
     dependencies:
       '@ai-sdk/provider': 1.0.3
       '@ai-sdk/provider-utils': 2.0.5(zod@3.24.1)
