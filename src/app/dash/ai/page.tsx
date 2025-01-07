@@ -25,6 +25,9 @@ export default function DashPage() {
     onError: () => {
       toast.error(UNEXPECTED_ERROR_MESSAGE)
     },
+    onSettled: () => {
+      setInput('')
+    },
   })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,8 +62,15 @@ export default function DashPage() {
               onChange={handleInputChange}
               placeholder="Type what you're looking for..."
               className='flex-1'
+              disabled={matchMessage.status === 'executing'}
             />
-            <Button type='submit'>Search</Button>
+            <Button
+              type='submit'
+              disabled={matchMessage.status === 'executing'}
+              className='w-28'
+            >
+              {matchMessage.status === 'executing' ? 'Searching' : 'Search'}
+            </Button>
           </form>
 
           <div className='mt-8 flex flex-col gap-4'>
