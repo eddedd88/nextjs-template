@@ -2,7 +2,6 @@
 
 import { matchAction } from '@/lib/ai'
 import { actions } from './user-actions'
-import { redirect } from 'next/navigation'
 import { safeAction } from '@/lib/safe-action'
 import { z } from 'zod'
 
@@ -17,8 +16,5 @@ export const matchMessageAction = safeAction
     const matchedAction = actions.find(
       action => action.id === response.actionId,
     )
-    if (matchedAction?.url) {
-      redirect(matchedAction.url)
-    }
-    return { success: false }
+    return matchedAction
   })

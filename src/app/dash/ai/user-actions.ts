@@ -13,6 +13,7 @@ export const ActionIdSchema = z.enum([
   'security-incidents',
   'setup-auth',
   'setup-google-auth',
+  'none',
 ])
 
 export type ActionId = z.infer<typeof ActionIdSchema>

@@ -7,9 +7,25 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { matchMessageAction } from './match-message-action'
 import { toast } from 'sonner'
+import { useAction } from 'next-safe-action/hooks'
+import { useRouter } from 'next/navigation'
+import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 
 export default function DashPage() {
+  const router = useRouter()
   const [input, setInput] = useState('')
+  const matchMessage = useAction(matchMessageAction, {
+    onSuccess: ({ data }) => {
+      if (!data) {
+        toast.error('No matching action found for your request.')
+      } else {
+        router.push(data.url)
+      }
+    },
+    onError: () => {
+      toast.error(UNEXPECTED_ERROR_MESSAGE)
+    },
+  })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
@@ -17,12 +33,9 @@ export default function DashPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const matchedAction = await matchMessageAction({
+    matchMessage.execute({
       message: input.trim(),
     })
-    if (!matchedAction?.data?.success) {
-      toast.error('No matching action found for your request.')
-    }
   }
 
   return (
