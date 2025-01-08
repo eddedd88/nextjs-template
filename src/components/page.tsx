@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div className='container mx-auto max-w-4xl animate-fade-in p-6 sm:w-fit'>
+    <div className='container mx-auto max-w-3xl animate-fade-in p-6'>
       {children}
     </div>
   )

@@ -13,6 +13,7 @@ export const ActionIdSchema = z.enum([
   'security-incidents',
   'setup-auth',
   'setup-google-auth',
+  'user-list',
   'none',
 ])
 
@@ -28,6 +29,12 @@ export const UserActionSchema = z.object({
 export type UserAction = z.infer<typeof UserActionSchema>
 
 export const actions: UserAction[] = [
+  {
+    id: 'user-list',
+    title: 'User List',
+    description: 'View and manage users',
+    url: '/dash/users',
+  },
   {
     id: 'setup-auth',
     title: 'Setup Authentication with Auth.js',
