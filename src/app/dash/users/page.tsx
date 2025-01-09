@@ -29,11 +29,11 @@ export default function UsersPage() {
 
 function UserList({ users }: UserListProps) {
   return (
-    <div className='overflow-hidden rounded-lg bg-card text-card-foreground shadow-sm'>
-      <ul className='divide-y divide-border'>
+    <div className='rounded-lg bg-card text-card-foreground sm:shadow-lg'>
+      <ul className='sm:divide-y sm:divide-border'>
         {users.map(user => (
           <li key={user.id}>
-            <div className='flex items-center justify-between px-4 py-4 sm:px-6'>
+            <div className='flex items-center justify-between py-4 sm:px-6'>
               <div className='flex items-center'>
                 <Avatar>
                   <AvatarFallback>{user.initials}</AvatarFallback>

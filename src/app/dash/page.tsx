@@ -1,6 +1,6 @@
 'use client'
 
-import { CogIcon } from 'lucide-react'
+import { ArrowRightIcon, CogIcon, Loader2Icon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
@@ -61,15 +61,19 @@ export default function DashPage() {
               value={input}
               onChange={handleInputChange}
               placeholder="Type what you're looking for..."
-              className='flex-1'
               disabled={matchMessage.status === 'executing'}
             />
             <Button
               type='submit'
               disabled={matchMessage.status === 'executing'}
-              className='w-28'
+              size='icon'
+              className='p-3'
             >
-              {matchMessage.status === 'executing' ? 'Searching' : 'Search'}
+              {matchMessage.status === 'executing' ? (
+                <Loader2Icon className='animate-spin' />
+              ) : (
+                <ArrowRightIcon />
+              )}
             </Button>
           </form>
 
