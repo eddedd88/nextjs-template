@@ -11,13 +11,6 @@ import { useAction } from 'next-safe-action/hooks'
 import { useRouter } from 'next/navigation'
 import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 
-/**
- * TODO:
- * - move this ai page to the home page
- * - add the edit user page
- * - add a way to display all the user actions
- * - make new dash page responsive
- */
 export default function DashPage() {
   const router = useRouter()
   const [input, setInput] = useState('')
