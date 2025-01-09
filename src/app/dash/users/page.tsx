@@ -2,6 +2,8 @@ import { Button } from '@/components/ui/button'
 import { PencilIcon } from 'lucide-react'
 import { Page, PageBackButton, PageTitle } from '@/components/page'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import Link from 'next/link'
+import { users_data } from './users-data'
 
 type User = {
   id: string
@@ -15,50 +17,12 @@ type UserListProps = {
   users: User[]
 }
 
-const mockUsers = [
-  {
-    id: '1',
-    name: 'Alice Johnson',
-    email: 'alice@example.com',
-    initials: 'AJ',
-    createdAt: new Date('2023-01-15').toISOString(),
-  },
-  {
-    id: '2',
-    name: 'Bob Smith',
-    email: 'bob@example.com',
-    initials: 'BS',
-    createdAt: new Date('2023-02-20').toISOString(),
-  },
-  {
-    id: '3',
-    name: 'Charlie Brown',
-    email: 'charlie@example.com',
-    initials: 'CB',
-    createdAt: new Date('2023-03-25').toISOString(),
-  },
-  {
-    id: '4',
-    name: 'Diana Ross',
-    email: 'diana@example.com',
-    initials: 'DR',
-    createdAt: new Date('2023-04-30').toISOString(),
-  },
-  {
-    id: '5',
-    name: 'Ethan Hunt',
-    email: 'ethan@example.com',
-    initials: 'EH',
-    createdAt: new Date('2023-05-05').toISOString(),
-  },
-]
-
 export default function UsersPage() {
   return (
     <Page>
       <PageBackButton />
       <PageTitle>Users</PageTitle>
-      <UserList users={mockUsers} />
+      <UserList users={users_data} />
     </Page>
   )
 }
@@ -91,9 +55,12 @@ function UserList({ users }: UserListProps) {
                   variant='ghost'
                   size='icon'
                   className='text-muted-foreground hover:text-primary'
+                  asChild
                 >
-                  <PencilIcon className='h-4 w-4' />
-                  <span className='sr-only'>Edit user</span>
+                  <Link href={`/dash/users/${user.id}`}>
+                    <PencilIcon className='h-4 w-4' />
+                    <span className='sr-only'>Edit user</span>
+                  </Link>
                 </Button>
               </div>
             </div>
