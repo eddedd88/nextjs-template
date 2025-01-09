@@ -20,8 +20,7 @@ export default function LayoutDashPage({
             {COMPANY_NAME}
           </Link>
           <div className='flex items-center gap-4'>
-            <NavLinkItem href='/dash' label='Home' />
-            <NavLinkItem href='/dash/ai' label='AI Chat' />
+            {/* <NavLinkItem href='/dash' label='Home' /> */}
             <FeedbackButton />
           </div>
         </nav>

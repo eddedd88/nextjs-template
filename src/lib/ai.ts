@@ -1,4 +1,4 @@
-import { UserAction, ActionIdSchema } from '@/app/dash/ai/user-actions'
+import { UserAction, ActionIdSchema } from '@/app/dash/user-actions'
 import { createVertex } from '@ai-sdk/google-vertex'
 import { generateObject } from 'ai'
 import { z } from 'zod'

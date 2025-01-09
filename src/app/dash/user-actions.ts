@@ -1,5 +1,10 @@
 import { z } from 'zod'
 
+/**
+ * TODO:
+ * - derive ids from a list so that I don't have to duplicate the keys
+ */
+
 export const ActionIdSchema = z.enum([
   'manage-units',
   'maintenance-requests',
