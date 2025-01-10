@@ -17,7 +17,9 @@ export default function DashPage() {
   const matchMessage = useAction(matchMessageAction, {
     onSuccess: ({ data }) => {
       if (!data) {
-        toast.error('No matching action found for your request.')
+        toast.error(
+          "I'm not able to help with that. Please try something else.",
+        )
         setInput('')
       } else {
         router.push(data.url)
@@ -93,7 +95,7 @@ export default function DashPage() {
               <Link href='/dash/users'>Manage Users</Link>
             </Button>
             <Button size='lg' variant='outline' className='w-full' asChild>
-              <Link href='/dash/workflows'>See what else you can do</Link>
+              <Link href='/dash/workflows'>See all my capabilities</Link>
             </Button>
           </div>
         </div>
