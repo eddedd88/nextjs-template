@@ -15,7 +15,7 @@ export default async function UserProfilePage({
 
   return (
     <Page>
-      <PageBackButton />
+      <PageBackButton backUrl='/dash/users' />
       <PageTitle>{user?.name || 'User not found.'}</PageTitle>
       {user && (
         <form className='mt-8 space-y-6'>

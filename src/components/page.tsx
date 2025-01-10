@@ -14,7 +14,10 @@ export function PageTitle({ children }: { children: React.ReactNode }) {
   return <h2 className='mb-6 text-3xl leading-normal'>{children}</h2>
 }
 
-export function PageBackButton() {
+type PageBackButtonProps = {
+  backUrl?: string
+}
+export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
   return (
     <Button
       variant='ghost'
@@ -22,7 +25,7 @@ export function PageBackButton() {
       className='-ml-2 mb-6 hidden p-2 text-muted-foreground sm:inline-flex'
       asChild
     >
-      <Link href='/dash'>
+      <Link href={backUrl}>
         <ChevronLeftIcon />
         Back
       </Link>
