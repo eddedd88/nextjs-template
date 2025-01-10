@@ -18,14 +18,13 @@ export default function DashPage() {
     onSuccess: ({ data }) => {
       if (!data) {
         toast.error('No matching action found for your request.')
+        setInput('')
       } else {
         router.push(data.url)
       }
     },
     onError: () => {
       toast.error(UNEXPECTED_ERROR_MESSAGE)
-    },
-    onSettled: () => {
       setInput('')
     },
   })
@@ -60,7 +59,8 @@ export default function DashPage() {
             <Input
               value={input}
               onChange={handleInputChange}
-              placeholder="Type what you're looking for..."
+              placeholder='Describe what you want to do...'
+              required
               disabled={matchMessage.status === 'executing'}
             />
             <Button
