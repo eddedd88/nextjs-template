@@ -8,6 +8,7 @@ import { z } from 'zod'
 export const ActionIdSchema = z.enum([
   'setup-auth',
   'setup-google-auth',
+  'setup-database',
   'user-list',
   'ai-workflows',
   'none',
@@ -49,5 +50,11 @@ export const userActions: UserAction[] = [
     description:
       'See a list of all the workflows that have been configured for this app',
     url: '/dash/workflows',
+  },
+  {
+    id: 'setup-database',
+    title: 'Setup Database',
+    description: 'Configure your database connection and settings',
+    url: '/dash/setup/database',
   },
 ]
