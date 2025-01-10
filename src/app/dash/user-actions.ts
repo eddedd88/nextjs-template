@@ -9,6 +9,7 @@ export const ActionIdSchema = z.enum([
   'setup-auth',
   'setup-google-auth',
   'user-list',
+  'ai-workflows',
   'none',
 ])
 
@@ -41,5 +42,12 @@ export const userActions: UserAction[] = [
     title: 'Setup Google Authentication',
     description: 'Add Google authentication to your app',
     url: '/dash/setup/google-auth',
+  },
+  {
+    id: 'ai-workflows',
+    title: 'AI Assistant Workflows',
+    description:
+      'See a list of all the workflows that have been configured for this app',
+    url: '/dash/workflows',
   },
 ]

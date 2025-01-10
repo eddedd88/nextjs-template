@@ -9,13 +9,17 @@ import Link from 'next/link'
 import { userActions } from '../user-actions'
 import { Page, PageBackButton, PageTitle } from '@/components/page'
 
+const userActionsWithoutAIWorkflows = userActions.filter(
+  userAction => userAction.id !== 'ai-workflows',
+)
+
 export default function WorkflowsPage() {
   return (
     <Page>
       <PageBackButton />
       <PageTitle>All of my Capabilities</PageTitle>
       <div className='grid grid-cols-1 gap-4'>
-        {userActions.map(userAction => (
+        {userActionsWithoutAIWorkflows.map(userAction => (
           <Link
             href={userAction.url}
             key={userAction.id}
