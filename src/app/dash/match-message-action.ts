@@ -12,7 +12,7 @@ export const matchMessageAction = safeAction
     }),
   )
   .action(async ({ parsedInput: { message } }) => {
-    const response = await matchAction({ message, allActions: actions })
+    const response = await matchAction({ message, allActions: userActions })
     const matchedAction = userActions.find(
       action => action.id === response.actionId,
     )
