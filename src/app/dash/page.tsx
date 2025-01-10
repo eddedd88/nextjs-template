@@ -92,6 +92,9 @@ export default function DashPage() {
             <Button size='lg' variant='secondary' className='w-full' asChild>
               <Link href='/dash/users'>Manage Users</Link>
             </Button>
+            <Button size='lg' variant='outline' className='w-full' asChild>
+              <Link href='/dash/workflows'>See what else you can do</Link>
+            </Button>
           </div>
         </div>
       </div>

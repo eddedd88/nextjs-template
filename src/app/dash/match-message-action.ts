@@ -1,7 +1,7 @@
 'use server'
 
 import { matchAction } from '@/lib/ai'
-import { actions } from './user-actions'
+import { userActions } from './user-actions'
 import { safeAction } from '@/lib/safe-action'
 import { z } from 'zod'
 
@@ -13,7 +13,7 @@ export const matchMessageAction = safeAction
   )
   .action(async ({ parsedInput: { message } }) => {
     const response = await matchAction({ message, allActions: actions })
-    const matchedAction = actions.find(
+    const matchedAction = userActions.find(
       action => action.id === response.actionId,
     )
     return matchedAction
