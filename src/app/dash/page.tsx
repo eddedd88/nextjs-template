@@ -64,6 +64,7 @@ export default function DashPage() {
               placeholder='Describe what you want to do...'
               required
               disabled={matchMessage.status === 'executing'}
+              autoFocus
             />
             <Button
               type='submit'
