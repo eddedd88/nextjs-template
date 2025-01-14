@@ -2,10 +2,19 @@
 
 import { matchAction } from '@/lib/ai'
 import { userActions } from './user-actions'
-import { safeAction } from '@/lib/safe-action'
 import { z } from 'zod'
+import { createSafeActionClient } from 'next-safe-action'
+import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 
-export const matchMessageAction = safeAction
+const safeActionWithoutAuth = createSafeActionClient({
+  defaultValidationErrorsShape: 'flattened',
+  handleServerError(e) {
+    console.error(e)
+    return UNEXPECTED_ERROR_MESSAGE
+  },
+})
+
+export const matchMessageAction = safeActionWithoutAuth
   .schema(
     z.object({
       message: z.string().min(1, 'Please enter a message'),
