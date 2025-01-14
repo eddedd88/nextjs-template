@@ -1,4 +1,5 @@
 import { UserAction, ActionIdSchema } from '@/app/dash/user-actions'
+import { env } from '@/env'
 import { createVertex } from '@ai-sdk/google-vertex'
 import { generateObject } from 'ai'
 import { z } from 'zod'
@@ -113,8 +114,8 @@ function getVertex() {
     location: 'us-central1',
     googleAuthOptions: {
       credentials: {
-        client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY,
+        client_email: env.GOOGLE_CLIENT_EMAIL,
+        private_key: env.GOOGLE_PRIVATE_KEY,
       },
     },
   })
