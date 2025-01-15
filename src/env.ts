@@ -27,9 +27,9 @@ const parsedEnv = envSchema.safeParse({
 
 if (parsedEnv.error) {
   const errors = Object.entries(parsedEnv.error.flatten().fieldErrors)
-    .map(([field, errors]) => ` - ${field}: ${errors?.join(', ')}`)
+    .map(([field, errors]) => ` ${field}: ${errors?.join(', ')}`)
     .join('\n')
-  throw new Error('Invalid environment variables:\n' + errors)
+  throw new Error('Missing or invalid environment variables:\n' + errors)
 }
 
 export const env = parsedEnv.data
