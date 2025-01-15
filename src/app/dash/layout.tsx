@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { FlaskConicalIcon } from 'lucide-react'
 import { COMPANY_NAME } from '@/constants'
-import { FeedbackButton } from './feedback-button'
+import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { VariantProps } from 'class-variance-authority'
