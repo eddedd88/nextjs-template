@@ -35,6 +35,14 @@ export function HeroSection() {
         />
         <div className='absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white to-transparent' />
       </div>
+      <a
+        className='text-sm text-muted-foreground'
+        href='https://ui.shadcn.com/examples/tasks'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Image by <span className='underline underline-offset-4'>shadcn</span>
+      </a>
     </section>
   )
 }
