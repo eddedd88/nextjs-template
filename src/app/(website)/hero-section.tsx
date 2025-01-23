@@ -17,12 +17,10 @@ export function HeroSection() {
         everything you need to launch your app, gather feedback, and iterate
         fast.
       </p>
-      <div className='flex items-center space-x-4 pb-4'>
+      <div className='flex items-center gap-4 pb-4'>
         <Button size='lg' asChild>
-          <Link href='/dash'>Try it for Free</Link>
+          <Link href='/dash'>See Dashboard</Link>
         </Button>
-        <span>or</span>
-
         <JoinWaitlistButton />
       </div>
       <div className='relative aspect-video w-full max-w-6xl overflow-hidden rounded-xl shadow-sm'>

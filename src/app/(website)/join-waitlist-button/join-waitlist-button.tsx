@@ -13,11 +13,13 @@ export function JoinWaitlistButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size='lg'>Join Waitlist</Button>
+        <Button size='lg' variant='outline'>
+          Join Waitlist
+        </Button>
       </DialogTrigger>
       <DialogContent className='max-w-md'>
         <DialogHeader>
-          <DialogTitle>Join our Waitlist</DialogTitle>
+          <DialogTitle>Join our Waitlist (Demo)</DialogTitle>
           <DialogDescription>
             Get early access to our product and receive updates.
           </DialogDescription>
