@@ -6,7 +6,7 @@ import { AnimatedHeroHeading } from './animated-hero-heading'
 
 export function HeroSection() {
   return (
-    <section className='mx-auto flex flex-col items-center gap-6 px-4 py-20 text-center'>
+    <section className='mx-auto flex flex-col items-center gap-6 bg-gradient-to-b from-background from-25% via-primary/10 via-35% to-background px-4 py-20 text-center'>
       <AnimatedHeroHeading />
       {/* Non animated heading */}
       {/* <h1 className='px-4 text-4xl font-[350] leading-normal md:text-6xl md:leading-normal'>
@@ -34,7 +34,7 @@ export function HeroSection() {
         <div className='absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-white to-transparent' />
       </div>
       <a
-        className='text-sm text-muted-foreground'
+        className='text-xs text-muted-foreground'
         href='https://ui.shadcn.com/examples/tasks'
         target='_blank'
         rel='noopener noreferrer'
