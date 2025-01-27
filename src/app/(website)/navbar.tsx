@@ -23,7 +23,7 @@ export function NavBar() {
       {/* Links in bigger screens */}
       <div className='hidden gap-4 sm:flex sm:gap-6'>
         <NavLinkItem href='/coming-soon' label='Features' />
-        <NavLinkItem href='/coming-soon' label='Pricing' />
+        <NavLinkItem href='/pricing' label='Pricing' />
         <NavLinkItem href='/coming-soon' label='Contact' variant='outline' />
         <GithubButton />
       </div>
@@ -43,7 +43,7 @@ export function NavBar() {
             </DrawerHeader>
             <div className='flex flex-col items-start pb-6'>
               <MobileNavLinkItem href='/coming-soon' label='Features' />
-              <MobileNavLinkItem href='/coming-soon' label='Pricing' />
+              <MobileNavLinkItem href='/pricing' label='Pricing' />
               <MobileNavLinkItem href='/coming-soon' label='Contact' />
             </div>
           </DrawerContent>
