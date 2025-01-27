@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import { JoinWaitlistButton } from './join-waitlist-button'
 
 export function FinalCTASection() {
   return (
@@ -16,9 +17,7 @@ export function FinalCTASection() {
         <Button asChild size='lg'>
           <Link href='/dash'>Get Started</Link>
         </Button>
-        <Button variant='outline' size='lg'>
-          Book a Demo
-        </Button>
+        <JoinWaitlistButton />
       </div>
     </section>
   )
