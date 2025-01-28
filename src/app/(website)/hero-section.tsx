@@ -6,7 +6,7 @@ import { AnimatedHeroHeading } from './animated-hero-heading'
 
 export function HeroSection() {
   return (
-    <section className='mx-auto flex flex-col items-center gap-6 bg-gradient-to-b from-background from-40% via-primary/10 to-background px-4 py-20 text-center sm:from-10%'>
+    <section className='mx-auto flex flex-col items-center gap-6 bg-gradient-to-b from-background from-40% via-primary/10 to-background px-4 py-20 text-center sm:from-10% 2xl:pt-60'>
       <AnimatedHeroHeading />
       {/* Non animated heading */}
       {/* <h1 className='px-4 text-4xl font-[350] leading-normal md:text-6xl md:leading-normal'>
@@ -31,7 +31,7 @@ export function HeroSection() {
           <Link href='/dash'>See Dashboard</Link>
         </Button>
       </div>
-      <div className='relative aspect-video w-full max-w-6xl overflow-hidden rounded-xl shadow-sm'>
+      <div className='relative aspect-video w-full max-w-6xl overflow-hidden rounded-xl shadow-sm 2xl:mt-20 2xl:max-w-[1600px]'>
         <Image
           src='/fake-saas.png'
           alt='demo image'
