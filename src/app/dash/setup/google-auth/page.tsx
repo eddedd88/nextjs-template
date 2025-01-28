@@ -79,12 +79,7 @@ export default function SetupAuthPage() {
           Uncomment the env variable checks in <CodeBlock>src/env.ts</CodeBlock>
         </li>
       </ol>
-      {/* <div className='border p-3 mt-6 rounded-md flex items-center gap-3'> */}
-      <p className='mt-8 text-xl'>
-        The <CodeBlock>/dash</CodeBlock> routes now require auth. Refresh this
-        page and you will be redirected to the login page.
-      </p>
-      {/* </div> */}
+      <p className='mt-8 text-xl'>You can now login with Google on your app!</p>
     </Page>
   )
 }
