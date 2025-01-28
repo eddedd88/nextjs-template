@@ -13,18 +13,16 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: 'What is the purpose of this website?',
-    answer:
-      'This website is a template for a Next.js website with Tailwind CSS and TypeScript. It includes a few example components and pages to help you get started with your own project.',
+    answer: 'This website demonstrates what does the landing page look like.',
   },
   {
     question: 'How do I get started with this template?',
-    answer:
-      'To get started, clone the repository and install the dependencies. You can then run the development server to see the website in action.',
+    answer: 'To get started, follow the github link and clone the repository.',
   },
   {
     question: 'What technologies are used in this template?',
     answer:
-      'This template uses Next.js for the frontend, Tailwind CSS for styling, and TypeScript for type safety. It also includes ESLint and Prettier for code formatting.',
+      'This template uses Next.js, Shadcn, Prisma, Google Vertex AI, and the ai sdk',
   },
   {
     question: 'Can I use this template for my own projects?',
@@ -34,7 +32,7 @@ const faqData: FAQItem[] = [
   {
     question: 'What license is this template released under?',
     answer:
-      'This template is released under the MIT license. You are free to use it for commercial and non-commercial projects, with attribution to the original author.',
+      'This template is released under the MIT license. You are free to use it for commercial and non-commercial projects.',
   },
 ]
 
