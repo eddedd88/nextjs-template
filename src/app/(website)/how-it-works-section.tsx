@@ -8,18 +8,18 @@ export function HowItWorksSection() {
       <div className='grid gap-12 md:grid-cols-3'>
         <Step
           icon={<SearchIcon />}
-          title={'Discover'}
-          description='Find the perfect solution for your needs from our curated selection.'
+          title={'Clone Repo'}
+          description='Get started by cloning our repository and running it locally.'
         />
         <Step
           icon={<ZapIcon />}
-          title={'Choose'}
-          description='Select the option that best fits your requirements and goals.'
+          title={'Customize'}
+          description='Customize the copy of the landing page to fit your needs.'
         />
         <Step
           icon={<SendIcon />}
-          title={'Implement'}
-          description='Easily integrate our solution into your workflow and see immediate results.'
+          title={'Deploy'}
+          description='Deploy your landing page and start collecting leads.'
         />
       </div>
       {/* </div> */}
