@@ -4,14 +4,14 @@ import Link from 'next/link'
 
 export function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div className='container mx-auto mt-6 max-w-3xl animate-fade-in'>
+    <div className='container mx-auto max-w-3xl animate-fade-in pb-12 pt-6'>
       {children}
     </div>
   )
 }
 
 export function PageTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className='mb-6 text-3xl leading-normal'>{children}</h2>
+  return <h1 className='mb-6 text-3xl leading-normal'>{children}</h1>
 }
 
 type PageBackButtonProps = {
