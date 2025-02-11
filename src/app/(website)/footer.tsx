@@ -7,7 +7,7 @@ export function Footer() {
     <footer className='bg-secondary/80 py-2'>
       <div className='container flex flex-col gap-4 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between'>
         <div className='flex flex-col items-center gap-2 sm:flex-row sm:gap-4 sm:divide-x-2'>
-          <p className='text-center sm:text-left'>
+          <p className='mt-1 text-center sm:mt-0 sm:text-left'>
             &copy; 2025 {COMPANY_NAME}. All rights reserved.
           </p>
           <div>
