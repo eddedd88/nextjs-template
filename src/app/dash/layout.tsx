@@ -5,6 +5,7 @@ import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { VariantProps } from 'class-variance-authority'
+import { UserNav } from '@/components/usernav'
 
 export default function LayoutDashPage({
   children,
@@ -22,6 +23,7 @@ export default function LayoutDashPage({
           <div className='flex items-center gap-4'>
             {/* <NavLinkItem href='/dash' label='Home' /> */}
             <FeedbackButton />
+            <UserNav />
           </div>
         </nav>
       </header>
