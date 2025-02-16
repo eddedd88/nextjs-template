@@ -25,7 +25,7 @@ export async function matchAction({
   allActions: UserAction[]
 }) {
   const vertex = getVertex()
-  const model = vertex('gemini-2.0-flash-exp', {
+  const model = vertex('gemini-2.0-flash-lite-preview-02-05', {
     structuredOutputs: true,
   })
 
