@@ -46,10 +46,10 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",
+    "@tailwindcss/postcss": "^4.0.14",
     "@types/node": "^22.13.10",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "autoprefixer": "^10.4.21",
     "eslint": "^9.22.0",
     "eslint-config-next": "15.2.2",
     "husky": "^9.1.7",
@@ -58,7 +58,7 @@
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "prisma": "^6.5.0",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.0.14",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },

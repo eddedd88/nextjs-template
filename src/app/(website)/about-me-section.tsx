@@ -12,14 +12,14 @@ export function AboutMeSection() {
             alt='Eduardo Duran'
             width={150}
             height={150}
-            className='rounded-3xl border bg-secondary'
+            className='bg-secondary rounded-3xl border'
           />
         </div>
         <div className='text-center sm:col-span-2 sm:text-left'>
           <PageSectionTitle className='mb-4 text-2xl sm:text-left sm:text-3xl'>
             Let&apos;s Build Your AI SaaS App
           </PageSectionTitle>
-          <p className='mb-4 text-balance text-muted-foreground'>
+          <p className='text-muted-foreground mb-4 text-balance'>
             Hi! I&apos;m Ed, a seasoned developer specializing in AI-powered
             SaaS applications, based out of Toronto, Canada. With over 15 years
             of experience building B2B and enterprise solutions, I&apos;m here

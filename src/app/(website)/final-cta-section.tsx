@@ -4,11 +4,11 @@ import { JoinWaitlistButton } from './join-waitlist-button'
 
 export function FinalCTASection() {
   return (
-    <section className='bg-gradient-to-b from-white to-secondary to-20% pb-32 pt-16 sm:pt-24'>
+    <section className='to-secondary bg-linear-to-b from-white to-20% pt-16 pb-32 sm:pt-24'>
       <h2 className='mb-6 text-center text-3xl sm:text-4xl'>
         Ready to get started?
       </h2>
-      <p className='mx-auto max-w-3xl text-pretty text-center text-lg leading-7 text-muted-foreground sm:leading-8'>
+      <p className='text-muted-foreground mx-auto max-w-3xl text-center text-lg leading-7 text-pretty sm:leading-8'>
         Take your project to the next level with a solution designed to make an
         impact. Start your journey today and experience the difference
         firsthand.

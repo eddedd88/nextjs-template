@@ -30,11 +30,11 @@ export function HowItWorksSection() {
 function Step(props: { icon: ReactNode; title: string; description: string }) {
   return (
     <div className='container flex flex-col items-center text-center'>
-      <div className='mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent'>
+      <div className='bg-accent mb-4 flex h-16 w-16 items-center justify-center rounded-full'>
         {props.icon}
       </div>
       <h3 className='mb-2 text-2xl'>{props.title}</h3>
-      <p className='text-balance text-lg text-muted-foreground'>
+      <p className='text-muted-foreground text-lg text-balance'>
         {props.description}
       </p>
     </div>

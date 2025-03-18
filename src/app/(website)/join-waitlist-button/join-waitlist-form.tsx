@@ -17,7 +17,7 @@ export function JoinWaitlistForm() {
 
   if (isSubmitted) {
     return (
-      <p className='flex h-[204px] items-center justify-center space-y-4 py-6 text-center duration-300 ease-in animate-in fade-in-0 sm:text-left'>
+      <p className='animate-in fade-in-0 flex h-[204px] items-center justify-center space-y-4 py-6 text-center duration-300 ease-in sm:text-left'>
         Thanks for joining the waitlist!
       </p>
     )

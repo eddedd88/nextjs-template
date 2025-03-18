@@ -43,7 +43,7 @@ export function LoginForm() {
           Continue with Apple
         </SocialLoginButton>
       </div>
-      <div className='text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
+      <div className='text-muted-foreground text-center text-xs text-balance [&_a]:underline [&_a]:underline-offset-4'>
         By clicking continue, you agree to our{' '}
         <Link href='/terms' className='hover:text-primary'>
           Terms of Service
@@ -68,7 +68,7 @@ function SocialLoginButton({
   return (
     <Button
       variant='outline'
-      className='gap-3 py-6 text-base hover:border-primary/20 hover:bg-primary-foreground'
+      className='hover:border-primary/20 hover:bg-primary-foreground gap-3 py-6 text-base'
       size='lg'
       formAction={formAction}
     >

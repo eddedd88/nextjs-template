@@ -21,11 +21,11 @@ export function PageNotFound() {
         </Button>
 
         {SUPPORT_EMAIL_ADDRESS && (
-          <p className='text-pretty text-muted-foreground'>
+          <p className='text-muted-foreground text-pretty'>
             If you believe this is an error, please{' '}
             <a
               href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}
-              className='font-medium text-primary underline-offset-4 hover:text-primary/90 hover:underline'
+              className='text-primary hover:text-primary/90 font-medium underline-offset-4 hover:underline'
             >
               contact our support team
             </a>

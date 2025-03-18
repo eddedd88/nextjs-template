@@ -25,7 +25,7 @@ export default function WorkflowsPage() {
             key={userAction.id}
             className='rounded-xl'
           >
-            <Card className='transition-all duration-200 hover:scale-[1.02] hover:bg-secondary'>
+            <Card className='hover:bg-secondary transition-all duration-200 hover:scale-[1.02]'>
               <CardHeader className='pb-2'>
                 <CardTitle className='text-xl'>{userAction.title}</CardTitle>
               </CardHeader>

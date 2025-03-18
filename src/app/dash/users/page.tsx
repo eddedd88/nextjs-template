@@ -29,8 +29,8 @@ export default function UsersPage() {
 
 function UserList({ users }: UserListProps) {
   return (
-    <div className='rounded-lg bg-card text-card-foreground sm:shadow-lg'>
-      <ul className='sm:divide-y sm:divide-border'>
+    <div className='bg-card text-card-foreground rounded-lg sm:shadow-lg'>
+      <ul className='sm:divide-border sm:divide-y'>
         {users.map(user => (
           <li key={user.id}>
             <div className='flex items-center justify-between py-4 sm:px-6'>
@@ -39,16 +39,16 @@ function UserList({ users }: UserListProps) {
                   <AvatarFallback>{user.initials}</AvatarFallback>
                 </Avatar>
                 <div className='ml-4'>
-                  <p className='text-sm font-medium text-primary'>
+                  <p className='text-primary text-sm font-medium'>
                     {user.name}
                   </p>
-                  <p className='mt-1 text-sm text-muted-foreground'>
+                  <p className='text-muted-foreground mt-1 text-sm'>
                     {user.email}
                   </p>
                 </div>
               </div>
               <div className='flex items-center'>
-                <p className='mr-4 hidden text-sm text-muted-foreground sm:block'>
+                <p className='text-muted-foreground mr-4 hidden text-sm sm:block'>
                   Joined {new Date(user.createdAt).toLocaleDateString()}
                 </p>
                 <Button

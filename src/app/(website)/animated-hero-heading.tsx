@@ -22,7 +22,7 @@ export function AnimatedHeroHeading() {
   }, [displayedText])
 
   return (
-    <h1 className='h-[108px] bg-gray-900 bg-clip-text px-4 text-center text-4xl font-[350] leading-normal text-transparent sm:h-auto md:text-6xl md:leading-normal'>
+    <h1 className='h-[108px] bg-gray-900 bg-clip-text px-4 text-center text-4xl leading-normal font-[350] text-transparent sm:h-auto md:text-6xl md:leading-normal'>
       {displayedText}
       <span
         className={cn(
