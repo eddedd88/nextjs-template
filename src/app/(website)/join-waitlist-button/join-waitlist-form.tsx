@@ -24,29 +24,27 @@ export function JoinWaitlistForm() {
   }
 
   return (
-    <form className='space-y-4' onSubmit={handleSubmit}>
-      <div className='space-y-1'>
-        <Label htmlFor='name'>Name</Label>
-        <Input
-          id='name'
-          type='text'
-          name='name'
-          placeholder='Enter your name'
-          maxLength={200}
-          required
-        />
-      </div>
-      <div className='space-y-1 pb-2'>
-        <Label htmlFor='email'>Email</Label>
-        <Input
-          id='email'
-          type='email'
-          name='email'
-          placeholder='Enter your email'
-          maxLength={200}
-          required
-        />
-      </div>
+    <form onSubmit={handleSubmit} className='mt-2'>
+      <Label htmlFor='name'>Name</Label>
+      <Input
+        id='name'
+        type='text'
+        name='name'
+        placeholder='Enter your name'
+        maxLength={200}
+        required
+        className='mt-2 mb-6'
+      />
+      <Label htmlFor='email'>Email</Label>
+      <Input
+        id='email'
+        type='email'
+        name='email'
+        placeholder='Enter your email'
+        maxLength={200}
+        required
+        className='mt-2 mb-6'
+      />
       <Button type='submit' className='w-full'>
         Submit
       </Button>

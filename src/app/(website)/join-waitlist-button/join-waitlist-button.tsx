@@ -17,7 +17,7 @@ export function JoinWaitlistButton() {
           Join Waitlist
         </Button>
       </DialogTrigger>
-      <DialogContent className='max-w-md'>
+      <DialogContent className='sm:max-w-md'>
         <DialogHeader>
           <DialogTitle>Join our Waitlist (Demo)</DialogTitle>
           <DialogDescription>
