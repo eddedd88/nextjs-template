@@ -1,10 +1,11 @@
 import { ZapIcon, SendIcon, SearchIcon } from 'lucide-react'
 import { ReactNode } from 'react'
+import { PageSection, PageSectionTitle } from './page-section'
 
 export function HowItWorksSection() {
   return (
-    <section className='container py-16 sm:py-24'>
-      <h2 className='mb-12 text-center text-3xl sm:text-4xl'>How It Works</h2>
+    <PageSection>
+      <PageSectionTitle className='mb-12'>How It Works</PageSectionTitle>
       <div className='grid gap-12 md:grid-cols-3'>
         <Step
           icon={<SearchIcon />}
@@ -22,8 +23,7 @@ export function HowItWorksSection() {
           description='Deploy your landing page and start collecting leads.'
         />
       </div>
-      {/* </div> */}
-    </section>
+    </PageSection>
   )
 }
 

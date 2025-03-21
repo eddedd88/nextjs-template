@@ -24,7 +24,7 @@ export function PageSectionTitle({
   return (
     <h2
       className={cn(
-        'mb-12 text-center text-3xl leading-normal text-pretty sm:text-4xl',
+        'mb-6 text-center text-3xl leading-relaxed text-pretty sm:mb-12 sm:text-4xl',
         className,
       )}
     >

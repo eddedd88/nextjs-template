@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import { PageSection, PageSectionTitle } from './page-section'
 
 interface FAQItem {
   question: string
@@ -38,10 +39,8 @@ const faqData: FAQItem[] = [
 
 export function FAQSection() {
   return (
-    <section className='container max-w-3xl py-16 sm:py-24'>
-      <h2 className='mb-12 text-center text-3xl leading-normal sm:text-4xl'>
-        Frequently Asked Questions
-      </h2>
+    <PageSection className='max-w-3xl'>
+      <PageSectionTitle>Frequently Asked Questions</PageSectionTitle>
       <Accordion type='multiple'>
         {faqData.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
@@ -52,6 +51,6 @@ export function FAQSection() {
           </AccordionItem>
         ))}
       </Accordion>
-    </section>
+    </PageSection>
   )
 }
