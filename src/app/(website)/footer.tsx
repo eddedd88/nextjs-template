@@ -10,7 +10,7 @@ export function Footer() {
           <p className='mt-1 text-center sm:mt-0 sm:text-left'>
             &copy; 2025 {COMPANY_NAME}. All rights reserved.
           </p>
-          <div className='border-l-2'>
+          <div className='sm:border-l-2'>
             <Button
               variant='link'
               className='text-muted-foreground text-xs'
