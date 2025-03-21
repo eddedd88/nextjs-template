@@ -8,7 +8,7 @@ export default function LayoutLandingPage({
 }) {
   return (
     <div className='flex min-h-screen flex-col'>
-      <header className='container'>
+      <header className='px-6'>
         <NavBar />
       </header>
       <main className='grow'>{children}</main>

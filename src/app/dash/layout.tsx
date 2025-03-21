@@ -14,7 +14,7 @@ export default function LayoutDashPage({
 }) {
   return (
     <div className='flex min-h-screen flex-col'>
-      <header className='container'>
+      <header className='px-6'>
         <nav className='flex items-center justify-between gap-4 py-4'>
           <Link className='flex items-center gap-2' href='/'>
             <FlaskConicalIcon className='h-8 w-8 rotate-[30deg] stroke-1' />
