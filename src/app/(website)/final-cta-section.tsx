@@ -4,7 +4,7 @@ import { JoinWaitlistButton } from './join-waitlist-button'
 
 export function FinalCTASection() {
   return (
-    <section className='to-secondary bg-linear-to-b from-white to-20% pt-16 pb-32 sm:pt-24'>
+    <section className='to-primary/5 bg-linear-to-b from-white to-40% pt-16 pb-32 sm:pt-24'>
       <h2 className='mb-6 text-center text-3xl sm:text-4xl'>
         Ready to get started?
       </h2>

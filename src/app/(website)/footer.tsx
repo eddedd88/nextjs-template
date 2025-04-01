@@ -4,7 +4,7 @@ import { COMPANY_NAME } from '@/constants'
 
 export function Footer() {
   return (
-    <footer className='bg-secondary/80 py-2'>
+    <footer className='bg-primary/5 py-2'>
       <div className='text-muted-foreground flex flex-col gap-4 px-4 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6'>
         <div className='flex flex-col items-center gap-2 sm:flex-row sm:gap-4'>
           <p className='mt-1 text-center sm:mt-0 sm:text-left'>
