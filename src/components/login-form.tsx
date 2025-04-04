@@ -68,7 +68,7 @@ function SocialLoginButton({
   return (
     <Button
       variant='outline'
-      className='hover:border-primary/20 hover:bg-primary-foreground gap-3 py-6 text-base'
+      className='gap-3 py-6 text-base'
       size='lg'
       formAction={formAction}
     >
