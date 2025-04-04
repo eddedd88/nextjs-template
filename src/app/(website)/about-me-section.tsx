@@ -16,7 +16,7 @@ export function AboutMeSection() {
           />
         </div>
         <div className='text-center sm:col-span-2 sm:text-left'>
-          <PageSectionTitle className='mb-4 text-2xl sm:text-left sm:text-3xl'>
+          <PageSectionTitle className='mb-4 text-2xl sm:mb-4 sm:text-left sm:text-3xl'>
             Let&apos;s Build Your AI SaaS App
           </PageSectionTitle>
           <p className='text-muted-foreground mb-4 text-balance'>
