@@ -19,7 +19,7 @@ export function LoginForm() {
 
   return (
     <form className='flex max-w-xs flex-col gap-6'>
-      <div className='flex flex-col gap-3'>
+      <div className='flex flex-col gap-2'>
         <SocialLoginButton formAction={handleGoogleSignIn}>
           <svg
             xmlns='http://www.w3.org/2000/svg'
