@@ -63,16 +63,16 @@ export default function DashPage() {
               onChange={handleInputChange}
               placeholder='Describe what you want to do...'
               required
-              disabled={matchMessage.status === 'executing'}
+              disabled={matchMessage.isPending}
               autoFocus
             />
             <Button
               type='submit'
-              disabled={matchMessage.status === 'executing'}
+              disabled={matchMessage.isPending}
               size='icon'
               className='p-3'
             >
-              {matchMessage.status === 'executing' ? (
+              {matchMessage.isPending ? (
                 <Loader2Icon className='animate-spin' />
               ) : (
                 <ArrowRightIcon />
