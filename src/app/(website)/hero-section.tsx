@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className='from-background via-primary/10 to-background mx-auto flex flex-col items-center gap-6 bg-linear-to-b from-40% px-4 py-20 text-center sm:from-10% 2xl:pt-60'>
       <AnimatedHeroHeading />
       {/* Non animated heading */}
-      {/* <h1 className='px-4 text-4xl sm:font-[350] leading-normal md:text-6xl md:leading-normal'>
+      {/* <h1 className='px-4 max-w-5xl text-4xl sm:font-[350] leading-normal md:text-6xl md:leading-snug'>
         What are you building today?
       </h1> */}
       <p className='text-muted-foreground max-w-3xl pb-2 text-lg leading-7 text-pretty sm:text-xl sm:leading-8'>
