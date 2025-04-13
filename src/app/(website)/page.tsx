@@ -1,9 +1,9 @@
-import { FAQSection } from './faq-section'
-import { HeroSection } from './hero-section'
-import { HowItWorksSection } from './how-it-works-section'
-import { FinalCTASection } from './final-cta-section'
+import { FAQSection } from './_components/faq-section'
+import { HeroSection } from './_components/hero-section'
+import { HowItWorksSection } from './_components/how-it-works-section'
+import { FinalCTASection } from './_components/final-cta-section'
 import type { Metadata } from 'next'
-import { AboutMeSection } from './about-me-section'
+import { AboutMeSection } from './_components/about-me-section'
 
 export const metadata: Metadata = {
   title: 'Nitro | Launch your AI SaaS today',
