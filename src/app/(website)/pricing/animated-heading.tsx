@@ -51,7 +51,7 @@ export function AnimatedHeading() {
       {displayedText}
       <span
         className={cn(
-          'full -mb-2 ml-0.5 inline-block h-[44px] w-0.5 bg-gray-600 sm:h-[80px]',
+          '-mb-2 ml-0.5 inline-block h-[44px] w-0.5 bg-gray-600 sm:h-[80px]',
           (displayedText === FULL_HEADING ||
             displayedText === FULL_HEADING_2) &&
             'animate-blink',
