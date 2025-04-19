@@ -4,6 +4,7 @@ import { HowItWorksSection } from './_components/how-it-works-section'
 import { FinalCTASection } from './_components/final-cta-section'
 import type { Metadata } from 'next'
 import { AboutMeSection } from './_components/about-me-section'
+import { FeaturesSection } from './_components/features-section'
 
 export const metadata: Metadata = {
   title: 'Nitro | Launch your AI SaaS today',
@@ -23,6 +24,7 @@ export default function LandingPage() {
     <>
       <HeroSection />
       <HowItWorksSection />
+      <FeaturesSection />
       <FAQSection />
       <AboutMeSection />
       <FinalCTASection />
