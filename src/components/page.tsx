@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export function Page({ children }: { children: React.ReactNode }) {
   return (
-    <div className='animate-fade-in container mx-auto max-w-3xl pt-6 pb-12'>
+    <div className='animate-fade-in container mx-auto max-w-4xl pt-6 pb-12'>
       {children}
     </div>
   )
@@ -22,7 +22,7 @@ export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
     <Button
       variant='ghost'
       size='sm'
-      className='text-muted-foreground mb-6 -ml-2 hidden p-2 sm:inline-flex'
+      className='text-muted-foreground mb-6 -ml-3 hidden p-2 sm:inline-flex'
       asChild
     >
       <Link href={backUrl}>
