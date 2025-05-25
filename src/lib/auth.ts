@@ -3,9 +3,16 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
 import { prisma } from '@/lib/db/prisma'
 import GoogleProvider from 'next-auth/providers/google'
 
+import { env } from '@/env';
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: PrismaAdapter(prisma),
-  providers: [GoogleProvider],
+  providers: [
+    GoogleProvider({
+      clientId: env.AUTH_GOOGLE_ID,
+      clientSecret: env.AUTH_GOOGLE_SECRET,
+    }),
+  ],
   // to run in Database mode, must setup Prisma to run in Edge mode
   session: {
     strategy: 'jwt',

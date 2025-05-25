@@ -1,19 +1,21 @@
+'use client'; // Add 'use client'
+
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { signIn } from '@/lib/auth'
+import { signIn } from '@/lib/auth-client' // Change import path
 
 export function LoginForm() {
   const handleGoogleSignIn = async () => {
-    'use server'
+    // Remove 'use server'
     await signIn('google', {
-      redirectTo: '/dash',
+      callbackUrl: '/dash', // Change redirectTo to callbackUrl
     })
   }
 
   const handleAppleSignIn = async () => {
-    'use server'
+    // Remove 'use server'
     await signIn('apple', {
-      redirectTo: '/dash',
+      callbackUrl: '/dash', // Change redirectTo to callbackUrl
     })
   }
 

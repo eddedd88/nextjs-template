@@ -1,19 +1,25 @@
-import { auth } from './lib/auth'
+import { NextRequest, NextResponse } from 'next/server';
+import { auth } from '@/lib/auth'; // Adjusted import path
 
-export default auth(req => {
-  const pathname = req.nextUrl.pathname
-  // Redirect to login page if not authenticated
-  if (!req.auth && pathname !== '/login') {
-    const newUrl = new URL('/login', req.nextUrl.origin)
-    return Response.redirect(newUrl)
-  } else if (req.auth) {
-    // Redirect to dashboard if already logged in
-    if (pathname === '/login') {
-      const newUrl = new URL('/dash', req.nextUrl.origin)
-      return Response.redirect(newUrl)
-    }
+export async function middleware(req: NextRequest) {
+  const session = await auth(); // Get session using the auth() function from NextAuth
+
+  const pathname = req.nextUrl.pathname;
+
+  // If trying to access protected dashboard routes without a session, redirect to login
+  if (!session && pathname.startsWith('/dash')) {
+    const newUrl = new URL('/login', req.nextUrl.origin);
+    return NextResponse.redirect(newUrl);
   }
-})
+
+  // If trying to access login page with an active session, redirect to dashboard
+  if (session && pathname === '/login') {
+    const newUrl = new URL('/dash', req.nextUrl.origin);
+    return NextResponse.redirect(newUrl);
+  }
+
+  return NextResponse.next();
+}
 
 export const config = {
   matcher: [
@@ -23,4 +29,4 @@ export const config = {
     // Does NOT require authentication but have related logic in middleware
     '/login',
   ],
-}
+};
