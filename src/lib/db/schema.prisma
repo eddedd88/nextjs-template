@@ -26,17 +26,17 @@ model User {
 }
 
 model Account {
-  id                   String    @id @default(cuid()) // Added PK
-  userId               String
-  providerId           String    // Renamed from provider
-  accountId            String    // Renamed from providerAccountId
-  accessToken          String?   // Renamed from access_token
-  refreshToken         String?   // Renamed from refresh_token
-  accessTokenExpiresAt DateTime? // Changed from expires_at (Int?)
+  id                    String    @id @default(cuid()) // Added PK
+  userId                String
+  providerId            String // Renamed from provider
+  accountId             String // Renamed from providerAccountId
+  accessToken           String? // Renamed from access_token
+  refreshToken          String? // Renamed from refresh_token
+  accessTokenExpiresAt  DateTime? // Changed from expires_at (Int?)
   refreshTokenExpiresAt DateTime? // Added
-  scope                String?
-  idToken              String?   // Renamed from id_token
-  password             String?   // Added
+  scope                 String?
+  idToken               String? // Renamed from id_token
+  password              String? // Added
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -47,23 +47,23 @@ model Account {
 }
 
 model Session {
-  id          String   @id @default(cuid()) // Added PK
-  userId      String
-  token       String   @unique // Renamed from sessionToken
-  expiresAt   DateTime // Renamed from expires
-  ipAddress   String?  // Added
-  userAgent   String?  // Added
+  id        String   @id @default(cuid()) // Added PK
+  userId    String
+  token     String   @unique // Renamed from sessionToken
+  expiresAt DateTime // Renamed from expires
+  ipAddress String? // Added
+  userAgent String? // Added
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
-model Verification { // Renamed from VerificationToken
-  id          String   @id @default(cuid()) // Added PK
-  identifier  String
-  value       String   @unique // Renamed from token
-  expiresAt   DateTime // Renamed from expires
+model Verification {
+  id         String   @id @default(cuid()) // Added PK
+  identifier String
+  value      String   @unique // Renamed from token
+  expiresAt  DateTime // Renamed from expires
 
   createdAt DateTime @default(now()) // Added
   updatedAt DateTime @updatedAt // Added
@@ -71,7 +71,7 @@ model Verification { // Renamed from VerificationToken
   @@unique([identifier, value]) // Changed from @@id and field name
 }
 
-model Waitlist { // Assuming this is a custom model to keep
+model Waitlist {
   id        String   @id @default(cuid())
   name      String
   email     String   @unique
@@ -79,7 +79,7 @@ model Waitlist { // Assuming this is a custom model to keep
   updatedAt DateTime @updatedAt
 }
 
-model Feedback { // Assuming this is a custom model to keep
+model Feedback {
   id        String   @id @default(cuid())
   userId    String?
   email     String?
