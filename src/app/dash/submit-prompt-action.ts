@@ -1,7 +1,5 @@
 'use server'
 
-import { matchAction } from '@/lib/ai'
-import { userActions } from './user-actions'
 import { z } from 'zod'
 import { createSafeActionClient } from 'next-safe-action'
 import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
@@ -14,16 +12,15 @@ const safeActionWithoutAuth = createSafeActionClient({
   },
 })
 
-export const matchMessageAction = safeActionWithoutAuth
-  .schema(
+export const submitPromptAction = safeActionWithoutAuth
+  .inputSchema(
     z.object({
       message: z.string().min(1, 'Please enter a message'),
     }),
   )
   .action(async ({ parsedInput: { message } }) => {
-    const response = await matchAction({ message, allActions: userActions })
-    const matchedAction = userActions.find(
-      action => action.id === response.actionId,
-    )
-    return matchedAction
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    return {
+      message: 'Functionality not implemented yet',
+    }
   })

@@ -5,16 +5,16 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Link from 'next/link'
 import { useState } from 'react'
-import { matchMessageAction } from './match-message-action'
 import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
 import { useRouter } from 'next/navigation'
 import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
+import { submitPromptAction } from './submit-prompt-action'
 
 export default function DashPage() {
   const router = useRouter()
   const [input, setInput] = useState('')
-  const matchMessage = useAction(matchMessageAction, {
+  const matchMessage = useAction(submitPromptAction, {
     onSuccess: ({ data }) => {
       if (!data) {
         toast.error(
@@ -22,7 +22,7 @@ export default function DashPage() {
         )
         setInput('')
       } else {
-        router.push(data.url)
+        toast.success(data.message)
       }
     },
     onError: () => {
@@ -83,20 +83,9 @@ export default function DashPage() {
           <div className='mt-8 flex flex-col gap-4'>
             <h2 className='text-lg font-semibold'>Recent Actions</h2>
             <Button size='lg' variant='secondary' className='w-full' asChild>
-              <Link href='/dash/setup/auth'>
-                Setup Authentication with Auth.js
-              </Link>
-            </Button>
-            <Button size='lg' variant='secondary' className='w-full' asChild>
               <Link href='/dash/setup/google-auth'>
                 Setup Google Authentication
               </Link>
-            </Button>
-            <Button size='lg' variant='secondary' className='w-full' asChild>
-              <Link href='/dash/users'>Manage Users</Link>
-            </Button>
-            <Button size='lg' variant='outline' className='w-full' asChild>
-              <Link href='/dash/workflows'>See all my capabilities</Link>
             </Button>
           </div>
         </div>
