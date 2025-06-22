@@ -8,11 +8,10 @@ import {
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
 import { Button } from './ui/button'
-import { auth, signOut } from '@/lib/auth'
 
 export async function UserNav() {
-  const session = await auth()
-  const name = session?.user?.name || session?.user?.email || 'User'
+  const email = 'john.doe@gmail.com'
+  const name = 'John Doe'
   const initials = name
     .split(' ')
     .map(n => n[0])
@@ -25,9 +24,7 @@ export async function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
           <Avatar className='h-8 w-8'>
-            {session?.user?.image && (
-              <AvatarImage src={session.user.image} alt={name} />
-            )}
+            <AvatarImage src={''} alt={name} />
             <AvatarFallback className='border'>{initials}</AvatarFallback>
           </Avatar>
         </Button>
@@ -37,7 +34,7 @@ export async function UserNav() {
           <div className='flex flex-col space-y-1'>
             <p className='text-sm leading-none font-medium'>{name}</p>
             <p className='text-muted-foreground text-xs leading-none'>
-              {session?.user?.email}
+              {email}
             </p>
           </div>
         </DropdownMenuLabel>
@@ -46,9 +43,7 @@ export async function UserNav() {
           <form
             action={async () => {
               'use server'
-              await signOut({
-                redirectTo: '/',
-              })
+              console.log('Logout functionality not implemented yet')
             }}
             className='w-full'
           >
