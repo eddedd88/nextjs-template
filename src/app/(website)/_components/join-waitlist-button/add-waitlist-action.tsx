@@ -1,7 +1,5 @@
 'use server'
 
-import { prisma } from '@/lib/db/prisma'
-
 export async function addWaitlistAction(formData: FormData) {
   try {
     const name = formData.get('name')?.toString()
@@ -18,11 +16,9 @@ export async function addWaitlistAction(formData: FormData) {
     console.log(
       'Implement adding to waitlist at /src/app/(website)/join-waitlist-button/add-waitlist-action.tsx',
     )
-    await prisma.waitlist.upsert({
-      where: { email },
-      create: { name, email },
-      update: { name },
-    })
+    // TODO: Implement your own database logic here
+    // Example: Save to your preferred database, send to an API, etc.
+    console.log('Adding to waitlist:', { name, email })
   } catch (error) {
     console.error('Failed to add to waitlist:', error)
   }

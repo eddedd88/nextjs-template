@@ -5,57 +5,60 @@ export default function DatabaseSetupPage() {
   return (
     <Page>
       <PageBackButton />
-      <PageTitle>How to Configure Your Database URL</PageTitle>
+      <PageTitle>How to Configure Your Database</PageTitle>
 
-      <ol className='list-decimal space-y-6 pl-4'>
-        <li>
-          Locate your{' '}
-          <code className='rounded bg-gray-100 px-2 py-1'>.env</code> file in
-          the root of your project
-        </li>
+      <div className='space-y-6'>
+        <Typography>
+          This template doesn't include a specific database setup, giving you
+          the flexibility to choose your preferred data storage solution.
+        </Typography>
 
-        <li>
-          Add or update your DATABASE_URL and DATABASE_DIRECT_URL environment
-          variable:
-          <Typography variant='codeBlock' className='mt-2'>
-            {/* <pre className="bg-gray-100 p-3 rounded-md mt-2 overflow-x-auto"> */}
-            DATABASE_URL=
-            <br />
-            DATABASE_DIRECT_URL=
+        <div>
+          <Typography className='mb-3 text-lg font-semibold'>
+            Popular Database Options:
           </Typography>
-        </li>
+          <ul className='list-disc space-y-2 pl-6'>
+            <li>
+              <strong>Prisma + PostgreSQL:</strong> Add Prisma ORM for type-safe
+              database operations
+            </li>
+            <li>
+              <strong>Drizzle ORM:</strong> Lightweight TypeScript ORM with
+              excellent performance
+            </li>
+            <li>
+              <strong>Supabase:</strong> PostgreSQL with built-in auth and
+              real-time features
+            </li>
+            <li>
+              <strong>PlanetScale:</strong> Serverless MySQL platform with
+              branching
+            </li>
+            <li>
+              <strong>MongoDB:</strong> NoSQL database with Mongoose ODM
+            </li>
+            <li>
+              <strong>SQLite:</strong> Lightweight file-based database for
+              development
+            </li>
+          </ul>
+        </div>
 
-        <li>
-          Run Prisma Generate to update your database client:
-          <Typography variant='codeBlock' className='mt-2'>
-            pnpm generatedb
+        <div>
+          <Typography className='mb-3 text-lg font-semibold'>
+            Next Steps:
           </Typography>
-        </li>
-
-        <li>
-          Push your schema changes to the database:
-          <Typography variant='codeBlock' className='mt-2'>
-            pnpm pushdb
-          </Typography>
-        </li>
-
-        <li>
-          <Typography className='mt-2'>
-            Your database is now configured and ready to use!
-            <br />
-            To learn more about Prisma, visit the{' '}
-            <a
-              href='https://www.prisma.io/docs/getting-started'
-              className='text-blue-500 hover:underline'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              official Prisma documentation
-            </a>
-            .
-          </Typography>
-        </li>
-      </ol>
+          <ol className='list-decimal space-y-2 pl-6'>
+            <li>Choose your preferred database solution</li>
+            <li>Install the necessary packages and dependencies</li>
+            <li>Set up your database connection and configuration</li>
+            <li>
+              Update the placeholder database actions in your components (like
+              waitlist and feedback forms)
+            </li>
+          </ol>
+        </div>
+      </div>
     </Page>
   )
 }

@@ -38,8 +38,8 @@ export function FeaturesSection() {
           icon={<UserCheck className='size-6' />}
         />
         <FeatureCard
-          title='Database Ready with Prisma'
-          description='Includes Prisma ORM setup for easy database interaction and migrations.'
+          title='Flexible Data Layer'
+          description='Template is ready for any data solution - integrate your preferred database or API.'
           icon={<Database className='size-6' />}
         />
         <FeatureCard
