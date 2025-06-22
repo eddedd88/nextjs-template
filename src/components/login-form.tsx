@@ -1,20 +1,15 @@
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import { signIn } from '@/lib/auth'
 
 export function LoginForm() {
   const handleGoogleSignIn = async () => {
     'use server'
-    await signIn('google', {
-      redirectTo: '/dash',
-    })
+    console.log('Implement Google sign-in at /src/components/login-form.tsx')
   }
 
   const handleAppleSignIn = async () => {
     'use server'
-    await signIn('apple', {
-      redirectTo: '/dash',
-    })
+    console.log('Implement Apple sign-in at /src/components/login-form.tsx')
   }
 
   return (
