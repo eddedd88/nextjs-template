@@ -27,7 +27,7 @@ export default function LayoutDashPage({
           </div>
         </nav>
       </header>
-      <main className='grow'>{children}</main>
+      {children}
       <Toaster />
     </div>
   )

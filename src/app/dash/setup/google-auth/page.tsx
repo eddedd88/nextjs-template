@@ -3,7 +3,7 @@ import { Typography } from '@/components/ui/typography'
 
 export default function SetupAuthPage() {
   return (
-    <Page>
+    <Page className='max-w-4xl'>
       <PageBackButton />
       <PageTitle>Setup Google Authentication</PageTitle>
       <ol className='ml-5 list-decimal space-y-6'>
