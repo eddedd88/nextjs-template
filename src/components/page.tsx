@@ -1,17 +1,37 @@
 import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 import { ChevronLeftIcon } from 'lucide-react'
 import Link from 'next/link'
 
-export function Page({ children }: { children: React.ReactNode }) {
+export function Page({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
   return (
-    <div className='animate-fade-in container mx-auto max-w-4xl pt-6 pb-12'>
+    <main
+      className={cn(
+        'animate-fade-in container space-y-6 p-4 md:py-8 lg:py-12',
+        className,
+      )}
+    >
       {children}
-    </div>
+    </main>
   )
 }
 
-export function PageTitle({ children }: { children: React.ReactNode }) {
-  return <h1 className='mb-6 text-3xl leading-normal'>{children}</h1>
+export function PageTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <h1 className={cn('text-3xl leading-normal', className)}>{children}</h1>
+  )
 }
 
 type PageBackButtonProps = {
@@ -22,7 +42,7 @@ export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
     <Button
       variant='ghost'
       size='sm'
-      className='text-muted-foreground mb-6 -ml-3 hidden p-2 sm:inline-flex'
+      className='text-muted-foreground -ml-3 hidden p-2 sm:inline-flex'
       asChild
     >
       <Link href={backUrl}>
