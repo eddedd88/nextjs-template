@@ -20,6 +20,7 @@ export const submitPromptAction = safeActionWithoutAuth
   )
   .action(async ({ parsedInput: { message } }) => {
     await new Promise(resolve => setTimeout(resolve, 1500))
+    console.log('Received message:', message)
     return {
       message: 'Functionality not implemented yet',
     }

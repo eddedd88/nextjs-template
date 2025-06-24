@@ -16,7 +16,7 @@ export const safeAction = createSafeActionClient({
     }
     return UNEXPECTED_ERROR_MESSAGE
   },
-}).use(async ({ next, ctx }) => {
+}).use(async ({ next }) => {
   // if (...no session...) {
   //   throw new Error('Session is not valid')
   // }

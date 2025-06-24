@@ -7,12 +7,10 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
-import { useRouter } from 'next/navigation'
 import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 import { submitPromptAction } from './submit-prompt-action'
 
 export default function DashPage() {
-  const router = useRouter()
   const [input, setInput] = useState('')
   const matchMessage = useAction(submitPromptAction, {
     onSuccess: ({ data }) => {

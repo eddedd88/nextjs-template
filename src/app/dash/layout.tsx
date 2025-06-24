@@ -3,8 +3,8 @@ import { FlaskConicalIcon } from 'lucide-react'
 import { COMPANY_NAME } from '@/constants'
 import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { VariantProps } from 'class-variance-authority'
+// import { Button, buttonVariants } from '@/components/ui/button'
+// import { VariantProps } from 'class-variance-authority'
 import { UserNav } from '@/components/usernav'
 
 export default function LayoutDashPage({
@@ -33,15 +33,15 @@ export default function LayoutDashPage({
   )
 }
 
-interface NavLinkItemProps extends VariantProps<typeof buttonVariants> {
-  href: string
-  label: string
-}
+// interface NavLinkItemProps extends VariantProps<typeof buttonVariants> {
+//   href: string
+//   label: string
+// }
 
-function NavLinkItem({ href, label, variant = 'ghost' }: NavLinkItemProps) {
-  return (
-    <Button variant={variant} asChild>
-      <Link href={href}>{label}</Link>
-    </Button>
-  )
-}
+// function NavLinkItem({ href, label, variant = 'ghost' }: NavLinkItemProps) {
+//   return (
+//     <Button variant={variant} asChild>
+//       <Link href={href}>{label}</Link>
+//     </Button>
+//   )
+// }
