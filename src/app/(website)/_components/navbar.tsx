@@ -25,6 +25,7 @@ export function NavBar() {
         <NavLinkItem href='/coming-soon' label='Features' />
         <NavLinkItem href='/pricing' label='Pricing' />
         <NavLinkItem href='/coming-soon' label='Contact' variant='outline' />
+        <NavLinkItem href='/login' label='Login' variant='default' />
         <GithubButton />
       </div>
 
