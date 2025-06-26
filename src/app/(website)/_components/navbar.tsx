@@ -21,17 +21,18 @@ export function NavBar() {
       </Link>
 
       {/* Links in bigger screens */}
-      <div className='hidden gap-4 sm:flex sm:gap-6'>
+      <div className='hidden gap-2 sm:flex sm:items-center'>
         <NavLinkItem href='/coming-soon' label='Features' />
         <NavLinkItem href='/pricing' label='Pricing' />
         <NavLinkItem href='/coming-soon' label='Contact' variant='outline' />
-        <NavLinkItem href='/login' label='Login' variant='default' />
+        <NavLinkItem href='/login' label='Login' variant='outline' />
         <GithubButton />
       </div>
 
       {/* Links in smaller screens */}
       <div className='flex items-center gap-4 sm:hidden'>
         <GithubButton />
+        <NavLinkItem href='/login' label='Login' variant='outline' />
         <Drawer>
           <DrawerTrigger className='flex items-center'>
             <MenuIcon />
@@ -73,7 +74,7 @@ interface NavLinkItemProps extends VariantProps<typeof buttonVariants> {
 
 function NavLinkItem({ href, label, variant = 'ghost' }: NavLinkItemProps) {
   return (
-    <Button variant={variant} asChild>
+    <Button variant={variant} size='sm' asChild>
       <Link href={href}>{label}</Link>
     </Button>
   )
