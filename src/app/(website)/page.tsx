@@ -21,13 +21,13 @@ export const metadata: Metadata = {
 
 export default function LandingPage() {
   return (
-    <>
+    <main>
       <HeroSection />
       <HowItWorksSection />
       <FeaturesSection />
       <FAQSection />
       <AboutMeSection />
       <FinalCTASection />
-    </>
+    </main>
   )
 }

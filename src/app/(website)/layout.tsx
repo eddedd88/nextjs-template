@@ -11,7 +11,7 @@ export default function LayoutLandingPage({
       <header className='px-4 sm:px-6'>
         <NavBar />
       </header>
-      <main className='grow'>{children}</main>
+      {children}
       <Footer />
     </div>
   )

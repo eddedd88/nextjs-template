@@ -2,7 +2,7 @@ import { COMPANY_NAME } from '@/constants'
 
 export default function TermsPage() {
   return (
-    <div className='container mx-auto mb-8 max-w-4xl rounded-md bg-white py-8 sm:border'>
+    <main className='container mx-auto mb-8 max-w-4xl rounded-md bg-white py-8 sm:border'>
       <div>
         <h1 className='mb-4 text-3xl font-medium'>Terms and Conditions</h1>
         <p className='text-muted-foreground text-sm font-light'>
@@ -135,6 +135,6 @@ export default function TermsPage() {
           </p>
         </section>
       </div>
-    </div>
+    </main>
   )
 }
