@@ -59,8 +59,7 @@ function SocialLoginButton({
   return (
     <Button
       variant='outline'
-      className='gap-3 py-6 text-base'
-      size='lg'
+      className='h-12 gap-3 text-base'
       onClick={onClick}
     >
       {children}
