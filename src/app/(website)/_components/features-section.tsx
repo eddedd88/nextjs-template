@@ -34,7 +34,7 @@ export function FeaturesSection() {
         />
         <FeatureCard
           title='Authentication Ready'
-          description='Integrated NextAuth.js simplifies adding user login and registration.'
+          description='Includes a login page and authentication structure ready for your preferred auth solution.'
           icon={<UserCheck className='size-6' />}
         />
         <FeatureCard
