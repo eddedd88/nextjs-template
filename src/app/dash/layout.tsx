@@ -5,7 +5,7 @@ import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
 // import { Button, buttonVariants } from '@/components/ui/button'
 // import { VariantProps } from 'class-variance-authority'
-import { UserNav } from '@/components/usernav'
+import { UserNav } from './usernav'
 
 export default function LayoutDashPage({
   children,
