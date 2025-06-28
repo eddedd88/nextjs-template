@@ -4,7 +4,7 @@ import { safeAction } from '@/lib/safe-action'
 import { z } from 'zod'
 
 export const submitFeedbackAction = safeAction
-  .schema(
+  .inputSchema(
     z.object({
       message: z.string().min(1, 'Please enter your feedback'),
     }),
