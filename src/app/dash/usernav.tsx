@@ -7,7 +7,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
-import { Button } from './ui/button'
+import { Button } from '@/components/ui/button'
 
 export async function UserNav() {
   const email = 'john.doe@gmail.com'
