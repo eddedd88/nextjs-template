@@ -1,18 +1,9 @@
 'use server'
 
 import { z } from 'zod'
-import { createSafeActionClient } from 'next-safe-action'
-import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
+import { safeAction } from '@/lib/safe-action'
 
-const safeActionWithoutAuth = createSafeActionClient({
-  defaultValidationErrorsShape: 'flattened',
-  handleServerError(e) {
-    console.error(e)
-    return UNEXPECTED_ERROR_MESSAGE
-  },
-})
-
-export const submitPromptAction = safeActionWithoutAuth
+export const submitPromptAction = safeAction
   .inputSchema(
     z.object({
       message: z.string().min(1, 'Please enter a message'),
