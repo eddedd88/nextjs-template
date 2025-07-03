@@ -7,6 +7,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang='en' className={`${inter.variable} antialiased`}>
       <body>
         {children}
         <Analytics />
