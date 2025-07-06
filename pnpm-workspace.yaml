@@ -1,9 +1,0 @@
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - '@vercel/speed-insights'
-  - esbuild
-  - sharp
-  - unrs-resolver
-
-publicHoistPattern:
-  - '*eslint*'
