@@ -3,7 +3,6 @@
 import { ArrowRightIcon, CogIcon, Loader2Icon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import Link from 'next/link'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
@@ -77,15 +76,6 @@ export default function DashPage() {
               )}
             </Button>
           </form>
-
-          <div className='mt-8 flex flex-col gap-4'>
-            <h2 className='text-sm'>Recent Actions</h2>
-            <Button size='lg' variant='secondary' className='w-full' asChild>
-              <Link href='/dash/setup/google-auth'>
-                Setup Google Authentication
-              </Link>
-            </Button>
-          </div>
         </div>
       </div>
     </div>
