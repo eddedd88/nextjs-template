@@ -20,9 +20,20 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Shadcn/ui](https://ui.shadcn.com/)
 - [Next Safe Action](https://github.com/TheEdoRan/next-safe-action)
 - [Google Gemini AI](https://github.com/googleapis/js-genai)
-- [Convex](https://convex.dev/) - Backend database and functions
-- [Clerk](https://clerk.com/) - Authentication and user management
+- [Convex](https://convex.dev/)
+- [Clerk](https://clerk.com/)
 
-#### Backend & Auth
+### Backend & Auth
 
 This template contains an alternative dashboard that uses **Convex** for your backend needs (database, real-time updates, serverless functions, background jobs) and **Clerk** for authentication. Both services offer generous free tiers and are perfect for getting started quickly.
+
+##### Setting up Convex and Clerk
+
+1. Replace the existing dash and login folders and add the middleware file
+
+```
+src/app/_dash-with-convex-and-clerk/
+├── dash          -> src/app/dash
+├── login         -> src/app/login
+└── middleware.ts -> src/middleware.ts
+```
