@@ -1,5 +1,6 @@
 import { createSafeActionClient } from 'next-safe-action'
 import { UNEXPECTED_ERROR_MESSAGE } from '../constants'
+import { auth } from '@clerk/nextjs/server'
 
 /**
  * Custom error class to be used in actions to
@@ -17,14 +18,14 @@ export const safeAction = createSafeActionClient({
     return UNEXPECTED_ERROR_MESSAGE
   },
 }).use(async ({ next }) => {
-  // if (...no session...) {
-  //   throw new Error('Session is not valid')
-  // }
+  const session = await auth()
+  if (!session.userId) {
+    throw new Error('Session is not valid')
+  }
   return next({
     ctx: {
       user: {
-        id: '1',
-        email: 'john.doe@gmail.com',
+        id: session.userId,
       },
     },
   })
