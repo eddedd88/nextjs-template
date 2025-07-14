@@ -20,7 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - [Shadcn/ui](https://ui.shadcn.com/)
 - [Next Safe Action](https://github.com/TheEdoRan/next-safe-action)
 - [Google Gemini AI](https://github.com/googleapis/js-genai)
+- [Convex](https://convex.dev/) - Backend database and functions
+- [Clerk](https://clerk.com/) - Authentication and user management
 
-#### What about DB or Auth?
+#### Backend & Auth
 
-Not included since there are so many different options and they are easy to setup. That being said I recommend using fully managed services that will get you started quickly.
+This template contains an alternative dashboard that uses **Convex** for your backend needs (database, real-time updates, serverless functions, background jobs) and **Clerk** for authentication. Both services offer generous free tiers and are perfect for getting started quickly.

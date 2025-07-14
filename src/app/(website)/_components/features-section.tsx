@@ -33,13 +33,13 @@ export function FeaturesSection() {
           icon={<Settings className='size-6' />}
         />
         <FeatureCard
-          title='Authentication Ready'
-          description='Includes a login page and authentication structure ready for your preferred auth solution.'
+          title='Clerk Authentication'
+          description='Complete authentication solution with login, signup, user management, and social auth providers built in.'
           icon={<UserCheck className='size-6' />}
         />
         <FeatureCard
-          title='Flexible Data Layer'
-          description='Template is ready for any data solution - integrate your preferred database or API.'
+          title='Convex Backend'
+          description='Real-time database, serverless functions, and file storage - everything you need for your backend in one place.'
           icon={<Database className='size-6' />}
         />
         <FeatureCard

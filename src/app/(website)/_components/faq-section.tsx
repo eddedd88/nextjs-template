@@ -23,7 +23,12 @@ const faqData: FAQItem[] = [
   {
     question: 'What technologies are used in this template?',
     answer:
-      'This template uses Next.js, Shadcn UI, Google Vertex AI, and the AI SDK',
+      'This template uses Next.js, Shadcn UI, Google Vertex AI, Convex for the backend, and Clerk for authentication.',
+  },
+  {
+    question: 'Why Convex and Clerk?',
+    answer:
+      'Convex provides a complete backend solution with real-time database, serverless functions, file storage and background jobs. Clerk offers comprehensive authentication with social logins, user management, and security features. Both have generous free tiers and excellent developer experience.',
   },
   {
     question: 'Can I use this template for my own projects?',
