@@ -7,7 +7,7 @@ import { Toaster } from '@/components/ui/sonner'
 // import { VariantProps } from 'class-variance-authority'
 import { UserNav } from './usernav'
 
-export default function LayoutDashPage({
+export default function DashLayout({
   children,
 }: {
   children: React.ReactNode
