@@ -5,7 +5,6 @@ const isPrivateRoute = createRouteMatcher(['/dash(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
   if (isPrivateRoute(req)) {
-    console.log('Private route accessed:', req.nextUrl.pathname)
     await auth.protect()
   } else if (req.nextUrl.pathname === '/login') {
     const { userId } = await auth()
