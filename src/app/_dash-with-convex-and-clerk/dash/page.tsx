@@ -1,32 +1,13 @@
 'use client'
 
-import { ArrowRightIcon, CogIcon, Loader2Icon } from 'lucide-react'
+import { ArrowRightIcon, CogIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
 import { toast } from 'sonner'
-import { useAction } from 'next-safe-action/hooks'
-import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
-import { submitPromptAction } from './submit-prompt-action'
 
 export default function DashPage() {
   const [input, setInput] = useState('')
-  const matchMessage = useAction(submitPromptAction, {
-    onSuccess: ({ data }) => {
-      if (!data) {
-        toast.error(
-          "I'm not able to help with that. Please try something else.",
-        )
-        setInput('')
-      } else {
-        toast.success(data.message)
-      }
-    },
-    onError: () => {
-      toast.error(UNEXPECTED_ERROR_MESSAGE)
-      setInput('')
-    },
-  })
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value)
@@ -34,9 +15,7 @@ export default function DashPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    matchMessage.execute({
-      message: input.trim(),
-    })
+    toast.success('Thank you for your feedback!')
   }
 
   return (
@@ -60,20 +39,10 @@ export default function DashPage() {
               onChange={handleInputChange}
               placeholder='Describe what you want to do...'
               required
-              disabled={matchMessage.isPending}
               autoFocus
             />
-            <Button
-              type='submit'
-              disabled={matchMessage.isPending}
-              size='icon'
-              className='p-3'
-            >
-              {matchMessage.isPending ? (
-                <Loader2Icon className='animate-spin' />
-              ) : (
-                <ArrowRightIcon />
-              )}
+            <Button type='submit' size='icon' className='p-3'>
+              <ArrowRightIcon />
             </Button>
           </form>
         </div>
