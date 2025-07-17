@@ -69,7 +69,7 @@ function FeatureCard({
   className,
 }: FeatureCardProps) {
   return (
-    <div className={cn('bg-background rounded-lg border p-6', className)}>
+    <div className={cn('bg-background rounded-xl border p-6', className)}>
       <div className='bg-primary/10 text-primary mb-4 flex size-12 items-center justify-center rounded-full'>
         {icon}
       </div>
