@@ -11,7 +11,7 @@ export function LoginForm() {
     return await signIn?.authenticateWithRedirect({
       strategy: strategy,
       redirectUrl: '/signin/sso-callback',
-      redirectUrlComplete: '/',
+      redirectUrlComplete: '/dash',
     })
   }
 
