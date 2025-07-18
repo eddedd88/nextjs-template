@@ -6,21 +6,8 @@ import { Toaster } from '@/components/ui/sonner'
 // import { Button, buttonVariants } from '@/components/ui/button'
 // import { VariantProps } from 'class-variance-authority'
 import { UserNav } from './usernav'
-import { Providers } from './providers'
 
 export default function DashLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <Providers>
-      <DashLayoutWithoutProviders>{children}</DashLayoutWithoutProviders>
-    </Providers>
-  )
-}
-
-function DashLayoutWithoutProviders({
   children,
 }: {
   children: React.ReactNode
