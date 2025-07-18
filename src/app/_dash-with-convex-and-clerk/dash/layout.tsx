@@ -3,8 +3,6 @@ import { FlaskConicalIcon } from 'lucide-react'
 import { COMPANY_NAME } from '@/constants'
 import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
-// import { Button, buttonVariants } from '@/components/ui/button'
-// import { VariantProps } from 'class-variance-authority'
 import { UserNav } from './usernav'
 
 export default function DashLayout({
@@ -21,7 +19,6 @@ export default function DashLayout({
             {COMPANY_NAME}
           </Link>
           <div className='flex items-center gap-4'>
-            {/* <NavLinkItem href='/dash' label='Home' /> */}
             <FeedbackButton />
             <UserNav />
           </div>
@@ -32,16 +29,3 @@ export default function DashLayout({
     </div>
   )
 }
-
-// interface NavLinkItemProps extends VariantProps<typeof buttonVariants> {
-//   href: string
-//   label: string
-// }
-
-// function NavLinkItem({ href, label, variant = 'ghost' }: NavLinkItemProps) {
-//   return (
-//     <Button variant={variant} asChild>
-//       <Link href={href}>{label}</Link>
-//     </Button>
-//   )
-// }
