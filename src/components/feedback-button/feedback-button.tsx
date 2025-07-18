@@ -35,7 +35,7 @@ export function FeedbackButton() {
       <DialogTrigger asChild>
         <Button variant='outline'>Feedback</Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className='sm:max-w-md'>
         <DialogHeader>
           <DialogTitle>Send Feedback</DialogTitle>
           <DialogDescription>
