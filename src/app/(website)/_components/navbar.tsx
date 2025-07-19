@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { VariantProps } from 'class-variance-authority'
-import { FlaskConicalIcon, MenuIcon } from 'lucide-react'
+import { MenuIcon } from 'lucide-react'
 import {
   Drawer,
   DrawerContent,
@@ -11,12 +11,13 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 import { COMPANY_NAME } from '@/constants'
+import { Logo } from '@/components/logo'
 
 export function NavBar() {
   return (
     <nav className='flex items-center justify-between gap-4 py-4'>
       <Link className='flex items-center gap-4' href='/'>
-        <FlaskConicalIcon className='h-8 w-8 rotate-[30deg] stroke-1' />
+        <Logo />
         {COMPANY_NAME}
       </Link>
 

@@ -1,9 +1,9 @@
 import Link from 'next/link'
-import { FlaskConicalIcon } from 'lucide-react'
 import { COMPANY_NAME } from '@/constants'
 import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
 import { UserNav } from './usernav'
+import { Logo } from '@/components/logo'
 
 export default function DashLayout({
   children,
@@ -15,7 +15,7 @@ export default function DashLayout({
       <header className='px-4 sm:px-6'>
         <nav className='flex items-center justify-between gap-4 py-4'>
           <Link className='flex items-center gap-4' href='/'>
-            <FlaskConicalIcon className='h-8 w-8 rotate-[30deg] stroke-1' />
+            <Logo />
             {COMPANY_NAME}
           </Link>
           <div className='flex items-center gap-4'>
