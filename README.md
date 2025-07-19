@@ -27,7 +27,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This template contains an alternative dashboard that uses **Convex** for your backend needs (database, real-time updates, serverless functions, background jobs) and **Clerk** for authentication. Both services offer generous free tiers and are perfect for getting started quickly.
 
-##### Setting up Convex and Clerk
+#### Setting up Convex and Clerk
 
 1. Replace the existing `/dash` and `/login` folders and move the `/middleware.ts` file.
 
