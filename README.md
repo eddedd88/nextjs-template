@@ -39,11 +39,17 @@ src/app/_dash-with-convex-and-clerk/
 ```
 
 2. Configure your environment variables:
-   - Copy the `.env.example` file into a new `.env` file.
-   - Update the environment variables in `.env` with your Convex and Clerk account values.
-   - Update the environment validation files:
-     ```bash
-     src/lib/client-env.ts
-     src/lib/server-env.ts
-     ```
-3. Update `src/app/layout.tsx` to use the `Providers` component from `src/app/providers.tsx`
+
+- Copy the `.env.example` file into a new `.env` file.
+- Update the environment variables in `.env` with your **Convex** and **Clerk** account values.
+- Update the environment validation files:
+  ```bash
+  src/lib/client-env.ts
+  src/lib/server-env.ts
+  ```
+
+3. Update `src/app/providers.tsx` to use the new env var `clientEnv.NEXT_PUBLIC_CONVEX_URL` for Convex client initialization:
+   ```tsx
+   const convex = new ConvexReactClient(clientEnv.NEXT_PUBLIC_CONVEX_URL)
+   ```
+4. Update `src/app/layout.tsx` to use the `Providers` component from `src/app/providers.tsx`
