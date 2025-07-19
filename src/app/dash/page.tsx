@@ -6,25 +6,23 @@ import { Input } from '@/components/ui/input'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
-import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 import { submitPromptAction } from './submit-prompt-action'
+import { Typography } from '@/components/ui/typography'
 
 export default function DashPage() {
   const [input, setInput] = useState('')
   const matchMessage = useAction(submitPromptAction, {
-    onSuccess: ({ data }) => {
-      if (!data) {
-        toast.error(
-          "I'm not able to help with that. Please try something else.",
-        )
-        setInput('')
-      } else {
-        toast.success(data.message)
-      }
-    },
-    onError: () => {
-      toast.error(UNEXPECTED_ERROR_MESSAGE)
-      setInput('')
+    onSettled: () => {
+      toast(
+        <>
+          <h2 className='mb-1 text-base font-medium'>
+            Implement this action in
+          </h2>
+          <Typography variant='codeBlock'>
+            src/app/dash/submit-prompt-action.ts
+          </Typography>
+        </>,
+      )
     },
   })
 

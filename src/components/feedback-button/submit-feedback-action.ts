@@ -13,4 +13,7 @@ export const submitFeedbackAction = safeAction
     // TODO: Implement your own feedback storage logic here
     // Example: Save to your preferred database, send to an API, etc.
     console.log('Feedback received:', message)
+    console.log(
+      'Implement this action in "src/app/dash/submit-feedback-action.ts"',
+    )
   })

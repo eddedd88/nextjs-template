@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
 import { toast } from 'sonner'
+import { Typography } from '@/components/ui/typography'
 
 export default function DashPage() {
   const [input, setInput] = useState('')
@@ -15,7 +16,12 @@ export default function DashPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    toast.success('Thank you for your feedback!')
+    toast.success(
+      <>
+        <h2 className='mb-1 text-base font-medium'>Implement this action in</h2>
+        <Typography variant='codeBlock'>src/app/dash/page.tsx</Typography>
+      </>,
+    )
   }
 
   return (
