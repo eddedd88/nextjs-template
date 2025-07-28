@@ -42,7 +42,7 @@ export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
     <Button
       variant='ghost'
       size='sm'
-      className='text-muted-foreground -ml-3 hidden p-2 sm:inline-flex'
+      className='text-muted-foreground -ml-2 hidden has-[>svg]:pl-1 sm:inline-flex'
       asChild
     >
       <Link href={backUrl}>
