@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint && tsc --noEmit",
     "format": "prettier --write --ignore-unknown .",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.27.1",
