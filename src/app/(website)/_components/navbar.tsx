@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/drawer'
 import { COMPANY_NAME } from '@/constants'
 import { Logo } from '@/components/logo'
+import type { Route } from 'next'
 
 export function NavBar() {
   return (
@@ -56,7 +57,7 @@ export function NavBar() {
   )
 }
 
-function MobileNavLinkItem({ href, label }: { href: string; label: string }) {
+function MobileNavLinkItem({ href, label }: { href: Route; label: string }) {
   return (
     <Button
       className='w-full justify-start px-6 py-8 text-lg'
@@ -69,7 +70,7 @@ function MobileNavLinkItem({ href, label }: { href: string; label: string }) {
 }
 
 interface NavLinkItemProps extends VariantProps<typeof buttonVariants> {
-  href: string
+  href: Route
   label: string
 }
 
