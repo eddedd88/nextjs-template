@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { ChevronLeftIcon } from 'lucide-react'
 import Link from 'next/link'
+import type { Route } from 'next'
 
 export function Page({
   children,
@@ -35,7 +36,7 @@ export function PageTitle({
 }
 
 type PageBackButtonProps = {
-  backUrl?: string
+  backUrl?: Route
 }
 export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
   return (
