@@ -33,11 +33,6 @@ export function FeaturesSection() {
           icon={<Settings className='size-6' />}
         />
         <FeatureCard
-          title='Clerk Authentication'
-          description='Complete authentication solution with login, signup, user management, and social auth providers built in.'
-          icon={<UserCheck className='size-6' />}
-        />
-        <FeatureCard
           title='Beautiful UI Components'
           description='Built with Shadcn UI - copy and paste beautiful, accessible components.'
           icon={<Palette className='size-6' />}

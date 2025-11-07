@@ -11,7 +11,6 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@clerk/nextjs": "^6.32.0",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.10",
@@ -58,7 +57,6 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@clerk/shared",
       "@tailwindcss/oxide",
       "@vercel/speed-insights",
       "esbuild",
