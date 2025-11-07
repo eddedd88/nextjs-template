@@ -14,8 +14,7 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "@/convex/*": ["./convex/_generated/*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {

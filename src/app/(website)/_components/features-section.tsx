@@ -38,11 +38,6 @@ export function FeaturesSection() {
           icon={<UserCheck className='size-6' />}
         />
         <FeatureCard
-          title='Convex Backend'
-          description='Real-time database, serverless functions, and file storage - everything you need for your backend in one place.'
-          icon={<Database className='size-6' />}
-        />
-        <FeatureCard
           title='Beautiful UI Components'
           description='Built with Shadcn UI - copy and paste beautiful, accessible components.'
           icon={<Palette className='size-6' />}
