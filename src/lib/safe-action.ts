@@ -1,17 +1,12 @@
 import { createSafeActionClient } from 'next-safe-action'
 import { UNEXPECTED_ERROR_MESSAGE } from '../constants'
-
-/**
- * Custom error class to be used in actions to
- * display a custom error message to the user
- */
-export class ActionError extends Error {}
+import { PublicError } from './public-error'
 
 export const safeAction = createSafeActionClient({
   defaultValidationErrorsShape: 'flattened',
   handleServerError(e) {
     console.error(e)
-    if (e instanceof ActionError) {
+    if (e instanceof PublicError) {
       return e.message
     }
     return UNEXPECTED_ERROR_MESSAGE
