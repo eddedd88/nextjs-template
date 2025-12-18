@@ -54,8 +54,8 @@ export default function PricingPage() {
             'Team collaboration tools',
           ]}
           ctaButton={
-            <Button className='w-full' size='lg' variant='default'>
-              Start Free Trial
+            <Button className='w-full' size='lg' asChild>
+              <Link href='/dash'>Start Free Trial</Link>
             </Button>
           }
         />
