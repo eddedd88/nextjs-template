@@ -14,6 +14,7 @@ export function Page({
   return (
     <main
       className={cn(
+        // To vertically center the page use: sm:my-auto
         'animate-fade-in container space-y-6 p-4 md:py-8 lg:py-12',
         className,
       )}
