@@ -7,7 +7,7 @@ export function PageNotFound() {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center px-8 py-12'>
       <div className='space-y-6 text-center'>
-        {/* Custom 404 SVG Illustration */}
+        {/* Put Custom 404 SVG Illustration Here */}
         <h1 className='text-3xl font-semibold sm:text-4xl'>
           404 - Page Not Found
         </h1>
