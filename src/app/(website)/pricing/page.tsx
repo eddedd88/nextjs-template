@@ -1,3 +1,4 @@
+import { Page } from '@/components/page'
 import { Button } from '@/components/ui/button'
 import {
   Card,
@@ -14,65 +15,67 @@ import { ReactNode } from 'react'
 
 export default function PricingPage() {
   return (
-    <section className='container py-6'>
-      <h1 className='text-center text-4xl leading-normal md:text-5xl md:leading-normal'>
-        Pricing
-      </h1>
-      <p className='text-muted-foreground mx-auto mt-2 mb-6 max-w-md text-center text-lg text-balance'>
-        Choose the perfect plan for your needs. Start free and upgrade as you
-        grow.
-      </p>
-
-      <div className='mx-auto grid max-w-2xl gap-6 md:grid-cols-2 lg:gap-8'>
-        <PricingCard
-          title='Starter'
-          description='Perfect for individuals and small projects'
-          price='$0'
-          features={[
-            'Up to 5 projects',
-            '1 GB storage',
-            'Basic analytics',
-            'Community support',
-            'Mobile app access',
-          ]}
-          ctaButton={
-            <Button className='w-full' size='lg' variant='secondary'>
-              <Link href='/dash'>Get Started</Link>
-            </Button>
-          }
-        />
-
-        <PricingCard
-          title='Professional'
-          description='Best for growing teams and businesses'
-          price='$29'
-          features={[
-            'Unlimited projects',
-            '50 GB storage',
-            'Priority email support',
-            'Custom integrations',
-            'Team collaboration tools',
-          ]}
-          ctaButton={
-            <Button className='w-full' size='lg' asChild>
-              <Link href='/dash'>Start Free Trial</Link>
-            </Button>
-          }
-        />
-      </div>
-
-      <div className='mt-8 text-center'>
-        <p className='text-muted-foreground text-sm'>
-          Need a custom plan for your organization?{' '}
-          <a
-            href='mailto:sales@example.com'
-            className='text-primary hover:underline'
-          >
-            Contact us
-          </a>
+    <div className='to-primary/5 from-background grow bg-linear-to-b from-80%'>
+      <Page>
+        <h1 className='text-center text-4xl leading-normal md:text-5xl md:leading-normal'>
+          Pricing
+        </h1>
+        <p className='text-muted-foreground mx-auto mt-2 mb-6 max-w-md text-center text-lg text-balance'>
+          Choose the perfect plan for your needs. Start free and upgrade as you
+          grow.
         </p>
-      </div>
-    </section>
+
+        <div className='mx-auto grid max-w-2xl gap-6 md:grid-cols-2 lg:gap-8'>
+          <PricingCard
+            title='Starter'
+            description='Perfect for individuals and small projects'
+            price='$0'
+            features={[
+              'Up to 5 projects',
+              '1 GB storage',
+              'Basic analytics',
+              'Community support',
+              'Mobile app access',
+            ]}
+            ctaButton={
+              <Button className='w-full' size='lg' variant='secondary'>
+                <Link href='/dash'>Get Started</Link>
+              </Button>
+            }
+          />
+
+          <PricingCard
+            title='Professional'
+            description='Best for growing teams and businesses'
+            price='$29'
+            features={[
+              'Unlimited projects',
+              '50 GB storage',
+              'Priority email support',
+              'Custom integrations',
+              'Team collaboration tools',
+            ]}
+            ctaButton={
+              <Button className='w-full' size='lg' asChild>
+                <Link href='/dash'>Start Free Trial</Link>
+              </Button>
+            }
+          />
+        </div>
+
+        <div className='mt-8 text-center'>
+          <p className='text-muted-foreground text-sm'>
+            Need a custom plan for your organization?{' '}
+            <a
+              href='mailto:sales@example.com'
+              className='text-primary hover:underline'
+            >
+              Contact us
+            </a>
+          </p>
+        </div>
+      </Page>
+    </div>
   )
 }
 
