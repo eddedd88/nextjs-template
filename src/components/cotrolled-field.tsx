@@ -6,23 +6,17 @@ import {
   FieldError,
   FieldLabel,
 } from '@/components/ui/field'
-import {
-  Control,
-  FieldPathByValue,
-  FieldValues,
-  Controller,
-} from 'react-hook-form'
+
+import { FieldValues, Controller, ControllerProps } from 'react-hook-form'
 import { Slot } from '@radix-ui/react-slot'
 import { cn } from '@/lib/utils'
 
 type Props<T extends FieldValues> = {
-  control: Control<T>
   children: React.ReactNode
-  name: FieldPathByValue<T, string>
   label?: string
   description?: string
   className?: string
-}
+} & Pick<ControllerProps<T>, 'name' | 'control'>
 
 export function ControlledField<T extends FieldValues>({
   name,
