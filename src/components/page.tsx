@@ -36,10 +36,12 @@ export function PageTitle({
   )
 }
 
-type PageBackButtonProps = {
-  backUrl?: Route
+type PageBackButtonProps<T extends string> = {
+  href?: Route<T>
 }
-export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
+export function PageBackButton<T extends string>({
+  href = '/dash',
+}: PageBackButtonProps<T>) {
   return (
     <Button
       variant='ghost'
@@ -47,7 +49,7 @@ export function PageBackButton({ backUrl = '/dash' }: PageBackButtonProps) {
       className='text-muted-foreground -ml-2 hidden has-[>svg]:pl-1 sm:inline-flex'
       asChild
     >
-      <Link href={backUrl}>
+      <Link href={href}>
         <ChevronLeftIcon />
         Back
       </Link>
