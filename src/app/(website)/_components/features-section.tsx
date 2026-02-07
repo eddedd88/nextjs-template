@@ -35,11 +35,6 @@ export function FeaturesSection() {
           description='Leverages Next.js Server Actions for type-safe data mutations.'
           icon={<ServerCog className='size-6' />}
         />
-        <FeatureCard
-          title='Optimized for Deployment'
-          description='Ready to deploy to Vercel with best practices baked in.'
-          icon={<Rocket className='size-6' />}
-        />
       </div>
     </PageSection>
   )
