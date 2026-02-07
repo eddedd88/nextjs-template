@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/field'
 
 import { FieldValues, Controller, ControllerProps } from 'react-hook-form'
-import { Slot } from '@radix-ui/react-slot'
+import { Slot } from 'radix-ui'
 import { cn } from '@/lib/utils'
 
 type Props<T extends FieldValues> = {
@@ -37,9 +37,9 @@ export function ControlledField<T extends FieldValues>({
         >
           <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
           <div className='grid gap-1'>
-            <Slot {...field} aria-invalid={fieldState.invalid}>
+            <Slot.Root {...field} aria-invalid={fieldState.invalid}>
               {children}
-            </Slot>
+            </Slot.Root>
             {description && !fieldState.error && (
               <FieldDescription className='animate-fade-in h-6'>
                 {description}
