@@ -29,6 +29,8 @@ This project is a Next.js App Router starter template for a SaaS-style web app w
 - Validate all action/form inputs with `zod`.
 - Reuse components from `src/components/ui/*` before creating new UI primitives.
 - Use `cn()` from `src/lib/utils.ts` for className merging.
+- Feature flags live in `src/lib/flags.ts` (`@/lib/flags`).
+- Only introduce feature flags when explicitly requested; do not gate new features by default.
 - Keep styling in Tailwind utility classes and theme tokens from `src/app/globals.css`.
 
 ## Implementation Paths to Know

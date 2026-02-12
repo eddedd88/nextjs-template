@@ -57,6 +57,8 @@ This file defines recommended agent roles and behavior for contributing safely a
 - Prefer minimal, composable edits over broad refactors.
 - Keep changes localized and aligned with existing folder structure.
 - When adding logic to templates with TODOs, replace placeholder logs with real behavior.
+- For feature gating, use `src/lib/flags.ts` (`@/lib/flags`), but only when explicitly requested.
+- Do not add feature flags by default for routine feature work.
 
 ## Mandatory Review Gate
 
