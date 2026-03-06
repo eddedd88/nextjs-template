@@ -35,7 +35,7 @@ export function ControlledField<T extends FieldValues>({
           data-invalid={fieldState.invalid}
           className={cn('gap-1', description && 'mb-5', className)}
         >
-          <FieldLabel htmlFor={field.name}>{label}</FieldLabel>
+          {label && <FieldLabel htmlFor={field.name}>{label}</FieldLabel>}
           <div className='grid gap-1'>
             <Slot.Root {...field} aria-invalid={fieldState.invalid}>
               {children}
