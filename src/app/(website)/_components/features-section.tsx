@@ -1,4 +1,4 @@
-import { Settings, Palette, ServerCog, Rocket } from 'lucide-react'
+import { Settings, Palette, ServerCog } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { PageSection, PageSectionTitle } from './page-section'
 
