@@ -19,9 +19,9 @@ export default function DashPage() {
           <h2 className='mb-1 text-base font-medium'>
             Implement this action in
           </h2>
-          <Typography variant='codeBlock'>
+          <code className='block rounded bg-muted p-3 font-mono text-sm wrap-break-word'>
             src/app/dash/submit-prompt-action.ts
-          </Typography>
+          </code>
         </>,
       )
     },
