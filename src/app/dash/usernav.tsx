@@ -5,6 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
   DropdownMenuSeparator,
+  DropdownMenuLabel,
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 
@@ -29,10 +30,10 @@ export async function UserNav() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-fit' align='end'>
-        <div className='flex flex-col px-2 py-1'>
+        <DropdownMenuLabel className='flex flex-col'>
           <span className='text-sm font-medium text-foreground'>{name}</span>
           <span className='text-xs text-muted-foreground'>{email}</span>
-        </div>
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='p-0'>
           <form
