@@ -13,7 +13,7 @@ export function JoinWaitlistButton() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size='lg' variant='outline'>
+        <Button size='lg' variant='outline' className='px-6'>
           Join Waitlist
         </Button>
       </DialogTrigger>

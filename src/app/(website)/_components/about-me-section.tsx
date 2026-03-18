@@ -12,26 +12,21 @@ export function AboutMeSection() {
             alt='Eduardo Duran'
             width={150}
             height={150}
-            className='bg-secondary rounded-3xl border'
+            className='rounded-3xl border bg-secondary'
           />
         </div>
         <div className='text-center sm:col-span-2 sm:text-left'>
           <PageSectionTitle className='mb-4 text-2xl sm:mb-4 sm:text-left sm:text-3xl'>
             Let&apos;s Build Your AI SaaS App
           </PageSectionTitle>
-          <p className='text-muted-foreground mb-4 text-balance'>
+          <p className='mb-4 text-balance text-muted-foreground'>
             Hi! I&apos;m Ed, a seasoned developer specializing in AI-powered
             SaaS applications, based out of Toronto, Canada. With over 15 years
             of experience building B2B and enterprise solutions, I&apos;m here
             to help you bring your vision to life.
           </p>
           <div className='mt-6 flex flex-col gap-4 sm:flex-row'>
-            <Button
-              variant='outline'
-              size='lg'
-              className='flex items-center gap-2'
-              asChild
-            >
+            <Button variant='outline' size='lg' className='px-4' asChild>
               <a
                 href='https://www.linkedin.com/in/eduardo-duran-b7034749/'
                 target='_blank'
@@ -56,12 +51,7 @@ export function AboutMeSection() {
                 Connect on LinkedIn
               </a>
             </Button>
-            <Button
-              variant='outline'
-              size='lg'
-              className='flex items-center gap-2'
-              asChild
-            >
+            <Button variant='outline' size='lg' className='px-4' asChild>
               <a
                 href='https://x.com/eddedd77'
                 target='_blank'
