@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRightIcon, CogIcon, Loader2Icon } from 'lucide-react'
+import { ArrowUpIcon, CogIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
@@ -8,6 +8,7 @@ import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
 import { submitPromptAction } from './submit-prompt-action'
 import { Typography } from '@/components/ui/typography'
+import { Spinner } from '@/components/ui/spinner'
 
 export default function DashPage() {
   const [input, setInput] = useState('')
@@ -39,7 +40,7 @@ export default function DashPage() {
 
   return (
     <div className='container flex min-h-[calc(100vh-68px)] flex-col pb-6'>
-      <div className='animate-fade-in flex grow flex-col items-center justify-center gap-8'>
+      <div className='flex grow animate-fade-in flex-col items-center justify-center gap-8'>
         <div className='flex flex-col items-center justify-center gap-4'>
           <div className='flex sm:mt-0'>
             <CogIcon className='h-12 w-12 animate-[spin_linear_5s_infinite]' />
@@ -61,17 +62,8 @@ export default function DashPage() {
               disabled={matchMessage.isPending}
               autoFocus
             />
-            <Button
-              type='submit'
-              disabled={matchMessage.isPending}
-              size='icon'
-              className='p-3'
-            >
-              {matchMessage.isPending ? (
-                <Loader2Icon className='animate-spin' />
-              ) : (
-                <ArrowRightIcon />
-              )}
+            <Button type='submit' disabled={matchMessage.isPending} size='icon'>
+              {matchMessage.isPending ? <Spinner /> : <ArrowUpIcon />}
             </Button>
           </form>
         </div>

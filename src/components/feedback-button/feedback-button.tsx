@@ -46,7 +46,7 @@ export function FeedbackButton() {
           <Textarea
             name='message'
             placeholder='Enter your feedback here...'
-            className='min-h-[120px]'
+            className='min-h-30 resize-none'
             required
           />
           <div className='mt-4 flex justify-end'>
