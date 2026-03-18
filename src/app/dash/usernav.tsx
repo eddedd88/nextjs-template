@@ -4,7 +4,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
@@ -22,22 +21,18 @@ export async function UserNav() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className='relative h-8 w-8 rounded-full'>
-          <Avatar className='h-8 w-8'>
+        <Button variant='ghost' size='icon' className='rounded-full'>
+          <Avatar>
             <AvatarImage src={''} alt={name} />
             <AvatarFallback className='border'>{initials}</AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align='end'>
-        <DropdownMenuLabel className='font-normal'>
-          <div className='flex flex-col space-y-1'>
-            <p className='text-sm leading-none font-medium'>{name}</p>
-            <p className='text-muted-foreground text-xs leading-none'>
-              {email}
-            </p>
-          </div>
-        </DropdownMenuLabel>
+      <DropdownMenuContent className='w-fit' align='end'>
+        <div className='flex flex-col px-2 py-1'>
+          <span className='text-sm font-medium text-foreground'>{name}</span>
+          <span className='text-xs text-muted-foreground'>{email}</span>
+        </div>
         <DropdownMenuSeparator />
         <DropdownMenuItem className='p-0'>
           <form
