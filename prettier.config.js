@@ -5,4 +5,6 @@ module.exports = {
   jsxSingleQuote: true,
   arrowParens: 'avoid',
   plugins: ['prettier-plugin-tailwindcss'],
+  tailwindStylesheet: 'src/app/globals.css',
+  tailwindFunctions: ['cn', 'cva'],
 }
