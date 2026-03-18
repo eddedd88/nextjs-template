@@ -7,7 +7,6 @@ import { useState } from 'react'
 import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
 import { submitPromptAction } from './submit-prompt-action'
-import { Typography } from '@/components/ui/typography'
 import { Spinner } from '@/components/ui/spinner'
 
 export default function DashPage() {
