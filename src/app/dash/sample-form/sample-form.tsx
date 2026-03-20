@@ -1,45 +1,43 @@
 'use client'
 
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useAction } from 'next-safe-action/hooks'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { toast } from 'sonner'
-
 import { ControlledField } from '@/components/cotrolled-field'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
+import { Spinner } from '@/components/ui/spinner'
 import { Textarea } from '@/components/ui/textarea'
-
-const sampleFormSchema = z.object({
-  name: z
-    .string()
-    .trim()
-    .min(1, 'Name is required')
-    .max(80, 'Name is too long'),
-  description: z
-    .string()
-    .trim()
-    .min(10, 'Description must be at least 10 characters')
-    .max(500, 'Description is too long'),
-})
-
-type SampleFormValues = z.infer<typeof sampleFormSchema>
-
-const defaultValues: SampleFormValues = {
-  name: '',
-  description: '',
-}
+import { submitSampleFormAction } from './submit-sample-form-action'
+import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
+import { SampleFormSchema } from './sample-form-schema'
 
 export function SampleForm() {
-  const form = useForm<SampleFormValues>({
-    resolver: zodResolver(sampleFormSchema),
-    defaultValues,
+  const form = useForm<z.infer<typeof SampleFormSchema>>({
+    resolver: zodResolver(SampleFormSchema),
+    defaultValues: {
+      name: '',
+      description: '',
+    },
+  })
+  const submitSampleForm = useAction(submitSampleFormAction, {
+    onSuccess: ({ data }) => {
+      toast.success(data?.message ?? 'Sample form submitted')
+      form.reset({
+        name: '',
+        description: '',
+      })
+    },
+    onError: ({ error }) => {
+      console.error(error)
+      toast.error(error.serverError || UNEXPECTED_ERROR_MESSAGE)
+    },
   })
 
-  const handleSubmit = (values: SampleFormValues) => {
-    toast.success('Sample form submitted', {
-      description: `${values.name}: ${values.description}`,
-    })
+  const handleSubmit = (values: z.infer<typeof SampleFormSchema>) => {
+    submitSampleForm.execute(values)
   }
 
   return (
@@ -61,7 +59,10 @@ export function SampleForm() {
       </ControlledField>
 
       <div className='flex justify-end'>
-        <Button type='submit'>Submit</Button>
+        <Button type='submit' disabled={submitSampleForm.isPending}>
+          {submitSampleForm.isPending && <Spinner />}
+          Submit
+        </Button>
       </div>
     </form>
   )
