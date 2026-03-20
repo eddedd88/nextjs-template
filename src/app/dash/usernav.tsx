@@ -1,31 +1,62 @@
+import { Suspense } from 'react'
+import { UserRoundIcon } from 'lucide-react'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
   DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Button } from '@/components/ui/button'
+import { Skeleton } from '@/components/ui/skeleton'
 
-export async function UserNav() {
-  const email = 'john.doe@gmail.com'
-  const name = 'John Doe'
-  const initials = name
-    .split(' ')
-    .map(n => n[0])
-    .join('')
-    .substring(0, 2)
-    .toUpperCase()
+export function UserNav() {
+  return (
+    <Suspense fallback={<Skeleton className='size-8 rounded-full' />}>
+      <UserNavContent />
+    </Suspense>
+  )
+}
 
+async function UserNavContent() {
+  const user = await currentUser()
+
+  if (!user) {
+    return (
+      <Button
+        className='size-8 rounded-full border text-muted-foreground'
+        variant='secondary'
+      >
+        <UserRoundIcon />
+      </Button>
+    )
+  }
+
+  const name = user.fullName?.trim() || user.username || 'User'
+  const email = user.primaryEmailAddress?.emailAddress || ''
+  return <UserNavMenu email={email} imageUrl={user.imageUrl} name={name} />
+}
+
+function UserNavMenu({
+  email,
+  imageUrl,
+  name,
+}: {
+  email: string
+  imageUrl: string | null
+  name: string
+}) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant='ghost' size='icon' className='rounded-full'>
+        <Button variant='ghost' className='size-8 rounded-full'>
           <Avatar>
-            <AvatarImage src={''} alt={name} />
-            <AvatarFallback className='border'>{initials}</AvatarFallback>
+            {imageUrl ? <AvatarImage src={imageUrl} alt={name} /> : null}
+            <AvatarFallback className='border'>
+              <UserRoundIcon className='size-4' />
+            </AvatarFallback>
           </Avatar>
         </Button>
       </DropdownMenuTrigger>
@@ -35,24 +66,22 @@ export async function UserNav() {
           <span className='text-xs text-muted-foreground'>{email}</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className='p-0'>
-          <form
-            action={async () => {
-              'use server'
-              console.log('Logout functionality not implemented yet')
-            }}
-            className='w-full'
-          >
-            <Button
-              type='submit'
-              variant='ghost'
-              className='w-full justify-start px-2'
-            >
-              Logout
-            </Button>
-          </form>
-        </DropdownMenuItem>
+        <DropdownMenuItem>Logout</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )
+}
+
+async function currentUser() {
+  console.log('Fetching current user [not implemented]')
+  await new Promise(resolve => setTimeout(resolve, 1000))
+  return {
+    id: '123',
+    fullName: 'John Doe',
+    username: 'johndoe',
+    imageUrl: '',
+    primaryEmailAddress: {
+      emailAddress: 'johndoe@example.com',
+    },
+  }
 }
