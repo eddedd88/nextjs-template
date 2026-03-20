@@ -53,7 +53,7 @@ export default function DashPage() {
         </div>
 
         <div className='mx-auto flex w-full max-w-md flex-col gap-4'>
-          <form onSubmit={handleSubmit} className='flex gap-2'>
+          <form onSubmit={handleSubmit} className='mb-6 flex gap-2'>
             <Input
               value={input}
               onChange={handleInputChange}
@@ -66,7 +66,7 @@ export default function DashPage() {
               {matchMessage.isPending ? <Spinner /> : <ArrowUpIcon />}
             </Button>
           </form>
-          <Button asChild variant='secondary' className='mx-auto w-fit'>
+          <Button asChild variant='secondary' className='w-full py-6'>
             <Link href='/dash/sample-form'>
               Open Sample Form
               <ArrowRightIcon />
