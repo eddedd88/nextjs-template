@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowUpIcon, CogIcon } from 'lucide-react'
+import { ArrowRightIcon, ArrowUpIcon, CogIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
@@ -8,6 +8,7 @@ import { toast } from 'sonner'
 import { useAction } from 'next-safe-action/hooks'
 import { submitPromptAction } from './submit-prompt-action'
 import { Spinner } from '@/components/ui/spinner'
+import Link from 'next/link'
 
 export default function DashPage() {
   const [input, setInput] = useState('')
@@ -65,6 +66,12 @@ export default function DashPage() {
               {matchMessage.isPending ? <Spinner /> : <ArrowUpIcon />}
             </Button>
           </form>
+          <Button asChild variant='secondary' className='mx-auto w-fit'>
+            <Link href='/dash/sample-form'>
+              Open Sample Form
+              <ArrowRightIcon />
+            </Link>
+          </Button>
         </div>
       </div>
     </div>
