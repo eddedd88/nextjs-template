@@ -41,7 +41,7 @@ export function SampleForm() {
   }
 
   return (
-    <form onSubmit={form.handleSubmit(handleSubmit)} className='flex-col gap-6'>
+    <form onSubmit={form.handleSubmit(handleSubmit)}>
       <ControlledField control={form.control} name='name' label='Name'>
         <Input placeholder='Jane Doe' />
       </ControlledField>
