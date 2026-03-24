@@ -4,7 +4,7 @@ import { SampleForm } from './sample-form'
 
 export default function SampleFormPage() {
   return (
-    <Page className='my-auto max-w-md'>
+    <Page className='max-w-md sm:my-auto'>
       <div>
         <PageBackButton href='/dash' />
         <PageTitle className='mt-2'>Sample form</PageTitle>
