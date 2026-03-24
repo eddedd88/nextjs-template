@@ -24,9 +24,7 @@ export function NavBar() {
 
       {/* Links in bigger screens */}
       <div className='hidden gap-3 sm:flex sm:items-center'>
-        <NavLinkItem href='/coming-soon' label='Features' />
         <NavLinkItem href='/pricing' label='Pricing' />
-        <NavLinkItem href='/coming-soon' label='Contact' variant='outline' />
         <NavLinkItem href='/login' label='Login' variant='outline' />
         <GithubButton />
       </div>
@@ -46,9 +44,7 @@ export function NavBar() {
               <DrawerDescription>Links to navigate the site</DrawerDescription>
             </DrawerHeader>
             <div className='flex flex-col items-start pb-6'>
-              <MobileNavLinkItem href='/coming-soon' label='Features' />
               <MobileNavLinkItem href='/pricing' label='Pricing' />
-              <MobileNavLinkItem href='/coming-soon' label='Contact' />
             </div>
           </DrawerContent>
         </Drawer>
