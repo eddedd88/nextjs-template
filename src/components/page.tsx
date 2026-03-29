@@ -15,7 +15,7 @@ export function Page({
     <main
       className={cn(
         // To vertically center the page use: my-auto
-        'animate-fade-in container space-y-6 p-4 md:py-8 lg:py-12',
+        'container animate-fade-in space-y-6 p-4 md:py-8 lg:py-12',
         className,
       )}
     >
@@ -36,6 +36,18 @@ export function PageTitle({
   )
 }
 
+export function PageDescription({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return (
+    <p className={cn('text-sm text-muted-foreground', className)}>{children}</p>
+  )
+}
+
 type PageBackButtonProps<T extends string> = {
   href?: Route<T>
 }
@@ -46,7 +58,7 @@ export function PageBackButton<T extends string>({
     <Button
       variant='ghost'
       size='sm'
-      className='text-muted-foreground -ml-2 hidden has-[>svg]:pl-1 sm:inline-flex'
+      className='-ml-2 hidden text-muted-foreground has-[>svg]:pl-1 sm:inline-flex'
       asChild
     >
       <Link href={href}>
