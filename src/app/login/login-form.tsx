@@ -9,7 +9,7 @@ export function LoginForm() {
   }
 
   return (
-    <div className='flex max-w-xs flex-col gap-4'>
+    <div className='flex w-xs flex-col gap-4'>
       <div className='flex flex-col gap-3'>
         <SocialLoginButton onClick={() => signInWith('google')}>
           <svg
@@ -34,7 +34,7 @@ export function LoginForm() {
           Continue with Apple
         </SocialLoginButton>
       </div>
-      <div className='text-muted-foreground text-center text-xs text-balance [&_a]:underline [&_a]:underline-offset-4'>
+      <div className='text-center text-xs text-balance text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
         By clicking continue, you agree to our{' '}
         <Link href='/terms' className='hover:text-primary'>
           Terms of Service
