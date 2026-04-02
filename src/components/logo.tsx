@@ -6,8 +6,6 @@ type Props = {
 }
 export function Logo({ className }: Props) {
   return (
-    <FlaskConicalIcon
-      className={cn('h-8 w-8 rotate-[30deg] stroke-1', className)}
-    />
+    <FlaskConicalIcon className={cn('size-8 rotate-30 stroke-1', className)} />
   )
 }
