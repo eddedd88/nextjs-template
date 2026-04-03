@@ -1,32 +1,39 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { Spinner } from '@/components/ui/spinner'
 import Link from 'next/link'
+import { useState } from 'react'
+
+type SSOStrategy = 'google' | 'apple'
 
 export function LoginForm() {
-  const signInWith = async (strategy: 'google' | 'apple') => {
-    console.log(`Signing in with ${strategy}`)
+  const [isRedirecting, setIsRedirecting] = useState<SSOStrategy | null>(null)
+
+  const signInWith = async (strategy: SSOStrategy) => {
+    setIsRedirecting(strategy)
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    setIsRedirecting(null)
+    console.log('Signing in with', strategy)
   }
 
   return (
     <div className='flex w-xs flex-col gap-3'>
-      <SocialLoginButton onClick={() => signInWith('google')}>
-        <GoogleLogo className='size-5' />
+      <SocialLoginButton
+        onClick={() => signInWith('google')}
+        isRedirecting={isRedirecting === 'google'}
+        logo={<GoogleLogo />}
+      >
         <span className='mt-0.5'>Continue with Google</span>
       </SocialLoginButton>
-      <SocialLoginButton onClick={() => signInWith('apple')}>
-        <svg
-          className='size-5'
-          xmlns='http://www.w3.org/2000/svg'
-          viewBox='0 0 24 24'
-        >
-          <path
-            d='M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701'
-            fill='currentColor'
-          />
-        </svg>
+      <SocialLoginButton
+        onClick={() => signInWith('apple')}
+        isRedirecting={isRedirecting === 'apple'}
+        logo={<AppleLogo />}
+      >
         <span className='mt-1'>Continue with Apple</span>
       </SocialLoginButton>
+
       <div className='mt-2 text-center text-xs text-balance text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
         By clicking continue, you agree to our{' '}
         <Link href='/terms' className='hover:text-primary'>
@@ -45,9 +52,13 @@ export function LoginForm() {
 function SocialLoginButton({
   children,
   onClick,
+  logo,
+  isRedirecting,
 }: {
   children: React.ReactNode
   onClick: () => void
+  logo?: React.ReactNode
+  isRedirecting?: boolean
 }) {
   return (
     <Button
@@ -55,19 +66,20 @@ function SocialLoginButton({
       className='h-12 gap-3 text-base'
       onClick={onClick}
     >
+      {isRedirecting ? <Spinner className='size-5' /> : logo}
       {children}
     </Button>
   )
 }
 
-function GoogleLogo({ className }: { className?: string }) {
+function GoogleLogo() {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
       viewBox='0 0 48 48'
       width='48px'
       height='48px'
-      className={className}
+      className='size-5'
     >
       <path
         fill='#FFC107'
@@ -84,6 +96,21 @@ function GoogleLogo({ className }: { className?: string }) {
       <path
         fill='#1976D2'
         d='M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z'
+      />
+    </svg>
+  )
+}
+
+function AppleLogo() {
+  return (
+    <svg
+      className='size-5'
+      xmlns='http://www.w3.org/2000/svg'
+      viewBox='0 0 24 24'
+    >
+      <path
+        d='M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701'
+        fill='currentColor'
       />
     </svg>
   )
