@@ -11,6 +11,9 @@ export function LoginForm() {
   const [isRedirecting, setIsRedirecting] = useState<SSOStrategy | null>(null)
 
   const signInWith = async (strategy: SSOStrategy) => {
+    if (isRedirecting) {
+      return
+    }
     setIsRedirecting(strategy)
     await new Promise(resolve => setTimeout(resolve, 2000))
     setIsRedirecting(null)
