@@ -16,7 +16,7 @@ export function LoginForm() {
       </SocialLoginButton>
       <SocialLoginButton onClick={() => signInWith('apple')}>
         <svg
-          className='mb-1'
+          className='size-5'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
         >
@@ -25,7 +25,7 @@ export function LoginForm() {
             fill='currentColor'
           />
         </svg>
-        Continue with Apple
+        <span className='mt-1'>Continue with Apple</span>
       </SocialLoginButton>
       <div className='mt-2 text-center text-xs text-balance text-muted-foreground [&_a]:underline [&_a]:underline-offset-4'>
         By clicking continue, you agree to our{' '}
