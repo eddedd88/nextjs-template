@@ -12,11 +12,11 @@ export function LoginForm() {
     <div className='flex w-xs flex-col gap-3'>
       <SocialLoginButton onClick={() => signInWith('google')}>
         <GoogleLogo className='size-5' />
-        Continue with Google
+        <span className='mt-0.5'>Continue with Google</span>
       </SocialLoginButton>
       <SocialLoginButton onClick={() => signInWith('apple')}>
         <svg
-          className='mb-0.5'
+          className='mb-1'
           xmlns='http://www.w3.org/2000/svg'
           viewBox='0 0 24 24'
         >
