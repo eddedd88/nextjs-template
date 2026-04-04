@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { COMPANY_NAME } from '@/constants'
 import { FeedbackButton } from '@/components/feedback-button'
 import { Toaster } from '@/components/ui/sonner'
-import { UserNav } from './usernav'
+import { UserNav } from './_components/usernav'
 import { Logo } from '@/components/logo'
 
 export default function DashLayout({

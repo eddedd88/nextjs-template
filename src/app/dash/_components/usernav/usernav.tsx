@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Skeleton } from '@/components/ui/skeleton'
+import { LogoutDropdownMenuItem } from './logout-dropdown-menu-item'
 
 export function UserNav() {
   return (
@@ -66,7 +66,7 @@ function UserNavMenu({
           <span className='text-xs text-muted-foreground'>{email}</span>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Logout</DropdownMenuItem>
+        <LogoutDropdownMenuItem />
       </DropdownMenuContent>
     </DropdownMenu>
   )
