@@ -4,10 +4,12 @@ import { Button } from '@/components/ui/button'
 import { Spinner } from '@/components/ui/spinner'
 import Link from 'next/link'
 import { useState } from 'react'
+// import { useSignIn } from '@clerk/nextjs'
 
 type SSOStrategy = 'google' | 'apple'
 
 export function LoginForm() {
+  // const { signIn } = useSignIn()
   const [isRedirecting, setIsRedirecting] = useState<SSOStrategy | null>(null)
 
   const signInWith = async (strategy: SSOStrategy) => {
@@ -15,6 +17,23 @@ export function LoginForm() {
       return
     }
     setIsRedirecting(strategy)
+
+    /**
+     * Clerk.js implementation
+     */
+    // const { error } = await signIn.sso({
+    //   strategy,
+    //   redirectCallbackUrl: '/login/sso-callback',
+    //   redirectUrl: '/',
+    // })
+    // if (error) {
+    //   setIsRedirecting(null)
+    //   console.error(error)
+    // }
+
+    /**
+     * Remove this when implementing actual SSO logic.
+     */
     await new Promise(resolve => setTimeout(resolve, 2000))
     setIsRedirecting(null)
     console.log('Signing in with', strategy)
