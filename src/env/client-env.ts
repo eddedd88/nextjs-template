@@ -3,14 +3,14 @@ import { extractMissingEnvErrors } from './extract-missing-env-errors'
 
 /**
  * Define your client-side environment variables here,
- * they must be prefixed with NEXT_PUBLIC_, for example:
+ * they must be prefixed with NEXT_PUBLIC_
  */
 const EnvSchema = z.object({
   // NEXT_PUBLIC_CONVEX_URL: z.string().min(1),
 })
 
 /**
- * Populate the environment variables from process.env, for example:
+ * Populate the environment variables from process.env,
  */
 const parsedEnv = EnvSchema.safeParse({
   // NEXT_PUBLIC_CONVEX_URL: process.env.NEXT_PUBLIC_CONVEX_URL,
