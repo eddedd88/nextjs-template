@@ -182,7 +182,7 @@ export function SampleUpload() {
       </Field>
 
       <div className='space-y-3'>
-        <div className='flex items-center justify-between gap-3'>
+        <div className='flex h-8 items-center justify-between gap-3'>
           <h2 className='text-sm font-medium'>Selected files</h2>
           {items.length > 0 && (
             <Button
