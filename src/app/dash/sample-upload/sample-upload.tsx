@@ -182,10 +182,10 @@ export function SampleUpload() {
         <FieldError>{error}</FieldError>
       </Field>
 
-      <div className='space-y-3'>
-        <div className='flex h-8 items-center justify-between gap-3'>
-          <h2 className='text-sm font-medium'>Selected files</h2>
-          {items.length > 0 && (
+      {items.length > 0 && (
+        <div className='animate-fade-in space-y-3'>
+          <div className='flex items-center justify-between gap-3'>
+            <h2 className='text-sm font-medium'>Selected files</h2>
             <Button
               type='button'
               variant='ghost'
@@ -194,10 +194,8 @@ export function SampleUpload() {
             >
               Clear
             </Button>
-          )}
-        </div>
+          </div>
 
-        {items.length ? (
           <ItemGroup>
             {items.map(item => (
               <Item key={item.id} className='animate-fade-in' variant='outline'>
@@ -226,12 +224,8 @@ export function SampleUpload() {
               </Item>
             ))}
           </ItemGroup>
-        ) : (
-          <div className='rounded-lg border border-dashed p-6 text-center text-sm text-muted-foreground'>
-            No files selected
-          </div>
-        )}
-      </div>
+        </div>
+      )}
     </FieldGroup>
   )
 }
