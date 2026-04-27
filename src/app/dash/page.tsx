@@ -1,6 +1,11 @@
 'use client'
 
-import { ArrowRightIcon, ArrowUpIcon, CogIcon } from 'lucide-react'
+import {
+  ArrowRightIcon,
+  ArrowUpIcon,
+  CogIcon,
+  UploadCloudIcon,
+} from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { useState } from 'react'
@@ -66,12 +71,20 @@ export default function DashPage() {
               {matchMessage.isPending ? <Spinner /> : <ArrowUpIcon />}
             </Button>
           </form>
-          <Button asChild variant='secondary' className='w-full py-6'>
-            <Link href='/dash/sample-form'>
-              Open Sample Form
-              <ArrowRightIcon />
-            </Link>
-          </Button>
+          <div className='grid gap-2 sm:grid-cols-2'>
+            <Button asChild variant='secondary' className='w-full py-6'>
+              <Link href='/dash/sample-form'>
+                Open Sample Form
+                <ArrowRightIcon />
+              </Link>
+            </Button>
+            <Button asChild variant='secondary' className='w-full py-6'>
+              <Link href='/dash/sample-upload'>
+                <UploadCloudIcon />
+                Open Sample Upload
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
