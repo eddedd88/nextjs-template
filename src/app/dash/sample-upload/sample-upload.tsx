@@ -199,10 +199,10 @@ export function SampleUpload() {
         {items.length ? (
           <ul className='space-y-2'>
             {items.map(item => (
-              <li key={item.id}>
+              <li key={item.id} className='animate-fade-in'>
                 <Item>
                   <ItemMedia>
-                    <div className='mt-0.5 flex size-9 items-center justify-center rounded-md bg-muted'>
+                    <div className='flex size-10 items-center justify-center rounded-md bg-muted'>
                       <FileTypeIcon fileType={item.file.type} />
                     </div>
                   </ItemMedia>
@@ -216,7 +216,7 @@ export function SampleUpload() {
                     <Button
                       type='button'
                       variant='ghost'
-                      size='icon-sm'
+                      // size='icon-sm'
                       onClick={() => handleRemove(item.id)}
                       aria-label={`Remove ${item.file.name}`}
                     >
@@ -239,18 +239,18 @@ export function SampleUpload() {
 
 function FileTypeIcon({ fileType }: { fileType: string }) {
   if (fileType.startsWith('image/')) {
-    return <FileImageIcon className='size-4 text-muted-foreground' />
+    return <FileImageIcon className='size-5 text-muted-foreground' />
   }
 
   if (fileType === 'text/csv') {
-    return <FileSpreadsheetIcon className='size-4 text-muted-foreground' />
+    return <FileSpreadsheetIcon className='size-5 text-muted-foreground' />
   }
 
   if (fileType === 'application/pdf') {
-    return <FileTextIcon className='size-4 text-muted-foreground' />
+    return <FileTextIcon className='size-5 text-muted-foreground' />
   }
 
-  return <FileArchiveIcon className='size-4 text-muted-foreground' />
+  return <FileArchiveIcon className='size-5 text-muted-foreground' />
 }
 
 function getFileId(file: File) {
