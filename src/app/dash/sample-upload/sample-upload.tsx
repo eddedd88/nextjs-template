@@ -25,6 +25,7 @@ import {
   ItemActions,
   ItemContent,
   ItemDescription,
+  ItemGroup,
   ItemMedia,
   ItemTitle,
 } from '@/components/ui/item'
@@ -197,36 +198,34 @@ export function SampleUpload() {
         </div>
 
         {items.length ? (
-          <ul className='space-y-2'>
+          <ItemGroup>
             {items.map(item => (
-              <li key={item.id} className='animate-fade-in'>
-                <Item>
-                  <ItemMedia>
-                    <div className='flex size-10 items-center justify-center rounded-md bg-muted'>
-                      <FileTypeIcon fileType={item.file.type} />
-                    </div>
-                  </ItemMedia>
-                  <ItemContent>
-                    <ItemTitle>{item.file.name}</ItemTitle>
-                    <ItemDescription>
-                      {formatFileSize(item.file.size)}
-                    </ItemDescription>
-                  </ItemContent>
-                  <ItemActions>
-                    <Button
-                      type='button'
-                      variant='ghost'
-                      // size='icon-sm'
-                      onClick={() => handleRemove(item.id)}
-                      aria-label={`Remove ${item.file.name}`}
-                    >
-                      <XIcon />
-                    </Button>
-                  </ItemActions>
-                </Item>
-              </li>
+              <Item key={item.id} className='animate-fade-in' variant='outline'>
+                <ItemMedia>
+                  <div className='flex size-10 items-center justify-center rounded-md bg-muted'>
+                    <FileTypeIcon fileType={item.file.type} />
+                  </div>
+                </ItemMedia>
+                <ItemContent>
+                  <ItemTitle>{item.file.name}</ItemTitle>
+                  <ItemDescription>
+                    {formatFileSize(item.file.size)}
+                  </ItemDescription>
+                </ItemContent>
+                <ItemActions>
+                  <Button
+                    type='button'
+                    variant='ghost'
+                    // size='icon-sm'
+                    onClick={() => handleRemove(item.id)}
+                    aria-label={`Remove ${item.file.name}`}
+                  >
+                    <XIcon />
+                  </Button>
+                </ItemActions>
+              </Item>
             ))}
-          </ul>
+          </ItemGroup>
         ) : (
           <div className='rounded-lg border border-dashed p-6 text-center text-sm text-muted-foreground'>
             No files selected
