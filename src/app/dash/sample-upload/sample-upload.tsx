@@ -150,7 +150,7 @@ export function SampleUpload() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor={inputId}>Files</FieldLabel>
+        <FieldLabel htmlFor={inputId}>Upload Files</FieldLabel>
         <div
           {...getRootProps({
             className: cn(
