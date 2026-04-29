@@ -5,11 +5,14 @@ import {
   FileImageIcon,
   FileSpreadsheetIcon,
   FileTextIcon,
+  SendIcon,
   UploadCloudIcon,
   XIcon,
 } from 'lucide-react'
+import { useAction } from 'next-safe-action/hooks'
 import { useCallback, useId, useState } from 'react'
 import { type Accept, type FileRejection, useDropzone } from 'react-dropzone'
+import { toast } from 'sonner'
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import {
@@ -29,7 +32,10 @@ import {
   ItemMedia,
   ItemTitle,
 } from '@/components/ui/item'
+import { Spinner } from '@/components/ui/spinner'
+import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 import { cn } from '@/lib/utils'
+import { submitSampleUploadAction } from './submit-sample-upload-action'
 
 const MAX_FILE_COUNT = 5
 const MAX_FILE_SIZE_BYTES = 8 * 1024 * 1024
@@ -65,6 +71,17 @@ export function SampleUpload() {
   const inputId = useId()
   const [items, setItems] = useState<UploadItem[]>([])
   const [error, setError] = useState<string | null>(null)
+  const submitSampleUpload = useAction(submitSampleUploadAction, {
+    onSuccess: ({ data }) => {
+      setItems([])
+      setError(null)
+      toast.success(data?.message ?? 'Files uploaded')
+    },
+    onError: ({ error }) => {
+      console.error(error)
+      toast.error(error.serverError || UNEXPECTED_ERROR_MESSAGE)
+    },
+  })
 
   const handleDrop = useCallback(
     (acceptedFiles: File[], fileRejections: FileRejection[]) => {
@@ -147,6 +164,16 @@ export function SampleUpload() {
     setError(null)
   }
 
+  const handleUpload = () => {
+    const formData = new FormData()
+
+    for (const item of items) {
+      formData.append('files', item.file)
+    }
+
+    submitSampleUpload.execute(formData)
+  }
+
   return (
     <FieldGroup>
       <Field>
@@ -177,7 +204,7 @@ export function SampleUpload() {
           <Input {...getInputProps({ id: inputId })} className='sr-only' />
         </div>
         <FieldDescription>
-          This demo stores files in browser state and never uploads them.
+          This demo sends files to a placeholder server action.
         </FieldDescription>
         <FieldError>{error}</FieldError>
       </Field>
@@ -191,6 +218,7 @@ export function SampleUpload() {
               variant='ghost'
               size='sm'
               onClick={handleClear}
+              disabled={submitSampleUpload.isPending}
             >
               Clear
             </Button>
@@ -217,6 +245,7 @@ export function SampleUpload() {
                     // size='icon-sm'
                     onClick={() => handleRemove(item.id)}
                     aria-label={`Remove ${item.file.name}`}
+                    disabled={submitSampleUpload.isPending}
                   >
                     <XIcon />
                   </Button>
@@ -224,6 +253,17 @@ export function SampleUpload() {
               </Item>
             ))}
           </ItemGroup>
+
+          <div className='flex justify-end'>
+            <Button
+              type='button'
+              onClick={handleUpload}
+              disabled={submitSampleUpload.isPending}
+            >
+              {submitSampleUpload.isPending ? <Spinner /> : <SendIcon />}
+              Upload
+            </Button>
+          </div>
         </div>
       )}
     </FieldGroup>
