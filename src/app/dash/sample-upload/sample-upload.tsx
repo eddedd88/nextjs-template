@@ -25,7 +25,6 @@ import {
 } from '@/components/ui/dialog'
 import {
   Field,
-  FieldDescription,
   FieldError,
   FieldGroup,
   FieldLabel,
@@ -183,7 +182,7 @@ export function SampleUpload() {
   }
 
   return (
-    <FieldGroup>
+    <FieldGroup className='gap-4'>
       <Field>
         <FieldLabel htmlFor={inputId}>Upload Files</FieldLabel>
         <div
@@ -292,20 +291,19 @@ export function SampleUpload() {
                 )}
               </DialogContent>
             </Dialog>
-            {items.length > 0 && (
-              <Button
-                type='button'
-                size='sm'
-                onClick={handleUpload}
-                disabled={submitSampleUpload.isPending}
-              >
-                {submitSampleUpload.isPending ? <Spinner /> : <SendIcon />}
-                Upload
-              </Button>
-            )}
           </div>
         </div>
       </div>
+      <Button
+        type='button'
+        size='sm'
+        onClick={handleUpload}
+        disabled={submitSampleUpload.isPending || items.length === 0}
+        className='w-fit'
+      >
+        {submitSampleUpload.isPending ? <Spinner /> : <SendIcon />}
+        Upload
+      </Button>
       <p className='text-sm text-muted-foreground'>
         This demo sends files to a placeholder server action.
       </p>
