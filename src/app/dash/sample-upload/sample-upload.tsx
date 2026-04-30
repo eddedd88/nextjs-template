@@ -16,6 +16,14 @@ import { toast } from 'sonner'
 import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog'
+import {
   Field,
   FieldDescription,
   FieldError,
@@ -209,63 +217,98 @@ export function SampleUpload() {
         <FieldError>{error}</FieldError>
       </Field>
 
-      {items.length > 0 && (
-        <div className='animate-fade-in space-y-3'>
-          <div className='flex items-center justify-between gap-3'>
-            <h2 className='text-sm font-medium'>Selected files</h2>
-            <Button
-              type='button'
-              variant='ghost'
-              size='sm'
-              onClick={handleClear}
-              disabled={submitSampleUpload.isPending}
-            >
-              Clear
-            </Button>
-          </div>
+      <div className='animate-fade-in space-y-3 rounded-lg border border-border bg-background p-4'>
+        <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+          <p className='text-sm font-medium'>
+            {items.length} selected {items.length === 1 ? 'file' : 'files'}
+          </p>
+          <div className='flex flex-wrap items-center gap-2'>
+            {items.length > 0 && (
+              <Button
+                type='button'
+                variant='ghost'
+                size='sm'
+                onClick={handleClear}
+                disabled={submitSampleUpload.isPending}
+              >
+                Clear
+              </Button>
+            )}
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button
+                  type='button'
+                  variant='outline'
+                  size='sm'
+                  disabled={items.length === 0}
+                >
+                  View
+                </Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Selected files</DialogTitle>
+                  <DialogDescription>
+                    {items.length} selected{' '}
+                    {items.length === 1 ? 'file' : 'files'}
+                  </DialogDescription>
+                </DialogHeader>
 
-          <ItemGroup>
-            {items.map(item => (
-              <Item key={item.id} className='animate-fade-in' variant='outline'>
-                <ItemMedia>
-                  <div className='flex size-10 items-center justify-center rounded-md bg-muted'>
-                    <FileTypeIcon fileType={item.file.type} />
-                  </div>
-                </ItemMedia>
-                <ItemContent>
-                  <ItemTitle>{item.file.name}</ItemTitle>
-                  <ItemDescription>
-                    {formatFileSize(item.file.size)}
-                  </ItemDescription>
-                </ItemContent>
-                <ItemActions>
-                  <Button
-                    type='button'
-                    variant='ghost'
-                    // size='icon-sm'
-                    onClick={() => handleRemove(item.id)}
-                    aria-label={`Remove ${item.file.name}`}
-                    disabled={submitSampleUpload.isPending}
-                  >
-                    <XIcon />
-                  </Button>
-                </ItemActions>
-              </Item>
-            ))}
-          </ItemGroup>
-
-          <div className='flex justify-end'>
-            <Button
-              type='button'
-              onClick={handleUpload}
-              disabled={submitSampleUpload.isPending}
-            >
-              {submitSampleUpload.isPending ? <Spinner /> : <SendIcon />}
-              Upload
-            </Button>
+                {items.length > 0 ? (
+                  <ItemGroup className='max-h-80 overflow-y-auto'>
+                    {items.map(item => (
+                      <Item
+                        key={item.id}
+                        className='animate-fade-in'
+                        variant='outline'
+                      >
+                        <ItemMedia>
+                          <div className='flex size-10 items-center justify-center rounded-md bg-muted'>
+                            <FileTypeIcon fileType={item.file.type} />
+                          </div>
+                        </ItemMedia>
+                        <ItemContent>
+                          <ItemTitle>{item.file.name}</ItemTitle>
+                          <ItemDescription>
+                            {formatFileSize(item.file.size)}
+                          </ItemDescription>
+                        </ItemContent>
+                        <ItemActions>
+                          <Button
+                            type='button'
+                            variant='ghost'
+                            size='icon-sm'
+                            onClick={() => handleRemove(item.id)}
+                            aria-label={`Remove ${item.file.name}`}
+                            disabled={submitSampleUpload.isPending}
+                          >
+                            <XIcon />
+                          </Button>
+                        </ItemActions>
+                      </Item>
+                    ))}
+                  </ItemGroup>
+                ) : (
+                  <p className='rounded-md border border-dashed border-border p-4 text-sm text-muted-foreground'>
+                    No files selected.
+                  </p>
+                )}
+              </DialogContent>
+            </Dialog>
+            {items.length > 0 && (
+              <Button
+                type='button'
+                size='sm'
+                onClick={handleUpload}
+                disabled={submitSampleUpload.isPending}
+              >
+                {submitSampleUpload.isPending ? <Spinner /> : <SendIcon />}
+                Upload
+              </Button>
+            )}
           </div>
         </div>
-      )}
+      </div>
     </FieldGroup>
   )
 }
