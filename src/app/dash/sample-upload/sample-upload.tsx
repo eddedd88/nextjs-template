@@ -211,9 +211,6 @@ export function SampleUpload() {
           </Button>
           <Input {...getInputProps({ id: inputId })} className='sr-only' />
         </div>
-        <FieldDescription>
-          This demo sends files to a placeholder server action.
-        </FieldDescription>
         <FieldError>{error}</FieldError>
       </Field>
 
@@ -309,6 +306,9 @@ export function SampleUpload() {
           </div>
         </div>
       </div>
+      <p className='text-sm text-muted-foreground'>
+        This demo sends files to a placeholder server action.
+      </p>
     </FieldGroup>
   )
 }
