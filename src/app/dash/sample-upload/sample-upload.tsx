@@ -243,10 +243,12 @@ export function SampleUpload() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Selected files</DialogTitle>
-                  <DialogDescription>
-                    {items.length} selected{' '}
+                  <DialogTitle>
+                    {items.length} Selected{' '}
                     {items.length === 1 ? 'file' : 'files'}
+                  </DialogTitle>
+                  <DialogDescription>
+                    Review the files you&apos;ve selected before uploading.
                   </DialogDescription>
                 </DialogHeader>
 
@@ -264,7 +266,9 @@ export function SampleUpload() {
                           </div>
                         </ItemMedia>
                         <ItemContent>
-                          <ItemTitle>{item.file.name}</ItemTitle>
+                          <ItemTitle className='break-all'>
+                            {item.file.name}
+                          </ItemTitle>
                           <ItemDescription>
                             {formatFileSize(item.file.size)}
                           </ItemDescription>
