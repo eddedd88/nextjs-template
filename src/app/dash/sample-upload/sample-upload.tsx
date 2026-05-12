@@ -309,7 +309,7 @@ export function SampleUpload() {
         Upload
       </Button>
       <p className='text-sm text-muted-foreground'>
-        This demo sends files to a placeholder server action.
+        No files are stored in this demo.
       </p>
     </FieldGroup>
   )
