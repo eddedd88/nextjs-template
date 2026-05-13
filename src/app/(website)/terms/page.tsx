@@ -5,7 +5,7 @@ export default function TermsPage() {
     <main className='container mx-auto mb-8 max-w-4xl rounded-md bg-white py-8 sm:border'>
       <div>
         <h1 className='mb-4 text-3xl font-medium'>Terms and Conditions</h1>
-        <p className='text-muted-foreground text-sm font-light'>
+        <p className='text-sm font-light text-muted-foreground'>
           Last Updated: Dec 27, 2024
         </p>
       </div>

@@ -15,7 +15,7 @@ export function FeaturesSection() {
       <PageSectionTitle className='mb-2 sm:mb-2'>
         Jumpstart Your Next Project
       </PageSectionTitle>
-      <p className='text-muted-foreground text-center text-xl'>
+      <p className='text-center text-xl text-muted-foreground'>
         This Next.js template provides everything you need to build and launch
         faster.
       </p>
@@ -47,8 +47,8 @@ function FeatureCard({
   className,
 }: FeatureCardProps) {
   return (
-    <div className={cn('bg-background rounded-xl border p-6', className)}>
-      <div className='bg-primary/10 text-primary mb-4 flex size-12 items-center justify-center rounded-full'>
+    <div className={cn('rounded-xl border bg-background p-6', className)}>
+      <div className='mb-4 flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary'>
         {icon}
       </div>
       <h3 className='mb-2 text-xl font-semibold'>{title}</h3>

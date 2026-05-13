@@ -5,11 +5,11 @@ import { PageSectionTitle } from './page-section'
 
 export function FinalCTASection() {
   return (
-    <section className='to-primary/5 from-background bg-linear-to-b to-40% pt-16 pb-32 sm:pt-24'>
+    <section className='bg-linear-to-b from-background to-primary/5 to-40% pt-16 pb-32 sm:pt-24'>
       <PageSectionTitle className='mb-2 sm:mb-2'>
         Ready to get started?
       </PageSectionTitle>
-      <p className='text-muted-foreground mx-auto max-w-3xl text-center text-lg leading-7 text-pretty sm:leading-8'>
+      <p className='mx-auto max-w-3xl text-center text-lg leading-7 text-pretty text-muted-foreground sm:leading-8'>
         Take your project to the next level with a solution designed to make an
         impact. Start your journey today and experience the difference
         firsthand.

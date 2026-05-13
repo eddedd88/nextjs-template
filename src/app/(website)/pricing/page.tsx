@@ -15,12 +15,12 @@ import { ReactNode } from 'react'
 
 export default function PricingPage() {
   return (
-    <div className='to-primary/5 from-background grow bg-linear-to-b from-80%'>
+    <div className='grow bg-linear-to-b from-background from-80% to-primary/5'>
       <Page>
         <h1 className='text-center text-4xl leading-normal md:text-5xl md:leading-normal'>
           Pricing
         </h1>
-        <p className='text-muted-foreground mx-auto mt-2 mb-6 max-w-md text-center text-lg text-balance'>
+        <p className='mx-auto mt-2 mb-6 max-w-md text-center text-lg text-balance text-muted-foreground'>
           Choose the perfect plan for your needs. Start free and upgrade as you
           grow.
         </p>
@@ -64,7 +64,7 @@ export default function PricingPage() {
         </div>
 
         <div className='mt-8 text-center'>
-          <p className='text-muted-foreground text-sm'>
+          <p className='text-sm text-muted-foreground'>
             Need a custom plan for your organization?{' '}
             <a
               href='mailto:sales@example.com'
@@ -94,7 +94,7 @@ function PricingCard(props: PricingCardProps) {
         <CardDescription>{props.description}</CardDescription>
         <div className='flex items-end'>
           <span className='text-4xl font-semibold'>{props.price}</span>
-          <span className='text-muted-foreground text-lg'>/month</span>
+          <span className='text-lg text-muted-foreground'>/month</span>
         </div>
         <Separator className='mt-3' />
       </CardHeader>
@@ -102,7 +102,7 @@ function PricingCard(props: PricingCardProps) {
         <ul className='space-y-3'>
           {props.features.map(feature => (
             <li key={feature} className='flex items-center gap-3'>
-              <CheckIcon className='text-primary size-4' />
+              <CheckIcon className='size-4 text-primary' />
               <span>{feature}</span>
             </li>
           ))}
