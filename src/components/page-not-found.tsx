@@ -21,7 +21,7 @@ export function PageNotFound() {
               If you believe this is an error, please contact our{' '}
               <a
                 href={`mailto:${SUPPORT_EMAIL_ADDRESS}`}
-                className='text-primary hover:text-primary/90 font-medium underline-offset-4 hover:underline'
+                className='font-medium text-primary underline-offset-4 hover:text-primary/90 hover:underline'
               >
                 support team
               </a>

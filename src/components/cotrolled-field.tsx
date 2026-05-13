@@ -41,7 +41,7 @@ export function ControlledField<T extends FieldValues>({
               {children}
             </Slot.Root>
             {description && !fieldState.error && (
-              <FieldDescription className='animate-fade-in h-6'>
+              <FieldDescription className='h-6 animate-fade-in'>
                 {description}
               </FieldDescription>
             )}
