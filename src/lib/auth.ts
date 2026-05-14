@@ -1,5 +1,5 @@
 import 'server-only'
-// import { auth, currentUser } from '@clerk/nextjs/server'
+// import { auth } from '@clerk/nextjs/server'
 
 export async function getAuthToken() {
   throw new Error('Not implemented')

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 // import { useSignIn } from '@clerk/nextjs'
 
-type SSOStrategy = 'google' | 'apple'
+type SSOStrategy = 'oauth_google' | 'oauth_apple'
 
 export function LoginForm() {
   // const { signIn } = useSignIn()
@@ -42,15 +42,15 @@ export function LoginForm() {
   return (
     <div className='flex w-xs flex-col gap-3'>
       <SocialLoginButton
-        onClick={() => signInWith('google')}
-        isRedirecting={isRedirecting === 'google'}
+        onClick={() => signInWith('oauth_google')}
+        isRedirecting={isRedirecting === 'oauth_google'}
         logo={<GoogleLogo />}
       >
         <span className='mt-0.5'>Continue with Google</span>
       </SocialLoginButton>
       <SocialLoginButton
-        onClick={() => signInWith('apple')}
-        isRedirecting={isRedirecting === 'apple'}
+        onClick={() => signInWith('oauth_apple')}
+        isRedirecting={isRedirecting === 'oauth_apple'}
         logo={<AppleLogo />}
       >
         <span className='mt-1'>Continue with Apple</span>
