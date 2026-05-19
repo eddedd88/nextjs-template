@@ -19,24 +19,24 @@ export function LoginForm() {
     setIsRedirecting(strategy)
 
     /**
-     * Clerk.js implementation
-     */
-    // const { error } = await signIn.sso({
-    //   strategy,
-    //   redirectCallbackUrl: '/login/sso-callback',
-    //   redirectUrl: '/',
-    // })
-    // if (error) {
-    //   setIsRedirecting(null)
-    //   console.error(error)
-    // }
-
-    /**
      * Remove this when implementing actual SSO logic.
      */
     await new Promise(resolve => setTimeout(resolve, 2000))
     setIsRedirecting(null)
     console.log('Signing in with', strategy)
+
+    /**
+     * Clerk.js implementation
+     */
+    // const { error } = await signIn.sso({
+    //   strategy,
+    //   redirectCallbackUrl: '/login/sso-callback',
+    //   redirectUrl: '/dash',
+    // })
+    // if (error) {
+    //   setIsRedirecting(null)
+    //   console.error(error)
+    // }
   }
 
   return (

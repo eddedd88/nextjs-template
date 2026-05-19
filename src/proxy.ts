@@ -12,7 +12,7 @@ export default function proxy() {}
 //   if (req.nextUrl.pathname === '/login') {
 //     const { userId } = await auth()
 //     if (userId) {
-//       return NextResponse.redirect(new URL('/', req.url))
+//       return NextResponse.redirect(new URL('/dash', req.url))
 //     }
 //   }
 
