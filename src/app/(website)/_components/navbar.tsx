@@ -80,7 +80,12 @@ function NavLinkItem({ href, label, variant = 'ghost' }: NavLinkItemProps) {
 
 function GithubButton() {
   return (
-    <Button variant='ghost' className='hover:bg-primary/5' size='icon' asChild>
+    <Button
+      variant='ghost'
+      className='hover:bg-primary/5'
+      size='icon-sm'
+      asChild
+    >
       <a href='https://github.com/eddedd88/nextjs-template' target='_blank'>
         <svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
           <title>GitHub</title>
