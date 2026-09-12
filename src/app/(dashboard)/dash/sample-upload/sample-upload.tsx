@@ -41,7 +41,7 @@ import {
 } from '@/components/ui/item'
 import { Spinner } from '@/components/ui/spinner'
 import { UNEXPECTED_ERROR_MESSAGE } from '@/constants'
-import { cn } from '@/lib/utils'
+import { cn } from 'cn'
 import { submitSampleUploadAction } from './submit-sample-upload-action'
 
 const MAX_FILE_COUNT = 5

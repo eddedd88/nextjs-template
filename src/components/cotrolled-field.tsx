@@ -9,7 +9,7 @@ import {
 
 import { FieldValues, Controller, ControllerProps } from 'react-hook-form'
 import { Slot } from 'radix-ui'
-import { cn } from '@/lib/utils'
+import { cn } from 'cn'
 
 type Props<T extends FieldValues> = {
   children: React.ReactNode

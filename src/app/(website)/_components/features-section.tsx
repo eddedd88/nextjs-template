@@ -1,5 +1,5 @@
 import { Settings, Palette, ServerCog } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { cn } from 'cn'
 import { PageSection, PageSectionTitle } from './page-section'
 
 interface FeatureCardProps {

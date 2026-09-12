@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/lib/utils'
+import { cn } from 'cn'
 import { useEffect, useState } from 'react'
 
 const TYPING_SPEED = 75 // in ms

@@ -10,8 +10,8 @@ This project is a Next.js App Router starter template for a SaaS-style web app w
 - React `19.2.x` and React DOM `19.2.x`
 - TypeScript `5.9.x` in strict mode
 - Tailwind CSS `4.x` with `@tailwindcss/postcss`
-- shadcn-style component setup (`components.json`) + Radix primitives via `radix-ui`
-- `class-variance-authority`, `clsx`, `tailwind-merge` for variant-based styling
+- shadcn/ui 4.21.x with the Radix Vega style (`components.json`) + Radix primitives via `radix-ui`
+- `class-variance-authority` for variants and `cn` for Tailwind class merging
 - `next-safe-action` + `zod` for validated server actions
 - `react-hook-form` + `@hookform/resolvers` for client form handling
 - `sonner` for toasts
@@ -28,7 +28,7 @@ This project is a Next.js App Router starter template for a SaaS-style web app w
 - Use `safeAction` from `src/lib/safe-action.ts` for new server actions.
 - Validate all action/form inputs with `zod`.
 - Reuse components from `src/components/ui/*` before creating new UI primitives.
-- Use `cn()` from `src/lib/utils.ts` for className merging.
+- Import `cn()` from `cn` for className merging (`src/lib/utils.ts` also re-exports it).
 - Feature flags live in `src/lib/flags.ts` (`@/lib/flags`).
 - Only introduce feature flags when explicitly requested; do not gate new features by default.
 - Keep styling in Tailwind utility classes and theme tokens from `src/app/globals.css`.
