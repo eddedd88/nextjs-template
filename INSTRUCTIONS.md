@@ -6,9 +6,9 @@ This project is a Next.js App Router starter template for a SaaS-style web app w
 
 ## Libraries and Tooling in Use
 
-- Next.js `16.1.6` (App Router, typed routes enabled, Turbopack in dev)
-- React `19.2.x` and React DOM `19.2.x`
-- TypeScript `5.9.x` in strict mode
+- Next.js `16.3.x` (App Router, typed routes enabled, Turbopack in dev)
+- React `19.3.x` and React DOM `19.3.x`
+- TypeScript `7.0.x` CLI in strict mode, with the TypeScript 6 compatibility API for tooling
 - Tailwind CSS `4.x` with `@tailwindcss/postcss`
 - shadcn/ui 4.21.x with the Radix Vega style (`components.json`) + Radix primitives via `radix-ui`
 - `class-variance-authority` for variants and `cn` for Tailwind class merging
@@ -18,7 +18,7 @@ This project is a Next.js App Router starter template for a SaaS-style web app w
 - `lucide-react` icons
 - `vaul` drawer primitives
 - `@vercel/analytics` and `@vercel/speed-insights`
-- ESLint 9 + `eslint-config-next`, Prettier 3 + `prettier-plugin-tailwindcss`, Husky + lint-staged
+- ESLint 10 + `eslint-config-next` + `@eslint/compat`, Prettier 3 + `prettier-plugin-tailwindcss`, Husky + lint-staged
 
 ## Project Conventions
 
@@ -49,6 +49,10 @@ pnpm dev
 pnpm lint
 pnpm build
 ```
+
+`pnpm lint` is the single command for linting and type checking. It uses ESLint's content cache and still runs the TypeScript check. The ESLint cache is ignored by Git; delete `.eslintcache` after upgrading lint dependencies to force a fresh check.
+
+Keep the TypeScript dependency aliases: `typescript` points to `@typescript/typescript6` for API consumers such as `typescript-eslint`, and `@typescript/native` points to TypeScript 7 for `tsc`. Keep `fixupConfigRules` in the ESLint config until Next's bundled plugins support ESLint 10's rule APIs directly; do not disable rules to work around plugin compatibility errors.
 
 ## Common Template TODOs
 
