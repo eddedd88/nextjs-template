@@ -3,7 +3,6 @@
 import { Page } from '@/components/page'
 import { SUPPORT_EMAIL_ADDRESS, UNEXPECTED_ERROR_MESSAGE } from '@/constants'
 import { PublicError } from '@/lib/public-error'
-// import { ConvexError } from 'convex/values'
 
 export type PageErrorProps = {
   error: Error & { digest?: string }
@@ -13,9 +12,6 @@ export type PageErrorProps = {
 export function PageError({ error }: PageErrorProps) {
   let errorMessage = UNEXPECTED_ERROR_MESSAGE
 
-  // if (error instanceof ConvexError) {
-  //   errorMessage = error.data
-  // }
   if (error instanceof PublicError) {
     errorMessage = error.message
   }

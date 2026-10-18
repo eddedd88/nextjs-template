@@ -6,13 +6,7 @@ import nextTs from 'eslint-config-next/typescript'
 const eslintConfig = defineConfig([
   // Next's React/import plugins still use rule APIs removed in ESLint 10.
   ...fixupConfigRules([...nextVitals, ...nextTs]),
-  globalIgnores([
-    '.next/**',
-    'out/**',
-    'build/**',
-    'next-env.d.ts',
-    'convex/_generated/**',
-  ]),
+  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
 ])
 
 export default eslintConfig
