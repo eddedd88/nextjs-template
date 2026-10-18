@@ -17,13 +17,29 @@ export function HeroSection() {
         fast.
       </p>
       <div className='flex items-center gap-4 pb-4'>
-        <Button size='lg' className='px-6' asChild>
-          <a href='https://github.com/eddedd88/nextjs-template' target='_blank'>
-            Use This Template
-          </a>
+        <Button
+          size='lg'
+          className='px-6'
+          nativeButton={false}
+          role='link'
+          render={
+            <a
+              href='https://github.com/eddedd88/nextjs-template'
+              target='_blank'
+            />
+          }
+        >
+          Use This Template
         </Button>
-        <Button size='lg' className='px-6' asChild variant='outline'>
-          <Link href='/dash'>See Dashboard</Link>
+        <Button
+          size='lg'
+          className='px-6'
+          variant='outline'
+          nativeButton={false}
+          role='link'
+          render={<Link href='/dash' />}
+        >
+          See Dashboard
         </Button>
       </div>
       <div className='relative aspect-video w-full max-w-6xl overflow-hidden rounded-xl shadow-xs 2xl:mt-20 2xl:max-w-[1600px]'>

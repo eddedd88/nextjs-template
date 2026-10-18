@@ -8,11 +8,12 @@ import {
 } from '@/components/ui/field'
 
 import { FieldValues, Controller, ControllerProps } from 'react-hook-form'
-import { Slot } from 'radix-ui'
+import { useRender } from '@base-ui/react/use-render'
+import type { ReactElement } from 'react'
 import { cn } from 'cn'
 
 type Props<T extends FieldValues> = {
-  children: React.ReactNode
+  children: ReactElement
   label?: string
   description?: string
   className?: string
@@ -37,9 +38,13 @@ export function ControlledField<T extends FieldValues>({
         >
           {label && <FieldLabel htmlFor={field.name}>{label}</FieldLabel>}
           <div className='grid gap-1'>
-            <Slot.Root {...field} aria-invalid={fieldState.invalid}>
+            <FieldControl
+              {...field}
+              id={field.name}
+              aria-invalid={fieldState.invalid}
+            >
               {children}
-            </Slot.Root>
+            </FieldControl>
             {description && !fieldState.error && (
               <FieldDescription className='h-6 animate-fade-in'>
                 {description}
@@ -58,4 +63,17 @@ export function ControlledField<T extends FieldValues>({
       )}
     />
   )
+}
+
+function FieldControl({
+  children,
+  ref,
+  ...props
+}: useRender.ComponentProps<'input'> & { children: ReactElement }) {
+  return useRender({
+    defaultTagName: 'input',
+    render: children,
+    ref,
+    props,
+  })
 }

@@ -30,8 +30,8 @@ export function PageNotFound() {
           )}
         </div>
 
-        <Button asChild>
-          <Link href='/'>Return to Home</Link>
+        <Button nativeButton={false} role='link' render={<Link href='/' />}>
+          Return to Home
         </Button>
       </div>
     </Page>

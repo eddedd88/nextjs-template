@@ -59,12 +59,12 @@ export function PageBackButton<T extends string>({
       variant='ghost'
       size='sm'
       className='-ml-2 hidden text-muted-foreground has-[>svg]:pl-1 sm:inline-flex'
-      asChild
+      nativeButton={false}
+      role='link'
+      render={<Link href={href} />}
     >
-      <Link href={href}>
-        <ChevronLeftIcon />
-        Back
-      </Link>
+      <ChevronLeftIcon />
+      Back
     </Button>
   )
 }

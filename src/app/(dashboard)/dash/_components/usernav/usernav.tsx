@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -50,23 +51,26 @@ function UserNavMenu({
 }) {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant='ghost' className='size-8 rounded-full'>
-          <Avatar>
-            {imageUrl ? <AvatarImage src={imageUrl} alt={name} /> : null}
-            <AvatarFallback className='border'>
-              <UserRoundIcon className='size-4' />
-            </AvatarFallback>
-          </Avatar>
-        </Button>
+      <DropdownMenuTrigger
+        aria-label='Open user menu'
+        render={<Button variant='ghost' className='size-8 rounded-full' />}
+      >
+        <Avatar>
+          {imageUrl ? <AvatarImage src={imageUrl} alt={name} /> : null}
+          <AvatarFallback className='border'>
+            <UserRoundIcon className='size-4' />
+          </AvatarFallback>
+        </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className='w-fit' align='end'>
-        <DropdownMenuLabel className='flex flex-col'>
-          <span className='text-sm font-medium text-foreground'>{name}</span>
-          <span className='text-xs text-muted-foreground'>{email}</span>
-        </DropdownMenuLabel>
-        <DropdownMenuSeparator />
-        <LogoutDropdownMenuItem />
+        <DropdownMenuGroup>
+          <DropdownMenuLabel className='flex flex-col'>
+            <span className='text-sm font-medium text-foreground'>{name}</span>
+            <span className='text-xs text-muted-foreground'>{email}</span>
+          </DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <LogoutDropdownMenuItem />
+        </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>
   )

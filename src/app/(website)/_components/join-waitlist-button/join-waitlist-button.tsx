@@ -12,10 +12,10 @@ import { JoinWaitlistForm } from './join-waitlist-form'
 export function JoinWaitlistButton() {
   return (
     <Dialog>
-      <DialogTrigger asChild>
-        <Button size='lg' variant='outline' className='px-6'>
-          Join Waitlist
-        </Button>
+      <DialogTrigger
+        render={<Button size='lg' variant='outline' className='px-6' />}
+      >
+        Join Waitlist
       </DialogTrigger>
       <DialogContent className='sm:max-w-md'>
         <DialogHeader>

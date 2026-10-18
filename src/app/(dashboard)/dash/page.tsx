@@ -72,17 +72,25 @@ export default function DashPage() {
             </Button>
           </form>
           <div className='grid gap-2 sm:grid-cols-2'>
-            <Button asChild variant='secondary' className='w-full py-6'>
-              <Link href='/dash/sample-form'>
-                Open Sample Form
-                <ArrowRightIcon />
-              </Link>
+            <Button
+              variant='secondary'
+              className='w-full py-6'
+              nativeButton={false}
+              role='link'
+              render={<Link href='/dash/sample-form' />}
+            >
+              Open Sample Form
+              <ArrowRightIcon />
             </Button>
-            <Button asChild variant='secondary' className='w-full py-6'>
-              <Link href='/dash/sample-upload'>
-                <UploadCloudIcon />
-                Open Sample Upload
-              </Link>
+            <Button
+              variant='secondary'
+              className='w-full py-6'
+              nativeButton={false}
+              role='link'
+              render={<Link href='/dash/sample-upload' />}
+            >
+              <UploadCloudIcon />
+              Open Sample Upload
             </Button>
           </div>
         </div>

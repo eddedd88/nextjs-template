@@ -15,8 +15,14 @@ export function FinalCTASection() {
         firsthand.
       </p>
       <div className='mt-8 flex items-center justify-center gap-4'>
-        <Button asChild size='lg' className='px-8'>
-          <Link href='/dash'>Get Started</Link>
+        <Button
+          size='lg'
+          className='px-8'
+          nativeButton={false}
+          role='link'
+          render={<Link href='/dash' />}
+        >
+          Get Started
         </Button>
         <JoinWaitlistButton />
       </div>

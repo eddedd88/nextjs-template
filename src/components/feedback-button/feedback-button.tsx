@@ -32,10 +32,8 @@ export function FeedbackButton() {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <Button variant='outline' size='sm'>
-          Feedback
-        </Button>
+      <DialogTrigger render={<Button variant='outline' size='sm' />}>
+        Feedback
       </DialogTrigger>
       <DialogContent className='sm:max-w-md'>
         <DialogHeader>

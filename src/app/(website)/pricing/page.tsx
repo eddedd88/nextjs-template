@@ -56,8 +56,14 @@ export default function PricingPage() {
               'Team collaboration tools',
             ]}
             ctaButton={
-              <Button className='w-full' size='lg' asChild>
-                <Link href='/dash'>Start Free Trial</Link>
+              <Button
+                className='w-full'
+                size='lg'
+                nativeButton={false}
+                role='link'
+                render={<Link href='/dash' />}
+              >
+                Start Free Trial
               </Button>
             }
           />

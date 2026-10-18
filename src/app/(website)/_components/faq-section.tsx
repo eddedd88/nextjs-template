@@ -40,7 +40,7 @@ export function FAQSection() {
   return (
     <PageSection className='max-w-3xl'>
       <PageSectionTitle>Frequently Asked Questions</PageSectionTitle>
-      <Accordion type='multiple'>
+      <Accordion multiple>
         {faqData.map((item, index) => (
           <AccordionItem key={index} value={`item-${index}`}>
             <AccordionTrigger>{item.question}</AccordionTrigger>

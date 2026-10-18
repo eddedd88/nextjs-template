@@ -231,15 +231,11 @@ export function SampleUpload() {
               </Button>
             )}
             <Dialog>
-              <DialogTrigger asChild>
-                <Button
-                  type='button'
-                  variant='outline'
-                  size='sm'
-                  disabled={items.length === 0}
-                >
-                  View
-                </Button>
+              <DialogTrigger
+                disabled={items.length === 0}
+                render={<Button type='button' variant='outline' size='sm' />}
+              >
+                View
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>

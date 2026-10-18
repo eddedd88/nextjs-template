@@ -15,9 +15,11 @@ export function Footer() {
               variant='link'
               className='text-xs text-muted-foreground'
               size='sm'
-              asChild
+              nativeButton={false}
+              role='link'
+              render={<Link href='/terms' />}
             >
-              <Link href='/terms'>Terms of Service</Link>
+              Terms of Service
             </Button>
           </div>
         </div>
@@ -56,10 +58,15 @@ function SocialLink({
   children: React.ReactNode
 }) {
   return (
-    <Button variant='ghost' className='hover:bg-primary/5' size='icon' asChild>
-      <a href={href} target='_blank'>
-        {children}
-      </a>
+    <Button
+      variant='ghost'
+      className='hover:bg-primary/5'
+      size='icon'
+      nativeButton={false}
+      role='link'
+      render={<a href={href} target='_blank' />}
+    >
+      {children}
     </Button>
   )
 }

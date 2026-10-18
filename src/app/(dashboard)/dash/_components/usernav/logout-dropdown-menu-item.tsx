@@ -20,7 +20,7 @@ export function LogoutDropdownMenuItem() {
         // })
       }}
       disabled={isSigningOut}
-      onSelect={e => e.preventDefault()}
+      closeOnClick={false}
     >
       {isSigningOut ? <Spinner /> : <LogOutIcon />}
       Logout
