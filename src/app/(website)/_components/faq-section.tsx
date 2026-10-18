@@ -22,7 +22,8 @@ const faqData: FAQItem[] = [
   },
   {
     question: 'What technologies are used in this template?',
-    answer: 'This template uses Next.js, Shadcn UI, Google Vertex AI.',
+    answer:
+      'This template uses Next.js, shadcn/ui with Base UI, and Tailwind CSS.',
   },
   {
     question: 'Can I use this template for my own projects?',

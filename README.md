@@ -50,4 +50,3 @@ Run `pnpm exec playwright install chromium` once, then `pnpm exec playwright tes
 - [Next.js](https://github.com/vercel/next.js/)
 - [Shadcn/ui](https://ui.shadcn.com/)
 - [Next Safe Action](https://github.com/TheEdoRan/next-safe-action)
-- [Google Gemini AI](https://github.com/googleapis/js-genai)
